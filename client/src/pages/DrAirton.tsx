@@ -139,12 +139,12 @@ export default function DrAirton() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "Curso AO Trauma Blended Course – Basic Principles of Fracture Management",
-                  "XII Curso Teórico-Prático de Fixação Externa Dr. Hilário Boatto (15h)",
-                  "Curso de Capacitação em Segurança do Paciente – 5ª Edição (60h) — Hospital São Paulo / UNIFESP",
+                  "XII Curso Teórico-Prático de Fixação Externa Dr. Hilário Boatto",
+                  "Curso de Capacitação em Segurança do Paciente – 5ª Edição — Hospital São Paulo / UNIFESP",
                   "Curso de Ética Médica para Residentes — UNIFESP",
-                  "Medicina Transfusional – Uma Visão Atualizada (20h) — EPM/Hospital São Paulo UNIFESP",
+                  "Medicina Transfusional – Uma Visão Atualizada — EPM/Hospital São Paulo UNIFESP",
                   "Webinar – Lesões do Tendão Calcâneo – Aquiles — SBOT",
-                  "Curso de Ética Médica Continuada — CRM/MS (18h)"
+                  "Curso de Ética Médica Continuada — CRM/MS"
                 ].map((item, idx) => (
                   <div key={idx} className="bg-secondary rounded-lg p-4 border border-border flex gap-3 items-start">
                     <span className="text-primary font-bold flex-shrink-0">✓</span>
