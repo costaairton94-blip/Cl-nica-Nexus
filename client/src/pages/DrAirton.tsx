@@ -125,31 +125,6 @@ export default function DrAirton() {
 
               <div>
                 <h3 className="font-bold text-foreground text-lg mb-1">
-                  Uniderp / Santa Casa de Campo Grande – MS
-                </h3>
-                <p className="text-sm text-primary font-medium mb-3">Internato Médico</p>
-                <ul className="space-y-2">
-                  {[
-                    "Medicina de Urgência e Emergência — UPAs, SAMU (360h)",
-                    "Saúde Materno-Infantil — Ginecologia, Obstetrícia, Pediatria e Neonatologia (220h)",
-                    "Saúde do Adulto — Clínica Médica e Cirurgia (220h)",
-                    "Saúde Mental — Psiquiatria e CAPS (240h)",
-                    "Estágio Regional — Clínica Médica, Cirurgia e Pronto Atendimento no interior do estado (240h)",
-                    "Atenção Básica — Unidades Básicas de Saúde da Família (560h)",
-                    "Ambulatórios de Especialidades Médicas — Clínica Médica, Cirurgia e subespecialidades (200h)",
-                    "Saúde do Adulto — Clínica Médica, Cirurgia, Ortopedia e Anestesiologia (320h)",
-                    "Saúde Materno-Infantil — Ginecologia, Obstetrícia, Pediatria e Neonatologia (320h)"
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex gap-3 text-sm text-muted-foreground">
-                      <span className="text-primary font-bold flex-shrink-0">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-foreground text-lg mb-1">
                   Hospital Santa Casa — Associação Beneficente de Campo Grande
                 </h3>
                 <p className="text-sm text-primary font-medium mb-3">Estágio Extracurricular em Urgência e Emergência (594h)</p>
@@ -190,8 +165,7 @@ export default function DrAirton() {
                   "Curso de Ética Médica para Residentes — UNIFESP",
                   "Medicina Transfusional – Uma Visão Atualizada (20h) — EPM/Hospital São Paulo UNIFESP",
                   "Webinar – Lesões do Tendão Calcâneo – Aquiles — SBOT",
-                  "Curso de Ética Médica Continuada — CRM/MS (18h)",
-                  "Desafios Clínicos e Urgências da Oftalmologia — Hospital de Olhos de MS (36h)"
+                  "Curso de Ética Médica Continuada — CRM/MS (18h)"
                 ].map((item, idx) => (
                   <div key={idx} className="bg-secondary rounded-lg p-4 border border-border flex gap-3 items-start">
                     <span className="text-primary font-bold flex-shrink-0">✓</span>
