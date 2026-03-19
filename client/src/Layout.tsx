@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X, Phone, MapPin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,31 +19,44 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 bg-white border-b border-border z-50 shadow-sm">
-        <div className="container flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.32.03_c74ce314.jpeg" 
-              alt="Nexus Saúde Logo" 
-              className="h-10 w-auto"
-            />
+        <div className="container flex items-center justify-between h-16 md:h-20">
+          {/* Logo melhorado */}
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-shrink-0">
+            <div className="relative">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.32.03_c74ce314.jpeg"
+                alt="Nexus Espaço Saúde"
+                className="h-12 w-auto md:h-14 rounded-md shadow-sm"
+              />
+            </div>
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span className="text-base font-bold text-foreground tracking-tight">Nexus Espaço</span>
+              <span className="text-xs font-semibold text-primary tracking-widest uppercase">Saúde</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-foreground hover:text-primary transition-colors font-medium text-sm">
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm whitespace-nowrap"
+              >
                 {link.label}
               </Link>
             ))}
           </nav>
 
           {/* CTA Button + Mobile Menu */}
-          <div className="flex items-center gap-4">
-            <a href="/contato" className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md font-medium transition-colors">
+          <div className="flex items-center gap-3">
+            <a
+              href="/contato"
+              className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md font-medium transition-colors text-sm whitespace-nowrap"
+            >
               Agendar Consulta
             </a>
 
@@ -52,6 +64,7 @@ export default function Layout({ children }: LayoutProps) {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
+              aria-label="Menu"
             >
               {mobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -64,14 +77,23 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-white">
-            <nav className="container py-4 flex flex-col gap-3">
+          <div className="md:hidden border-t border-border bg-white shadow-lg">
+            <nav className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="block py-2 text-foreground hover:text-primary transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block py-3 px-2 text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors font-medium text-base"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   {link.label}
                 </Link>
               ))}
-              <a href="/contato" className="block w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md font-medium text-center transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              <a
+                href="/contato"
+                className="block w-full bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-md font-medium text-center transition-colors mt-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Agendar Consulta
               </a>
             </nav>
@@ -80,7 +102,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 pt-16">{children}</main>
+      <main className="flex-1 pt-16 md:pt-20 w-full">{children}</main>
 
       {/* Floating WhatsApp Button */}
       <a
@@ -89,27 +111,30 @@ export default function Layout({ children }: LayoutProps) {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all hover:scale-110 z-40"
         title="Abrir WhatsApp"
+        aria-label="Abrir WhatsApp"
       >
-        <svg
-          className="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.782 1.176l-.013 1.39 1.327 1.327c.086-1.165.664-2.256 1.482-3.023l1.99-1.87zm0 0"/>
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.782 1.176l-.013 1.39 1.327 1.327c.086-1.165.664-2.256 1.482-3.023l1.99-1.87zm0 0" />
         </svg>
       </a>
 
       {/* Footer */}
       <footer className="bg-secondary border-t border-border mt-20">
         <div className="container py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             {/* About */}
             <div>
-              <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.32.03_c74ce314.jpeg" 
-                alt="Nexus Saúde Logo" 
-                className="h-8 w-auto mb-4"
-              />
+              <div className="flex items-center gap-2 mb-4">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.32.03_c74ce314.jpeg"
+                  alt="Nexus Espaço Saúde"
+                  className="h-10 w-auto rounded-md"
+                />
+                <div className="flex flex-col leading-tight">
+                  <span className="text-sm font-bold text-foreground">Nexus Espaço</span>
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">Saúde</span>
+                </div>
+              </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Saúde especializada com acolhimento. Ortopedia, traumatologia e nutrição clínica em um único espaço.
               </p>
@@ -135,11 +160,15 @@ export default function Layout({ children }: LayoutProps) {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <Phone className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                  <a href="tel:+5511932962026" className="text-sm text-muted-foreground hover:text-primary transition-colors">(11) 93296-2026</a>
+                  <a href="tel:+5511932962026" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    (11) 93296-2026
+                  </a>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                  <a href="mailto:costadamorim@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">costadamorim@gmail.com</a>
+                  <a href="mailto:costadamorim@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors break-all">
+                    costadamorim@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
@@ -167,8 +196,8 @@ export default function Layout({ children }: LayoutProps) {
           {/* Divider */}
           <div className="border-t border-border pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-muted-foreground">
-                © 2026 Clínica Nexus Saúde. Todos os direitos reservados.
+              <p className="text-sm text-muted-foreground text-center md:text-left">
+                © 2026 Nexus Espaço Saúde. Todos os direitos reservados.
               </p>
               <div className="flex gap-6">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
