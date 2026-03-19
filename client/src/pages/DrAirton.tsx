@@ -105,7 +105,7 @@ export default function DrAirton() {
                 },
                 {
                   title: "Subespecialidade em Cirurgia do Pé e Tornozelo",
-                  institution: "Escola Paulista de Medicina da Universidade Federal de São Paulo (EPM-UNIFESP)"
+                  institution: "Departamento de Ortopedia e Traumatologia (DOT) da Escola Paulista de Medicina da Universidade Federal de São Paulo (EPM-UNIFESP)"
                 }
               ].map((item, idx) => (
                 <div key={idx} className="border-l-4 border-primary pl-5 py-1">
@@ -184,9 +184,7 @@ export default function DrAirton() {
               <h3 className="font-semibold text-foreground mb-3">Cursos e Treinamentos</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  "Curso AO Trauma Blended Course – Basic Principles of Fracture Management",
-                  "XII Curso Teórico-Prático de Fixação Externa "Dr. Hilário Boatto" (15h)",
-                  "Curso de Capacitação em Segurança do Paciente – 5ª Edição (60h) — Hospital São Paulo / UNIFESP",
+                  "Curso AO Trauma Blended Course – Basic Principles of Fracture Management",                    "XII Curso Teórico-Prático de Fixação Externa Dr. Hilário Boatto (15h)",                  "Curso de Capacitação em Segurança do Paciente – 5ª Edição (60h) — Hospital São Paulo / UNIFESP",
                   "Curso de Ética Médica para Residentes — UNIFESP",
                   "Medicina Transfusional – Uma Visão Atualizada (20h) — EPM/Hospital São Paulo UNIFESP",
                   "Webinar – Lesões do Tendão Calcâneo – Aquiles — SBOT",
