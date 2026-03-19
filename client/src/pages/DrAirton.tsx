@@ -185,33 +185,6 @@ export default function DrAirton() {
             </div>
           </div>
 
-          {/* Atividades Científicas */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 pb-2 border-b border-border">
-              Atividades Científicas
-            </h2>
-            <div className="space-y-5">
-              <div className="border-l-4 border-primary pl-5 py-1">
-                <h3 className="font-bold text-foreground text-sm uppercase tracking-wide text-primary mb-1">Trabalho Finalizado</h3>
-                <p className="font-semibold text-foreground">
-                  "Análise Comparativa entre os Tratamentos para as Fraturas do Antebraço em Crianças: Uma Revisão Sistemática e Meta-Análise"
-                </p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Aprovado para publicação na <em>Revista Acta Ortopédica Brasileira</em> — Orientador: Dr. Eiffel Tsuyoshi Dobashi
-                </p>
-              </div>
-              <div className="border-l-4 border-primary pl-5 py-1">
-                <h3 className="font-bold text-foreground text-sm uppercase tracking-wide text-primary mb-1">Trabalho Finalizado</h3>
-                <p className="font-semibold text-foreground">
-                  "A Relação das Fraturas Expostas da Tíbia no Paciente Pediátrico: Avaliação dos Desfechos Clínicos"
-                </p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Aprovado na Plataforma Brasil — Orientadores: Dr. Eiffel Tsuyoshi Dobashi e Dr. Luiz Fernando Cocco
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Competências e Habilidades */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 pb-2 border-b border-border">
