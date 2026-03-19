@@ -116,28 +116,7 @@ export default function DrAirton() {
             </div>
           </div>
 
-          {/* Experiência Acadêmica */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 pb-2 border-b border-border">
-              Experiência Acadêmica
-            </h2>
-            <div className="space-y-8">
 
-              <div>
-                <h3 className="font-bold text-foreground text-lg mb-1">
-                  Hospital Santa Casa — Associação Beneficente de Campo Grande
-                </h3>
-                <p className="text-sm text-primary font-medium mb-3">Estágio Extracurricular em Urgência e Emergência (594h)</p>
-                <ul className="space-y-2">
-                  <li className="flex gap-3 text-sm text-muted-foreground">
-                    <span className="text-primary font-bold flex-shrink-0">•</span>
-                    Membro da Liga de Urgência, Emergência e Trauma da UNIDERP (LET)
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
 
           {/* Qualificação e Atividades Acadêmicas */}
           <div>
@@ -221,8 +200,8 @@ export default function DrAirton() {
                   Aprovado para publicação na <em>Revista Acta Ortopédica Brasileira</em> — Orientador: Dr. Eiffel Tsuyoshi Dobashi
                 </p>
               </div>
-              <div className="border-l-4 border-border pl-5 py-1">
-                <h3 className="font-bold text-foreground text-sm uppercase tracking-wide text-muted-foreground mb-1">Em Andamento</h3>
+              <div className="border-l-4 border-primary pl-5 py-1">
+                <h3 className="font-bold text-foreground text-sm uppercase tracking-wide text-primary mb-1">Trabalho Finalizado</h3>
                 <p className="font-semibold text-foreground">
                   "A Relação das Fraturas Expostas da Tíbia no Paciente Pediátrico: Avaliação dos Desfechos Clínicos"
                 </p>
