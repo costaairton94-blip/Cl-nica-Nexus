@@ -158,8 +158,8 @@ export default function DrAirton() {
               <h3 className="font-semibold text-foreground mb-3">Congressos e Simpósios</h3>
               <ul className="space-y-2">
                 {[
-                  "30º Congresso de Ortopedia e Traumatologia do Estado de São Paulo (COTESP) — 22h",
-                  "56º Congresso Brasileiro de Ortopedia e Traumatologia — SBOT (18h 30min)"
+                  "30º Congresso de Ortopedia e Traumatologia do Estado de São Paulo (COTESP)",
+                  "57º Congresso Brasileiro de Ortopedia e Traumatologia — SBOT"
                 ].map((item, idx) => (
                   <li key={idx} className="flex gap-3 text-sm text-muted-foreground">
                     <span className="text-primary font-bold flex-shrink-0">•</span>
