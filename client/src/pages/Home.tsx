@@ -6,19 +6,19 @@ export default function Home() {
 
   const slides = [
     {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg",
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6 )_3c43ebb1.jpeg",
       alt: "Entrada da Clínica Nexus Saúde"
     },
     {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(3)_2d30012a.jpeg",
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(3 )_2d30012a.jpeg",
       alt: "Recepção Interior"
     },
     {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1 )_21ee0bb7.jpeg",
       alt: "Consultório Moderno"
     },
     {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2)_519093bd.jpeg",
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2 )_519093bd.jpeg",
       alt: "Consultório 2"
     },
     {
@@ -27,7 +27,7 @@ export default function Home() {
     }
   ];
 
-  useEffect(() => {
+  useEffect(( ) => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
@@ -73,22 +73,6 @@ export default function Home() {
                 >
                   Conhecer Espaço
                 </a>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="flex gap-6 pt-6 border-t border-border justify-center md:justify-start">
-                <div className="text-center md:text-left">
-                  <div className="font-bold text-2xl text-foreground">2+</div>
-                  <p className="text-sm text-muted-foreground">Especialistas</p>
-                </div>
-                <div className="text-center md:text-left">
-                  <div className="font-bold text-2xl text-foreground">❤️</div>
-                  <p className="text-sm text-muted-foreground">Atendimento Humanizado</p>
-                </div>
-                <div className="text-center md:text-left">
-                  <div className="font-bold text-2xl text-foreground">100%</div>
-                  <p className="text-sm text-muted-foreground">Dedicação</p>
-                </div>
               </div>
             </div>
 
@@ -165,7 +149,7 @@ export default function Home() {
             <div className="group">
               <div className="relative h-56 sm:h-64 md:h-80 rounded-lg overflow-hidden mb-5 shadow-lg">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(4)_24d83444.jpeg"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(4 )_24d83444.jpeg"
                   alt="Dr. Airton Pereira da Costa"
                   className="w-full h-full object-cover"
                 />
@@ -223,24 +207,60 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                name: "Mariana & Airton",
+                name: "Gabriel Santos",
                 role: "Paciente",
-                text: "Mariana profissional de nutrição e Airton de ortopedia, excelentes profissionais. Muito atencioso, cuidado com o paciente.",
+                text: "Ótimo atendimento, gostei muito da nutricionista Mariana. Muito atenciosa, sempre pensando no melhor e de acordo com as expectativas e preferências do paciente!",
                 rating: 5
               },
               {
-                name: "Ítalo Santos",
+                name: "Rafaella Viotto",
                 role: "Paciente",
-                text: "Ótimo atendimento. Gostei muito da nutricionista Mariana. Muito atencioso e de acordo com as preferências do paciente.",
+                text: "Ótima experiência! A clínica é organizada, pontual e conta com uma equipe muito atenciosa. Atendimento de qualidade desde a recepção até os profissionais de saúde. Recomendo!",
                 rating: 5
               },
               {
-                name: "Rafael Motta",
+                name: "Alex Calil",
+                role: "Local Guide",
+                text: "Clínica maravilhosa! Ótimos profissionais, faço consultas de nutrição e ortopedia lá e tenho um carinho enorme com os profissionais, ambiente muito agradável. Clínica muito confiável!",
+                rating: 5
+              },
+              {
+                name: "Vivian Kotait",
+                role: "Local Guide",
+                text: "Estou aqui pra falar sobre o atendimento da nutricionista Mariana. Exemplar!!! Parabéns!!! Muito bom ser atendida por uma profissional competente, atenciosa e dedicada. Indicarei pra outras pessoas...",
+                rating: 5
+              },
+              {
+                name: "Wania Carlim",
                 role: "Paciente",
-                text: "Ótima clínica e organizada, pontual e conta com uma equipe muito atenciosa. Recomendo!",
+                text: "Recomendo o ortopedista Dr. Airton Costa. Excelente médico, atencioso e muito detalhista durante a consulta. Melhorei muito da minha lesão no tornozelo. Há meses sofria com muitas dores.",
+                rating: 5
+              },
+              {
+                name: "Rafaella Alvarenga",
+                role: "Paciente",
+                text: "Só tenho elogios à clínica. Mariana profissional de nutrição e Airton de ortopedia são ótimos profissionais! O atendimento é humanizado, os profissionais são extremamente dedicados e o cuidado com o paciente é visível em cada detalhe. Me senti acolhida e confiante com o tratamento proposto. Indico de olhos fechados!",
+                rating: 5
+              },
+              {
+                name: "Giulia Amorim",
+                role: "Paciente",
+                text: "Passei com a nutri e com o ortopedista, ambos resolveram meus problemas, super indico! Atendimento ótimo.",
+                rating: 5
+              },
+              {
+                name: "Maria Cecilia",
+                role: "Paciente",
+                text: "Clínica super completa!! Espaço incrível para coworking, só elogios. Mariana nutricionista profissional excepcional",
+                rating: 5
+              },
+              {
+                name: "Chafic Kotait",
+                role: "Paciente",
+                text: "São extremamente competentes, atendimento espetacular. Recomendo muuuuito",
                 rating: 5
               }
-            ].map((testimonial, idx) => (
+            ].map((testimonial, idx ) => (
               <div key={idx} className="bg-secondary rounded-lg p-6 border border-border hover:shadow-lg transition-shadow">
                 <div className="flex gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
