@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
-/**
- * Design: Minimalismo Médico Contemporâneo
- * - Hero assimétrico com carrossel dinâmico à direita
- * - Whitespace generoso
- * - Tipografia Poppins (títulos) + Inter (corpo)
- * - Verde menta como cor primária
- */
-
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -81,8 +73,6 @@ export default function Home() {
                   Conhecer Espaço
                 </a>
               </div>
-
-
             </div>
 
             {/* Right Image Carousel */}
