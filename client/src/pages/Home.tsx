@@ -5,27 +5,27 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
-      alt: "Entrada da Clínica Nexus Saúde"
-    },
-    {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(1 )_e7c88a84.jpeg",
-      alt: "Recepção Interior"
-    },
-    {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(2 )_325b6d54.jpeg",
-      alt: "Consultório Moderno"
-    },
-    {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(5 )_0a011d81.jpeg",
-      alt: "Consultório 2"
-    },
-    {
-      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(6 )_a3ab4cfc.jpeg",
-      alt: "Sala de Espera"
-    }
-  ];
+  {
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
+    alt: "Entrada da Clínica Nexus Saúde"
+  },
+  {
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(1 )_e7c88a84.jpeg",
+    alt: "Recepção Interior"
+  },
+  {
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(2 )_325b6d54.jpeg",
+    alt: "Consultório Moderno"
+  },
+  {
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(5 )_0a011d81.jpeg",
+    alt: "Consultório 2"
+  },
+  {
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(6 )_a3ab4cfc.jpeg",
+    alt: "Sala de Espera"
+  }
+];
 
   useEffect(() => {
     const timer = setInterval(() => {
