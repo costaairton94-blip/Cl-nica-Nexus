@@ -82,21 +82,7 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="flex gap-6 pt-8 border-t border-border">
-                <div>
-                  <div className="font-bold text-2xl text-foreground">2+</div>
-                  <p className="text-sm text-muted-foreground">Especialistas</p>
-                </div>
-                <div>
-                  <div className="font-bold text-2xl text-foreground">❤️</div>
-                  <p className="text-sm text-muted-foreground">Atendimento Humanizado</p>
-                </div>
-                <div>
-                  <div className="font-bold text-2xl text-foreground">100%</div>
-                  <p className="text-sm text-muted-foreground">Dedicação</p>
-                </div>
-              </div>
+
             </div>
 
             {/* Right Image Carousel */}
@@ -230,21 +216,57 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Mariana & Airton",
+                name: "Gabriel Santos",
                 role: "Paciente",
-                text: "Mariana profissional de nutrição e Airton de ortopedia, excelentes profissionais. Muito atencioso, cuidado com o paciente.",
+                text: "Ótimo atendimento, gostei muito da nutricionista Mariana. Muito atenciosa, sempre pensando no melhor e de acordo com as expectativas e preferências do paciente!",
                 rating: 5
               },
               {
-                name: "Ítalo Santos",
+                name: "Rafaella Viotto",
                 role: "Paciente",
-                text: "Ótimo atendimento. Gostei muito da nutricionista Mariana. Muito atencioso e de acordo com as preferências do paciente.",
+                text: "Ótima experiência! A clínica é organizada, pontual e conta com uma equipe muito atenciosa. Atendimento de qualidade desde a recepção até os profissionais de saúde. Recomendo!",
                 rating: 5
               },
               {
-                name: "Rafael Motta",
+                name: "Alex Calil",
+                role: "Local Guide",
+                text: "Clínica maravilhosa! Ótimos profissionais, faço consultas de nutrição e ortopedia lá e tenho um carinho enorme com os profissionais, ambiente muito agradável. Clínica muito confiável!",
+                rating: 5
+              },
+              {
+                name: "Vivian Kotait",
+                role: "Local Guide",
+                text: "Estou aqui pra falar sobre o atendimento da nutricionista Mariana. Exemplar!!! Parabéns!!! Muito bom ser atendida por uma profissional competente, atenciosa e dedicada.",
+                rating: 5
+              },
+              {
+                name: "Wania Carlim",
                 role: "Paciente",
-                text: "Ótima clínica e organizada, pontual e conta com uma equipe muito atenciosa. Recomendo!",
+                text: "Recomendo o ortopedista Dr. Airton Costa. Excelente médico, atencioso e muito detalhista durante a consulta. Melhorei muito da minha lesão no tornozelo. Há meses sofria com muitas dores.",
+                rating: 5
+              },
+              {
+                name: "Rafaella Alvarenga",
+                role: "Paciente",
+                text: "Só tenho elogios à clínica. Mariana profissional de nutrição e Airton de ortopedia são ótimos profissionais! O atendimento é humanizado, os profissionais são extremamente dedicados e o cuidado com o paciente é visível em cada detalhe.",
+                rating: 5
+              },
+              {
+                name: "Giulia Amorim",
+                role: "Paciente",
+                text: "Passei com a nutri e com o ortopedista, ambos resolveram meus problemas, super indico! Atendimento ótimo.",
+                rating: 5
+              },
+              {
+                name: "Maria Cecilia",
+                role: "Paciente",
+                text: "Clínica super completa!! Espaço incrível para coworking, só elogios. Mariana nutricionista profissional excepcional",
+                rating: 5
+              },
+              {
+                name: "Chafic Kotait",
+                role: "Paciente",
+                text: "São extremamente competentes, atendimento espetacular. Recomendo muuuuito",
                 rating: 5
               }
             ].map((testimonial, idx) => (

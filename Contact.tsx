@@ -253,7 +253,23 @@ export default function Contact() {
                 <h3 className="font-bold text-foreground text-lg">Horários de Atendimento</h3>
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex justify-between">
-                    <span>Segunda a Sexta:</span>
+                    <span>Segunda-feira:</span>
+                    <span className="font-semibold">08:00 - 19:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Terça-feira:</span>
+                    <span className="font-semibold">08:00 - 19:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Quarta-feira:</span>
+                    <span className="font-semibold">08:00 - 19:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Quinta-feira:</span>
+                    <span className="font-semibold">08:00 - 19:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Sexta-feira:</span>
                     <span className="font-semibold">08:00 - 19:00</span>
                   </div>
                   <div className="flex justify-between">
