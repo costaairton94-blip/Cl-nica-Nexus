@@ -60,7 +60,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="inline-block">
                 <span className="text-sm font-semibold text-primary">
-                  TESTE - Bem-vindo à Clínica Nexus Saúde
+                  Bem-vindo à Clínica Nexus Saúde
                 </span>
               </div>
               
