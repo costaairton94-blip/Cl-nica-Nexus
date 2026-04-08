@@ -192,7 +192,9 @@ export default function Space() {
               <Clock className="w-8 h-8 text-primary" />
               <h3 className="text-xl font-bold text-foreground">Horários</h3>
               <p className="text-muted-foreground text-sm">
-                [Inserir horário de atendimento]
+                Seg-Sex: 08:00-19:00<br />
+                Sáb: 09:00-13:00<br />
+                Dom: Fechado
               </p>
             </div>
 

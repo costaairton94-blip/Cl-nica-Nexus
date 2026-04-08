@@ -10,19 +10,19 @@ export default function Home() {
     alt: "Entrada da Clínica Nexus Saúde"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(1 )_e7c88a84.jpeg",
-    alt: "Recepção Interior"
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
+    alt: "Consultório 1"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(2 )_325b6d54.jpeg",
-    alt: "Consultório Moderno"
-  },
-  {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(5 )_0a011d81.jpeg",
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
     alt: "Consultório 2"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.24(6 )_a3ab4cfc.jpeg",
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
+    alt: "Entrada Consultório"
+  },
+  {
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
     alt: "Sala de Espera"
   }
 ];
@@ -170,7 +170,7 @@ export default function Home() {
             <div className="group">
               <div className="relative h-64 md:h-80 rounded-lg overflow-hidden mb-6 shadow-lg">
                 <img 
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at19.00.28_a4ffe766.jpeg" 
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/dr_airton_a1f9b392.jpg" 
                   alt="Mariana Carlim D'Amorim" 
                   className="w-full h-full object-cover object-center"
                 />
