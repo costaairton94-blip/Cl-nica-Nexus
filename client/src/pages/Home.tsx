@@ -10,20 +10,20 @@ export default function Home() {
     alt: "Entrada da Clínica Nexus Saúde"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
     alt: "Consultório 1"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2)_519093bd.jpeg",
     alt: "Consultório 2"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
-    alt: "Entrada Consultório"
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.25_86e235e1.jpeg",
+    alt: "Sala de Espera"
   },
   {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
-    alt: "Sala de Espera"
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg",
+    alt: "Entrada Consultório"
   }
 ];
 
