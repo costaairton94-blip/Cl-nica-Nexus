@@ -170,7 +170,7 @@ export default function Home() {
             <div className="group">
               <div className="relative h-64 md:h-80 rounded-lg overflow-hidden mb-6 shadow-lg">
                 <img 
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/dr_airton_a1f9b392.jpg" 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/GvILTihzvcozhzrP.jpeg" 
                   alt="Mariana Carlim D'Amorim" 
                   className="w-full h-full object-cover object-center"
                 />
