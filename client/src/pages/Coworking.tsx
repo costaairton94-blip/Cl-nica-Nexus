@@ -208,15 +208,15 @@ export default function Coworking() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.23_86e235e1.jpeg",
+                img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
                 alt: "Fachada do Prédio"
               },
               {
-                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(5)_2d30012a.jpeg",
+                img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/qkmBWYHQXhTpABJp.jpeg",
                 alt: "Recepção Interior"
               },
               {
-                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(3)_519093bd.jpeg",
+                img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/jKRDVkQyaUtwCSgT.jpeg",
                 alt: "Consultório Moderno"
               },
               {
