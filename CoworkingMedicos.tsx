@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -15,341 +15,375 @@ import {
   Users,
   X,
   ZoomIn,
+  Star,
+  Shield,
+  TrendingDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-/**
- * Página SEO Premium – Coworking para Médicos em São Paulo
- * Otimizada para: coworking médico São Paulo, consultório por hora, Vila Clementino
- */
-
-const IMAGES = {
-  fachada: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
-  entradaExterna: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/MMIQogZagwsminEA.jpeg",
-  recepcaoInterna: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/jKRDVkQyaUtwCSgT.jpeg",
-  recepcaoPredio: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(5)_1cd4ab55.jpeg",
-  consultorio1: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
-  consultorio2: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2)_519093bd.jpeg",
-  consultorio3: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(3)_2d30012a.jpeg",
-  salaEspera: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.25_86e235e1.jpeg",
-  corredor: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg",
-  detalhe: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24_c9760ae6.jpeg",
+/* ─────────────────────────────────────────────────────────────
+   IMAGENS REAIS DA NEXUS
+───────────────────────────────────────────────────────────── */
+const IMG = {
+  hero:        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
+  entrada:     "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/MMIQogZagwsminEA.jpeg",
+  recepcao:    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/jKRDVkQyaUtwCSgT.jpeg",
+  corredor:    "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg",
+  consul1:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
+  consul2:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2)_519093bd.jpeg",
+  consul3:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(3)_2d30012a.jpeg",
+  salaEspera:  "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.25_86e235e1.jpeg",
+  detalhe:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24_c9760ae6.jpeg",
+  recepcaoPred:"https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(5)_1cd4ab55.jpeg",
 };
 
+const WA_LINK = "https://wa.me/5511932962026?text=Olá!%20Gostaria%20de%20conhecer%20o%20coworking%20para%20médicos%20da%20Nexus.";
+
+/* ─────────────────────────────────────────────────────────────
+   COMPONENTE PRINCIPAL
+───────────────────────────────────────────────────────────── */
 export default function CoworkingMedicos() {
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
+  /* Fechar lightbox com ESC */
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
+  /* ── Dados ── */
   const diferenciais = [
-    { icon: <Building2 className="w-6 h-6" />, title: "Consultórios Mobiliados", desc: "Salas completamente equipadas, prontas para atendimento imediato" },
-    { icon: <Users className="w-6 h-6" />, title: "Recepção Profissional", desc: "Estrutura de recepção elegante para acolher seus pacientes" },
-    { icon: <Wind className="w-6 h-6" />, title: "Ambiente Climatizado", desc: "Ar-condicionado em todos os ambientes para máximo conforto" },
-    { icon: <Wifi className="w-6 h-6" />, title: "Internet de Alta Velocidade", desc: "Conexão estável e rápida para laudos, prontuários e telemedicina" },
-    { icon: <Sparkles className="w-6 h-6" />, title: "Limpeza Inclusa", desc: "Higienização profissional incluída em todos os planos" },
-    { icon: <Clock className="w-6 h-6" />, title: "Flexibilidade de Horários", desc: "Agende conforme sua agenda, sem compromissos rígidos" },
-    { icon: <CalendarDays className="w-6 h-6" />, title: "Locação por Hora, Período ou Mensal", desc: "Escolha o modelo que melhor se adapta ao seu volume de atendimentos" },
-    { icon: <MapPin className="w-6 h-6" />, title: "Excelente Localização", desc: "Vila Clementino, próximo à UNIFESP e Hospital São Paulo" },
-  ];
-
-  const especialidades = [
-    "Médicos", "Cirurgiões", "Psiquiatras", "Dermatologistas",
-    "Ortopedistas", "Cardiologistas", "Endocrinologistas", "Pediatras",
-    "Neurologistas", "Outras Especialidades",
+    { icon: <Building2 className="w-6 h-6" />, title: "Consultórios Mobiliados", desc: "Salas completamente equipadas com mobiliário profissional. Você chega e começa a atender." },
+    { icon: <Users className="w-6 h-6" />,     title: "Recepção Preparada",      desc: "Estrutura de recepção elegante para acolher seus pacientes com a atenção que merecem." },
+    { icon: <Wifi className="w-6 h-6" />,      title: "Internet de Alta Velocidade", desc: "Conexão estável para prontuários eletrônicos, laudos online e telemedicina." },
+    { icon: <Wind className="w-6 h-6" />,      title: "Ambiente Climatizado",    desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes." },
+    { icon: <Sparkles className="w-6 h-6" />,  title: "Limpeza Inclusa",         desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
+    { icon: <Clock className="w-6 h-6" />,     title: "Flexibilidade de Horários", desc: "Agende os dias e horários que desejar, sem compromisso de frequência mínima." },
+    { icon: <CalendarDays className="w-6 h-6" />, title: "Locação por Hora, Período ou Mensal", desc: "Escolha o modelo ideal para o seu volume de atendimentos e orçamento." },
+    { icon: <MapPin className="w-6 h-6" />,    title: "Excelente Localização",   desc: "Vila Clementino, no coração do maior polo de saúde da América Latina." },
   ];
 
   const galeria = [
-    { src: IMAGES.fachada, alt: "Fachada do edifício Nexus Coworking Médico Vila Clementino São Paulo", label: "Fachada" },
-    { src: IMAGES.entradaExterna, alt: "Entrada externa do edifício Nexus Coworking para médicos São Paulo", label: "Entrada" },
-    { src: IMAGES.recepcaoInterna, alt: "Recepção interna do consultório Nexus Coworking médico", label: "Recepção" },
-    { src: IMAGES.recepcaoPredio, alt: "Recepção do prédio Nexus Coworking Vila Clementino", label: "Recepção do Prédio" },
-    { src: IMAGES.consultorio1, alt: "Consultório moderno equipado para médicos em São Paulo", label: "Consultório 1" },
-    { src: IMAGES.consultorio2, alt: "Sala de atendimento médico Nexus Coworking São Paulo", label: "Consultório 2" },
-    { src: IMAGES.consultorio3, alt: "Ambiente de consultório médico Vila Clementino", label: "Consultório 3" },
-    { src: IMAGES.salaEspera, alt: "Sala de espera acolhedora Nexus Coworking médico", label: "Sala de Espera" },
-    { src: IMAGES.corredor, alt: "Corredor e acesso aos consultórios Nexus São Paulo", label: "Corredor" },
-    { src: IMAGES.detalhe, alt: "Detalhes da ambientação premium Nexus Coworking", label: "Detalhes" },
+    { src: IMG.hero,        alt: "Fachada do edifício Nexus Coworking Médico Vila Clementino São Paulo",        label: "Fachada" },
+    { src: IMG.entrada,     alt: "Entrada externa do edifício Nexus Coworking para médicos em São Paulo",       label: "Entrada" },
+    { src: IMG.recepcao,    alt: "Recepção interna do consultório Nexus Coworking médico São Paulo",            label: "Recepção" },
+    { src: IMG.recepcaoPred,alt: "Recepção do prédio Nexus Coworking Vila Clementino",                         label: "Recepção do Prédio" },
+    { src: IMG.consul1,     alt: "Consultório moderno equipado para médicos em São Paulo",                      label: "Consultório 1" },
+    { src: IMG.consul2,     alt: "Sala de atendimento médico Nexus Coworking São Paulo",                       label: "Consultório 2" },
+    { src: IMG.consul3,     alt: "Ambiente de consultório médico Vila Clementino",                             label: "Consultório 3" },
+    { src: IMG.salaEspera,  alt: "Sala de espera acolhedora Nexus Coworking médico",                           label: "Sala de Espera" },
+    { src: IMG.corredor,    alt: "Corredor e acesso aos consultórios Nexus São Paulo",                         label: "Corredor" },
+    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus Coworking",                            label: "Detalhes" },
   ];
 
-  const comparacao = [
-    { item: "Investimento inicial", proprio: "R$ 50.000 – R$ 200.000+", nexus: "Zero" },
-    { item: "Custos fixos mensais", proprio: "R$ 5.000 – R$ 15.000+", nexus: "Apenas o que usar" },
-    { item: "Flexibilidade", proprio: "Contrato de 12–36 meses", nexus: "Por hora, período ou mês" },
-    { item: "Infraestrutura", proprio: "Você monta e mantém", nexus: "Pronta e inclusa" },
-    { item: "Recepção", proprio: "Custo adicional", nexus: "Inclusa" },
-    { item: "Localização", proprio: "Depende do imóvel", nexus: "Vila Clementino – estratégica" },
-    { item: "Manutenção", proprio: "Responsabilidade sua", nexus: "Totalmente inclusa" },
+  const comparativo = [
+    { criterio: "Investimento inicial",  proprio: "R$ 50.000 a R$ 200.000+",    nexus: "Zero" },
+    { criterio: "Custos mensais fixos",  proprio: "R$ 5.000 a R$ 15.000+",      nexus: "Apenas o que usar" },
+    { criterio: "Flexibilidade",         proprio: "Contrato de 12 a 36 meses",  nexus: "Por hora, período ou mês" },
+    { criterio: "Recepção",              proprio: "Custo adicional",             nexus: "Inclusa" },
+    { criterio: "Infraestrutura",        proprio: "Você monta e mantém",         nexus: "Pronta e inclusa" },
+    { criterio: "Manutenção",            proprio: "Responsabilidade sua",        nexus: "Totalmente inclusa" },
   ];
 
   const faqs = [
     {
-      question: "Quanto custa alugar um consultório por hora na Nexus?",
-      answer: "Os valores variam conforme o plano escolhido: Uso Eventual (R$ 85/h), Uso Recorrente (R$ 75/h) e Parceria Preferencial (R$ 65/h). Entre em contato para conhecer as condições detalhadas.",
+      q: "Quanto custa alugar um consultório por hora na Nexus?",
+      a: "Os valores variam conforme o plano: Uso Eventual (R$ 85/h), Uso Recorrente (R$ 75/h) e Parceria Preferencial (R$ 65/h). Entre em contato para conhecer as condições completas e escolher o plano ideal para o seu perfil de atendimento.",
     },
     {
-      question: "Posso atender apenas alguns dias da semana?",
-      answer: "Sim! Oferecemos total flexibilidade. Você pode agendar os dias e horários que melhor se encaixam na sua agenda, sem compromisso de frequência mínima.",
+      q: "O consultório já está mobiliado e equipado?",
+      a: "Sim. Todas as salas da Nexus são completamente mobiliadas e equipadas com mobiliário profissional de alto padrão. Você chega ao espaço e começa a atender seus pacientes imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
-      question: "O consultório já está mobiliado e equipado?",
-      answer: "Sim. Todas as salas são completamente mobiliadas e equipadas para atendimento imediato. Você chega e começa a atender seus pacientes sem nenhuma adaptação.",
+      q: "Posso atender apenas alguns dias da semana?",
+      a: "Sim. A Nexus oferece total flexibilidade de agenda. Você pode reservar os dias e horários que melhor se encaixam na sua rotina, sem compromisso de frequência mínima. Ideal para médicos que estão iniciando o atendimento particular ou que já possuem outra clínica.",
     },
     {
-      question: "Existe recepção para receber meus pacientes?",
-      answer: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade.",
+      q: "Existe recepção para receber meus pacientes?",
+      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para receber e acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
     },
     {
-      question: "Há estacionamento próximo?",
-      answer: "Sim. O edifício dispõe de estacionamento e há opções adicionais nas proximidades, facilitando o acesso tanto para profissionais quanto para pacientes.",
+      q: "É possível fazer locação mensal?",
+      a: "Sim. Além da locação por hora, a Nexus oferece planos recorrentes com condições especiais para médicos que atendem com frequência regular. Quanto maior a recorrência, melhor o custo por hora.",
     },
     {
-      question: "É possível fazer locação mensal?",
-      answer: "Sim! Além da locação por hora, oferecemos planos recorrentes com condições especiais para profissionais que atendem com frequência regular.",
+      q: "Como funciona o agendamento?",
+      a: "O agendamento é simples e pode ser feito via WhatsApp ou pelo formulário de contato do site. Nossa equipe confirma a disponibilidade e você já pode programar seus atendimentos com antecedência.",
     },
     {
-      question: "Como funciona o agendamento?",
-      answer: "O agendamento é simples e pode ser feito via WhatsApp ou formulário de contato. Nossa equipe confirma a disponibilidade e você já pode começar a atender.",
+      q: "Há estacionamento disponível?",
+      a: "Sim. O edifício dispõe de estacionamento e há diversas opções nas proximidades, facilitando o acesso tanto para os profissionais quanto para os pacientes.",
     },
     {
-      question: "O ambiente possui acessibilidade?",
-      answer: "Sim. O edifício conta com infraestrutura de acessibilidade, incluindo elevadores e rampas, garantindo conforto e segurança para todos os pacientes.",
+      q: "O ambiente possui acessibilidade para pacientes com mobilidade reduzida?",
+      a: "Sim. O edifício conta com infraestrutura completa de acessibilidade, incluindo elevadores, rampas e banheiros adaptados, garantindo conforto e segurança para todos os pacientes.",
+    },
+    {
+      q: "Posso realizar procedimentos no consultório?",
+      a: "As salas são versáteis e adequadas para consultas, avaliações, retornos e procedimentos ambulatoriais de baixa complexidade. Entre em contato para verificar a adequação ao seu tipo de atendimento específico.",
+    },
+    {
+      q: "Quais especialidades médicas podem utilizar o espaço?",
+      a: "O espaço é ideal para médicos de todas as especialidades: clínicos gerais, cardiologistas, dermatologistas, endocrinologistas, neurologistas, ortopedistas, pediatras, psiquiatras, cirurgiões e muitos outros. Também atende nutricionistas, psicólogos e demais profissionais da saúde.",
+    },
+    {
+      q: "Posso agendar uma visita antes de fechar o contrato?",
+      a: "Sim, e recomendamos fortemente! Agende uma visita pelo WhatsApp para conhecer pessoalmente o espaço, os consultórios e a recepção. Tenha certeza de que a Nexus é o ambiente ideal para os seus atendimentos.",
     },
   ];
 
+  /* ── Render ── */
   return (
     <>
-      {/* SEO Meta via Helmet-like approach using document title */}
-      {/* Schema.org e Open Graph são injetados via index.html ou SSR */}
+      {/* ══════════════════════════════════════════════════════
+          SEO HEAD — injetado via Helmet ou index.html
+          Title: Coworking para Médicos em São Paulo | Nexus Espaço Saúde
+          Description: Consultórios equipados, recepção profissional e localização estratégica na Vila Clementino. Locação por hora, período ou mensal. Próximo à UNIFESP e Hospital São Paulo.
+          Canonical: https://nexusespacosaude.com.br/coworking-medico
+      ══════════════════════════════════════════════════════ */}
 
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
 
-        {/* ── HERO ─────────────────────────────────────────── */}
-        <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-secondary via-background to-secondary overflow-hidden">
-          {/* Background decorative */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-primary blur-3xl" />
-            <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-primary blur-3xl" />
+        {/* ══ BREADCRUMB ══════════════════════════════════════ */}
+        <nav aria-label="Breadcrumb" className="bg-secondary border-b border-border">
+          <div className="container py-3">
+            <ol className="flex items-center gap-2 text-xs text-muted-foreground">
+              <li><Link href="/" className="hover:text-primary transition-colors">Início</Link></li>
+              <li aria-hidden="true">/</li>
+              <li><Link href="/coworking" className="hover:text-primary transition-colors">Coworking</Link></li>
+              <li aria-hidden="true">/</li>
+              <li className="text-foreground font-medium" aria-current="page">Coworking para Médicos em São Paulo</li>
+            </ol>
+          </div>
+        </nav>
+
+        {/* ══ HERO ════════════════════════════════════════════ */}
+        <section
+          className="relative min-h-[92vh] flex items-center bg-gradient-to-br from-secondary via-background to-secondary overflow-hidden"
+          aria-labelledby="hero-h1"
+        >
+          {/* Decorative blobs */}
+          <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+            <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
           </div>
 
-          <div className="container relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="container relative z-10 py-24 md:py-32">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* Copy */}
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-4 h-4" aria-hidden="true" />
                   Vila Clementino · São Paulo
                 </div>
 
-                <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
+                <h1 id="hero-h1" className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
                   Coworking para{" "}
                   <span className="text-primary">Médicos</span>{" "}
                   em São Paulo
                 </h1>
 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  Consultórios modernos, totalmente equipados e prontos para atendimento, em localização estratégica na Vila Clementino — próximo à UNIFESP e ao Hospital São Paulo.
+                  Consultórios equipados, recepção profissional e localização estratégica para médicos que desejam atender com excelência — sem os custos e burocracia de uma clínica própria.
                 </p>
 
+                {/* Social proof strip */}
+                <div className="flex flex-wrap gap-6">
+                  {[
+                    { icon: <Star className="w-4 h-4 text-yellow-500" />, text: "Ambiente premium" },
+                    { icon: <Shield className="w-4 h-4 text-primary" />, text: "Sem burocracia" },
+                    { icon: <TrendingDown className="w-4 h-4 text-primary" />, text: "Custo reduzido" },
+                  ].map((b, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      {b.icon}
+                      <span>{b.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <Link href="/espaco">
-                    <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base rounded-xl shadow-lg hover:shadow-primary/30 transition-all">
-                      Conhecer o Espaço
-                      <ArrowRight className="w-5 h-5 ml-2" />
+                  <Link href="/contato">
+                    <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base rounded-xl shadow-lg hover:shadow-primary/30 transition-all w-full sm:w-auto">
+                      Agendar Visita
+                      <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
                     </Button>
                   </Link>
                   <a
-                    href="https://wa.me/5511932962026?text=Olá! Gostaria de saber mais sobre o coworking para médicos na Nexus."
+                    href={WA_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-border hover:border-primary text-foreground hover:text-primary px-8 py-6 text-base rounded-xl transition-all font-medium"
                   >
-                    <Button variant="outline" className="px-8 py-6 text-base rounded-xl border-2 hover:bg-primary/5 transition-all">
-                      Falar pelo WhatsApp
-                    </Button>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.782 1.176l-.343.204-3.554-.932.95 3.469-.223.36a9.86 9.86 0 00-1.51 5.26c.001 5.45 4.436 9.884 9.888 9.884 2.64 0 5.122-1.03 6.988-2.898a9.825 9.825 0 002.893-6.994c-.003-5.45-4.437-9.884-9.885-9.884m8.413 18.297A11.815 11.815 0 0112.05 24C5.495 24 .06 18.565.06 12.012.06 9.348.938 6.78 2.62 4.66L.057 0l4.747 1.244A11.8 11.8 0 0112.05 0c6.554 0 11.89 5.435 11.893 12.012a11.82 11.82 0 01-3.48 8.282" />
+                    </svg>
+                    Falar pelo WhatsApp
                   </a>
-                </div>
-
-                {/* Trust badges */}
-                <div className="flex flex-wrap gap-6 pt-4">
-                  {["Pronto para atender", "Sem burocracia", "Planos flexíveis"].map((b) => (
-                    <div key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-white" />
-                      </div>
-                      {b}
-                    </div>
-                  ))}
                 </div>
               </div>
 
               {/* Hero image */}
               <div className="relative">
-                <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative h-[520px] rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src={IMAGES.fachada}
-                    alt="Fachada do edifício Nexus Coworking para médicos em São Paulo Vila Clementino"
+                    src={IMG.hero}
+                    alt="Fachada do edifício Nexus Coworking para médicos na Vila Clementino, São Paulo"
                     className="w-full h-full object-cover"
                     loading="eager"
+                    fetchPriority="high"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
-                {/* Floating card */}
-                <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-4 shadow-xl border border-border">
-                  <p className="text-xs text-muted-foreground">Localização</p>
-                  <p className="font-bold text-foreground text-sm">Vila Clementino, SP</p>
-                  <p className="text-xs text-primary">Próximo à UNIFESP</p>
+                {/* Floating badge */}
+                <div className="absolute -bottom-5 -left-5 bg-background rounded-2xl p-5 shadow-xl border border-border">
+                  <p className="text-xs text-muted-foreground mb-1">Localização</p>
+                  <p className="font-bold text-foreground">Vila Clementino</p>
+                  <p className="text-xs text-primary font-semibold mt-0.5">Próximo à UNIFESP</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── DIFERENCIAIS ─────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-background" aria-labelledby="diferenciais-heading">
+        {/* ══ DIFERENCIAIS ════════════════════════════════════ */}
+        <section
+          className="py-24 md:py-32 bg-background"
+          aria-labelledby="diferenciais-h2"
+        >
           <div className="container">
-            <div className="text-center mb-16 space-y-4">
+            <header className="text-center mb-16 space-y-3">
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Por que escolher a Nexus</span>
-              <h2 id="diferenciais-heading" className="text-4xl md:text-5xl font-bold text-foreground">
+              <h2 id="diferenciais-h2" className="text-4xl md:text-5xl font-bold text-foreground">
                 Tudo que Você Precisa para Atender com Excelência
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Infraestrutura completa, ambiente premium e total flexibilidade para profissionais da saúde
+                Infraestrutura completa, ambiente premium e total flexibilidade — para que você se concentre apenas nos seus pacientes.
               </p>
-            </div>
+            </header>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {diferenciais.map((d, i) => (
-                <div
+                <article
                   key={i}
-                  className="group bg-secondary rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                  className="group bg-secondary rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary rounded-xl flex items-center justify-center text-primary group-hover:text-white transition-all duration-300 mb-4">
+                  <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary rounded-xl flex items-center justify-center text-primary group-hover:text-white transition-all duration-300 mb-5" aria-hidden="true">
                     {d.icon}
                   </div>
                   <h3 className="font-bold text-foreground mb-2">{d.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── PARA QUEM É ──────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-secondary" aria-labelledby="especialidades-heading">
+        {/* ══ LOCALIZAÇÃO ═════════════════════════════════════ */}
+        <section
+          className="py-24 md:py-32 bg-secondary"
+          aria-labelledby="localizacao-h2"
+        >
           <div className="container">
-            <div className="text-center mb-16 space-y-4">
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Especialidades atendidas</span>
-              <h2 id="especialidades-heading" className="text-4xl md:text-5xl font-bold text-foreground">
-                Para Quem é o Coworking Nexus?
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Espaço ideal para médicos e profissionais da saúde de todas as especialidades
-              </p>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {especialidades.map((esp, i) => (
-                <div
-                  key={i}
-                  className="bg-background rounded-xl p-4 text-center border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 bg-primary/10 group-hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300">
-                    <Check className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <p className="font-semibold text-sm text-foreground">{esp}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── LOCALIZAÇÃO ──────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-background" aria-labelledby="localizacao-heading">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Copy */}
               <div className="space-y-8">
-                <div>
+                <header className="space-y-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-widest">Localização estratégica</span>
-                  <h2 id="localizacao-heading" className="text-4xl md:text-5xl font-bold text-foreground mt-2">
-                    No Coração da Saúde em São Paulo
+                  <h2 id="localizacao-h2" className="text-4xl md:text-5xl font-bold text-foreground">
+                    No Coração do Maior Polo de Saúde da América Latina
                   </h2>
-                  <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-                    Localizada na Vila Clementino, a Nexus está inserida no maior polo de saúde da América Latina, com acesso privilegiado aos principais hospitais e universidades médicas do país.
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    A Nexus está localizada na Vila Clementino, bairro que concentra os maiores hospitais e centros de pesquisa médica do Brasil. Seus pacientes chegam com facilidade — de carro, metrô ou a pé.
                   </p>
-                </div>
+                </header>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
-                    { icon: <Building2 className="w-5 h-5" />, label: "Próximo à UNIFESP", desc: "Universidade Federal de São Paulo" },
-                    { icon: <Building2 className="w-5 h-5" />, label: "Próximo ao Hospital São Paulo", desc: "Hospital universitário de referência" },
-                    { icon: <MapPin className="w-5 h-5" />, label: "Metrô Hospital São Paulo", desc: "Linha 5 – Lilás" },
-                    { icon: <MapPin className="w-5 h-5" />, label: "Metrô Santa Cruz", desc: "Linha 2 – Verde" },
-                    { icon: <MapPin className="w-5 h-5" />, label: "Metrô AACD-Servidor", desc: "Linha 5 – Lilás" },
+                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência nacional" },
+                    { label: "UNIFESP",                        sub: "Universidade Federal de São Paulo" },
+                    { label: "Hospital do Rim",                sub: "Referência em nefrologia e transplantes" },
+                    { label: "AACD",                           sub: "Associação de Assistência à Criança Deficiente" },
+                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás, acesso direto" },
+                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde, a poucos minutos" },
+                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás, acesso facilitado" },
                   ].map((loc, i) => (
-                    <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-secondary border border-border">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
-                        {loc.icon}
+                    <div key={i} className="flex items-start gap-4 bg-background rounded-xl p-4 border border-border">
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0 mt-0.5" aria-hidden="true">
+                        <MapPin className="w-4 h-4" />
                       </div>
                       <div>
                         <p className="font-semibold text-foreground text-sm">{loc.label}</p>
-                        <p className="text-xs text-muted-foreground">{loc.desc}</p>
+                        <p className="text-xs text-muted-foreground">{loc.sub}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
-                  <p className="text-sm font-semibold text-foreground">📍 Endereço</p>
-                  <p className="text-sm text-muted-foreground mt-1">Rua Onze de Junho, 1070 — Consultório 209<br />Vila Clementino, São Paulo – SP</p>
-                </div>
+                <address className="not-italic bg-primary/5 border border-primary/20 rounded-xl p-5">
+                  <p className="text-sm font-bold text-foreground mb-1">📍 Endereço</p>
+                  <p className="text-sm text-muted-foreground">
+                    Rua Onze de Junho, 1070 — Consultório 209<br />
+                    Vila Clementino, São Paulo – SP
+                  </p>
+                </address>
               </div>
 
-              {/* Mapa integrado */}
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-border h-[480px]">
+              {/* Mapa */}
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-border h-[520px] sticky top-24">
                 <iframe
-                  title="Mapa Nexus Coworking Médico Vila Clementino São Paulo"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0!2d-46.6400!3d-23.5990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0x1234567890abcdef!2sRua%20Onze%20de%20Junho%2C%201070%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr"
+                  title="Localização da Nexus Coworking Médico na Vila Clementino, São Paulo"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4!2d-46.6430!3d-23.5990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0x1!2sRua%20Onze%20de%20Junho%2C%201070%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  aria-label="Mapa de localização da Nexus Coworking em Vila Clementino, São Paulo"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── GALERIA ──────────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-secondary" aria-labelledby="galeria-heading">
+        {/* ══ GALERIA ═════════════════════════════════════════ */}
+        <section
+          className="py-24 md:py-32 bg-background"
+          aria-labelledby="galeria-h2"
+        >
           <div className="container">
-            <div className="text-center mb-16 space-y-4">
+            <header className="text-center mb-16 space-y-3">
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Fotos reais</span>
-              <h2 id="galeria-heading" className="text-4xl md:text-5xl font-bold text-foreground">
+              <h2 id="galeria-h2" className="text-4xl md:text-5xl font-bold text-foreground">
                 Conheça o Espaço
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ambiente premium, recepção elegante e consultórios prontos para atendimento
+                Ambiente premium, recepção elegante e consultórios prontos para o seu atendimento
               </p>
-            </div>
+            </header>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
               {galeria.map((img, i) => (
                 <button
                   key={i}
-                  onClick={() => setLightboxImg(img.src)}
-                  className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-square focus:outline-none focus:ring-2 focus:ring-primary"
-                  aria-label={`Ampliar imagem: ${img.label}`}
+                  onClick={() => setLightbox(img)}
+                  className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-square focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label={`Ampliar: ${img.label}`}
                 >
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                  <div aria-hidden="true" className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                  <div aria-hidden="true" className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <p className="text-white text-xs font-semibold">{img.label}</p>
                   </div>
                 </button>
@@ -359,102 +393,117 @@ export default function CoworkingMedicos() {
         </section>
 
         {/* Lightbox */}
-        {lightboxImg && (
+        {lightbox && (
           <div
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setLightboxImg(null)}
             role="dialog"
             aria-modal="true"
-            aria-label="Visualização ampliada da imagem"
+            aria-label="Visualização ampliada"
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 animate-in fade-in duration-200"
+            onClick={() => setLightbox(null)}
           >
             <button
-              className="absolute top-4 right-4 text-white hover:text-primary transition-colors"
-              onClick={() => setLightboxImg(null)}
-              aria-label="Fechar visualização"
+              className="absolute top-5 right-5 text-white/80 hover:text-white transition-colors p-2 rounded-full bg-white/10 hover:bg-white/20"
+              onClick={() => setLightbox(null)}
+              aria-label="Fechar"
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6" />
             </button>
             <img
-              src={lightboxImg}
-              alt="Imagem ampliada do espaço Nexus Coworking"
+              src={lightbox.src}
+              alt={lightbox.alt}
               className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
               onClick={(e) => e.stopPropagation()}
             />
+            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm">{lightbox.alt}</p>
           </div>
         )}
 
-        {/* ── COMPARAÇÃO ───────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-background" aria-labelledby="comparacao-heading">
+        {/* ══ COMPARATIVO ═════════════════════════════════════ */}
+        <section
+          className="py-24 md:py-32 bg-secondary"
+          aria-labelledby="comparativo-h2"
+        >
           <div className="container">
-            <div className="text-center mb-16 space-y-4">
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Vantagens</span>
-              <h2 id="comparacao-heading" className="text-4xl md:text-5xl font-bold text-foreground">
+            <header className="text-center mb-16 space-y-3">
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Análise comparativa</span>
+              <h2 id="comparativo-h2" className="text-4xl md:text-5xl font-bold text-foreground">
                 Consultório Próprio × Coworking Nexus
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Veja por que cada vez mais médicos escolhem o modelo de coworking para seus atendimentos
+                Veja por que médicos de todo o Brasil estão migrando para o modelo de coworking médico
               </p>
-            </div>
+            </header>
 
-            <div className="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-border shadow-lg">
+            <div className="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-border shadow-xl">
               {/* Header */}
-              <div className="grid grid-cols-3 bg-primary text-white">
-                <div className="p-4 font-semibold text-sm">Critério</div>
-                <div className="p-4 font-semibold text-sm text-center border-l border-white/20">Consultório Próprio</div>
-                <div className="p-4 font-semibold text-sm text-center border-l border-white/20">Coworking Nexus</div>
+              <div className="grid grid-cols-3 bg-primary text-white text-sm font-bold">
+                <div className="p-5">Critério</div>
+                <div className="p-5 text-center border-l border-white/20">Consultório Próprio</div>
+                <div className="p-5 text-center border-l border-white/20">Coworking Nexus</div>
               </div>
               {/* Rows */}
-              {comparacao.map((row, i) => (
+              {comparativo.map((row, i) => (
                 <div
                   key={i}
-                  className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-background" : "bg-secondary"} border-t border-border`}
+                  className={`grid grid-cols-3 border-t border-border text-sm ${i % 2 === 0 ? "bg-background" : "bg-secondary/50"}`}
                 >
-                  <div className="p-4 text-sm font-medium text-foreground">{row.item}</div>
-                  <div className="p-4 text-sm text-muted-foreground text-center border-l border-border flex items-center justify-center gap-2">
-                    <X className="w-4 h-4 text-red-400 flex-shrink-0" />
+                  <div className="p-5 font-semibold text-foreground">{row.criterio}</div>
+                  <div className="p-5 text-muted-foreground text-center border-l border-border flex items-center justify-center gap-2">
+                    <X className="w-4 h-4 text-red-400 flex-shrink-0" aria-hidden="true" />
                     {row.proprio}
                   </div>
-                  <div className="p-4 text-sm font-semibold text-primary text-center border-l border-border flex items-center justify-center gap-2">
-                    <Check className="w-4 h-4 flex-shrink-0" />
+                  <div className="p-5 font-bold text-primary text-center border-l border-border flex items-center justify-center gap-2">
+                    <Check className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                     {row.nexus}
                   </div>
                 </div>
               ))}
             </div>
+
+            <p className="text-center text-sm text-muted-foreground mt-8 max-w-xl mx-auto">
+              Com o Coworking Nexus, você elimina o risco financeiro de manter uma clínica própria e foca no que realmente importa: seus pacientes.
+            </p>
           </div>
         </section>
 
-        {/* ── FAQ ──────────────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-secondary" aria-labelledby="faq-heading">
+        {/* ══ FAQ ═════════════════════════════════════════════ */}
+        <section
+          className="py-24 md:py-32 bg-background"
+          aria-labelledby="faq-h2"
+        >
           <div className="container max-w-3xl">
-            <div className="text-center mb-16 space-y-4">
+            <header className="text-center mb-16 space-y-3">
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Dúvidas frequentes</span>
-              <h2 id="faq-heading" className="text-4xl md:text-5xl font-bold text-foreground">
-                Perguntas Frequentes sobre Coworking Médico
+              <h2 id="faq-h2" className="text-4xl md:text-5xl font-bold text-foreground">
+                Perguntas Frequentes
               </h2>
-            </div>
+              <p className="text-lg text-muted-foreground">
+                Tudo que você precisa saber antes de agendar sua visita
+              </p>
+            </header>
 
-            <div className="space-y-3">
+            <div className="space-y-3" role="list">
               {faqs.map((faq, i) => (
                 <div
                   key={i}
-                  className="bg-background rounded-xl border border-border overflow-hidden shadow-sm"
+                  role="listitem"
+                  className="bg-secondary rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                 >
                   <button
-                    onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary/50 transition-colors"
-                    aria-expanded={expandedFaq === i}
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full flex items-start justify-between gap-4 p-6 text-left hover:bg-secondary/80 transition-colors"
+                    aria-expanded={openFaq === i}
+                    aria-controls={`faq-answer-${i}`}
                   >
-                    <span className="font-semibold text-foreground pr-4">{faq.question}</span>
-                    {expandedFaq === i ? (
-                      <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                    )}
+                    <span className="font-semibold text-foreground leading-snug">{faq.q}</span>
+                    {openFaq === i
+                      ? <ChevronUp className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    }
                   </button>
-                  {expandedFaq === i && (
-                    <div className="px-6 pb-6">
-                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  {openFaq === i && (
+                    <div id={`faq-answer-${i}`} className="px-6 pb-6">
+                      <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
                     </div>
                   )}
                 </div>
@@ -463,37 +512,40 @@ export default function CoworkingMedicos() {
           </div>
         </section>
 
-        {/* ── CTA FINAL ────────────────────────────────────── */}
-        <section className="py-24 md:py-32 bg-primary text-white relative overflow-hidden" aria-labelledby="cta-heading">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white blur-3xl" />
+        {/* ══ CTA FINAL ═══════════════════════════════════════ */}
+        <section
+          className="relative py-28 md:py-40 bg-primary text-white overflow-hidden"
+          aria-labelledby="cta-h2"
+        >
+          <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-white/10 blur-3xl" />
           </div>
 
-          <div className="container relative z-10 text-center space-y-8 max-w-3xl mx-auto">
-            <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold leading-tight">
+          <div className="container relative z-10 text-center max-w-3xl mx-auto space-y-8">
+            <h2 id="cta-h2" className="text-4xl md:text-5xl font-bold leading-tight">
               Pronto para Começar Seus Atendimentos?
             </h2>
             <p className="text-xl opacity-90 leading-relaxed">
-              Conheça a estrutura da Nexus Clínica e Coworking e encontre um espaço moderno, acolhedor e preparado para oferecer a melhor experiência aos seus pacientes.
+              Conheça pessoalmente a estrutura da Nexus Clínica e Coworking. Um espaço moderno, acolhedor e preparado para oferecer a melhor experiência aos seus pacientes — sem burocracia, sem investimento inicial.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a
-                href="https://wa.me/5511932962026?text=Olá! Gostaria de agendar uma visita ao coworking médico da Nexus."
+                href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-xl font-semibold text-base transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-3 bg-white text-primary hover:bg-white/90 px-8 py-5 rounded-xl font-bold text-base transition-all shadow-xl hover:shadow-2xl"
               >
-                {/* WhatsApp icon */}
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.782 1.176l-.343.204-3.554-.932.950 3.469-.223.36a9.86 9.86 0 00-1.51 5.26c.001 5.45 4.436 9.884 9.888 9.884 2.64 0 5.122-1.03 6.988-2.898a9.825 9.825 0 002.893-6.994c-.003-5.45-4.437-9.884-9.885-9.884m8.413 18.297A11.815 11.815 0 0112.05 24C5.495 24 .06 18.565.06 12.012.06 9.348.938 6.78 2.62 4.66L.057 0l4.747 1.244A11.8 11.8 0 0112.05 0c6.554 0 11.89 5.435 11.893 12.012a11.82 11.82 0 01-3.48 8.282" />
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.782 1.176l-.343.204-3.554-.932.95 3.469-.223.36a9.86 9.86 0 00-1.51 5.26c.001 5.45 4.436 9.884 9.888 9.884 2.64 0 5.122-1.03 6.988-2.898a9.825 9.825 0 002.893-6.994c-.003-5.45-4.437-9.884-9.885-9.884m8.413 18.297A11.815 11.815 0 0112.05 24C5.495 24 .06 18.565.06 12.012.06 9.348.938 6.78 2.62 4.66L.057 0l4.747 1.244A11.8 11.8 0 0112.05 0c6.554 0 11.89 5.435 11.893 12.012a11.82 11.82 0 01-3.48 8.282" />
                 </svg>
                 Falar pelo WhatsApp
               </a>
               <Link href="/contato">
-                <button className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-base transition-all">
+                <button className="inline-flex items-center justify-center gap-2 border-2 border-white/60 hover:border-white text-white hover:bg-white/10 px-8 py-5 rounded-xl font-bold text-base transition-all">
                   Agendar uma Visita
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </Link>
             </div>
@@ -502,7 +554,7 @@ export default function CoworkingMedicos() {
 
       </div>
 
-      {/* Schema.org JSON-LD */}
+      {/* ══ SCHEMA.ORG JSON-LD ══════════════════════════════ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -510,12 +562,13 @@ export default function CoworkingMedicos() {
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "LocalBusiness",
+                "@type": "MedicalBusiness",
                 "@id": "https://nexusespacosaude.com.br/coworking-medico",
-                "name": "Nexus Coworking para Médicos",
-                "description": "Coworking médico em São Paulo com consultórios modernos, totalmente equipados e prontos para atendimento na Vila Clementino.",
+                "name": "Nexus Coworking para Médicos — Vila Clementino",
+                "description": "Coworking médico em São Paulo com consultórios modernos, totalmente equipados e prontos para atendimento na Vila Clementino, próximo à UNIFESP e Hospital São Paulo.",
                 "url": "https://nexusespacosaude.com.br/coworking-medico",
                 "telephone": "+5511932962026",
+                "email": "costadamorim@gmail.com",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Rua Onze de Junho, 1070, Consultório 209",
@@ -527,28 +580,31 @@ export default function CoworkingMedicos() {
                 "geo": {
                   "@type": "GeoCoordinates",
                   "latitude": -23.599,
-                  "longitude": -46.64,
+                  "longitude": -46.643,
                 },
+                "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
+                "priceRange": "R$ 65 – R$ 85/hora",
                 "openingHoursSpecification": [
                   { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
                   { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "13:00" },
                 ],
-                "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
-                "priceRange": "R$ 65 – R$ 85/hora",
+                "hasMap": "https://maps.google.com/?q=Rua+Onze+de+Junho,+1070,+Vila+Clementino,+São+Paulo",
+                "sameAs": ["https://nexusespacosaude.com.br"],
               },
               {
                 "@type": "FAQPage",
                 "mainEntity": faqs.map((f) => ({
                   "@type": "Question",
-                  "name": f.question,
-                  "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+                  "name": f.q,
+                  "acceptedAnswer": { "@type": "Answer", "text": f.a },
                 })),
               },
               {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                   { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://nexusespacosaude.com.br/" },
-                  { "@type": "ListItem", "position": 2, "name": "Coworking Médico São Paulo", "item": "https://nexusespacosaude.com.br/coworking-medico" },
+                  { "@type": "ListItem", "position": 2, "name": "Coworking", "item": "https://nexusespacosaude.com.br/coworking" },
+                  { "@type": "ListItem", "position": 3, "name": "Coworking para Médicos em São Paulo", "item": "https://nexusespacosaude.com.br/coworking-medico" },
                 ],
               },
             ],
