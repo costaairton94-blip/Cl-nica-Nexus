@@ -9,6 +9,20 @@
   status = 301
   force  = true
 
+# ─── SITEMAP.XML — servir arquivo estático (NÃO redirecionar para SPA) ──────
+[[redirects]]
+  from   = "/sitemap.xml"
+  to     = "/sitemap.xml"
+  status = 200
+  force  = true
+
+# ─── ROBOTS.TXT — servir arquivo estático (NÃO redirecionar para SPA) ───────
+[[redirects]]
+  from   = "/robots.txt"
+  to     = "/robots.txt"
+  status = 200
+  force  = true
+
 # ─── SPA FALLBACK (deve vir depois dos redirects específicos) ───────────────
 [[redirects]]
   from   = "/*"
@@ -19,11 +33,11 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options       = "SAMEORIGIN"
+    X-Frame-Options        = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection      = "1; mode=block"
-    Referrer-Policy       = "strict-origin-when-cross-origin"
-    Permissions-Policy    = "camera=(), microphone=(), geolocation=()"
+    X-XSS-Protection       = "1; mode=block"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
 
 # ─── SITEMAP.XML ────────────────────────────────────────────────────────────
 [[headers]]
@@ -31,7 +45,6 @@
   [headers.values]
     Content-Type  = "application/xml; charset=UTF-8"
     Cache-Control = "public, max-age=86400"
-    X-Robots-Tag  = "noindex"
 
 # ─── ROBOTS.TXT ─────────────────────────────────────────────────────────────
 [[headers]]
