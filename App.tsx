@@ -12,6 +12,7 @@ import CoworkingMedicos from "./pages/CoworkingMedicos";
 import ConsultorioPorHora from "./pages/ConsultorioPorHora";
 import AluguelConsultorio from "./pages/AluguelConsultorio";
 import CoworkingVilaClementino from "./pages/CoworkingVilaClementino";
+import CoworkingVilaMariana from "./pages/CoworkingVilaMariana";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeProvider } from "./ThemeContext";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/consultorio-por-hora" component={ConsultorioPorHora} />
             <Route path="/aluguel-consultorio-sao-paulo" component={AluguelConsultorio} />
             <Route path="/coworking-vila-clementino" component={CoworkingVilaClementino} />
+            <Route path="/coworking-vila-mariana" component={CoworkingVilaMariana} />
             <Route component={NotFound} />
           </Switch>
         </Layout>

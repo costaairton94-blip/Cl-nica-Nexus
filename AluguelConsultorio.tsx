@@ -164,6 +164,7 @@ export default function AluguelConsultorio() {
     { href: "/coworking-medico",             label: "Coworking para Médicos" },
     { href: "/consultorio-por-hora",          label: "Consultório por Hora" },
     { href: "/coworking-vila-clementino",     label: "Coworking na Vila Clementino" },
+    { href: "/coworking-vila-mariana",         label: "Coworking na Vila Mariana" },
     { href: "/espaco",                        label: "Estrutura" },
     { href: "/contato",                       label: "Contato" },
   ];
