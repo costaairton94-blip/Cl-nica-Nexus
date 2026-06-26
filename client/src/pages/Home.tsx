@@ -142,12 +142,14 @@ export default function Home() {
               {/* Navigation Buttons */}
               <button
                 onClick={prevSlide}
+                aria-label="Imagem anterior"
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextSlide}
+                aria-label="Próxima imagem"
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -159,6 +161,7 @@ export default function Home() {
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
+                    aria-label={`Ir para imagem ${idx + 1}`}
                     className={`w-2 h-2 rounded-full transition-all ${
                       idx === currentSlide
                         ? "bg-white w-8"
@@ -195,6 +198,10 @@ export default function Home() {
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/dr_airton_a1f9b392.jpg" 
                   alt="Dr. Airton Pereira da Costa" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={600}
                 />
               </div>
               <div className="space-y-3">
@@ -217,6 +224,10 @@ export default function Home() {
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/GvILTihzvcozhzrP.jpeg" 
                   alt="Mariana Carlim D'Amorim" 
                   className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={600}
                 />
               </div>
               <div className="space-y-3">

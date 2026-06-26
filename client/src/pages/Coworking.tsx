@@ -143,6 +143,10 @@ export default function Coworking() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg" 
                 alt="Entrada da Clínica Nexus Coworking" 
                 className="w-full h-full object-cover"
+                loading="eager"
+                decoding="sync"
+                width={1200}
+                height={800}
               />
             </div>
           </div>
@@ -244,6 +248,10 @@ export default function Coworking() {
                   src={item.img} 
                   alt={item.alt} 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={600}
                 />
               </div>
             ))}
