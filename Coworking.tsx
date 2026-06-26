@@ -212,7 +212,7 @@ export default function Coworking() {
                 alt: "Fachada do Prédio"
               },
               {
-                img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/qkmBWYHQXhTpABJp.jpeg",
+                img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/MMIQogZagwsminEA.jpeg",
                 alt: "Recepção Interior"
               },
               {
