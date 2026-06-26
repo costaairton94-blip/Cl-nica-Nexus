@@ -568,6 +568,33 @@ export default function ConsultorioPorHora() {
           </div>
         </section>
 
+        {/* ══ LINKAGEM INTERNA ════════════════════════════════ */}
+        <section className="py-16 bg-secondary border-t border-border" aria-labelledby="links-consultorio-hora-h2">
+          <div className="container">
+            <header className="text-center mb-10 space-y-2">
+              <h2 id="links-consultorio-hora-h2" className="text-2xl font-bold text-foreground">Explore Mais Opções</h2>
+              <p className="text-muted-foreground">Conheça todos os serviços da Nexus Espaço Saúde</p>
+            </header>
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { href: "/aluguel-consultorio-sao-paulo", label: "Aluguel de Consultório em SP" },
+                { href: "/coworking-medico",              label: "Coworking para Médicos" },
+                { href: "/espaco",                        label: "Estrutura" },
+                { href: "/contato",                       label: "Contato" },
+              ].map((l, i) => (
+                <Link
+                  key={i}
+                  href={l.href}
+                  className="inline-flex items-center gap-2 bg-background border border-border hover:border-primary text-foreground hover:text-primary px-5 py-3 rounded-xl text-sm font-medium transition-all shadow-sm hover:shadow-md"
+                >
+                  {l.label}
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ══ CTA FINAL ═══════════════════════════════════════ */}
         <section
           className="relative py-28 md:py-40 bg-primary text-white overflow-hidden"

@@ -10,6 +10,7 @@ import DrAirton from "./pages/DrAirton";
 import Mariana from "./pages/Mariana";
 import CoworkingMedicos from "./pages/CoworkingMedicos";
 import ConsultorioPorHora from "./pages/ConsultorioPorHora";
+import AluguelConsultorio from "./pages/AluguelConsultorio";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeProvider } from "./ThemeContext";
@@ -30,6 +31,7 @@ function App() {
             <Route path="/mariana" component={Mariana} />
             <Route path="/coworking-medico" component={CoworkingMedicos} />
             <Route path="/consultorio-por-hora" component={ConsultorioPorHora} />
+            <Route path="/aluguel-consultorio-sao-paulo" component={AluguelConsultorio} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
