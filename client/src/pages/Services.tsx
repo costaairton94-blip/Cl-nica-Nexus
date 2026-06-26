@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
@@ -44,6 +45,11 @@ export default function Services() {
   ];
 
   return (
+    <SEOHead
+        title="Serviços | Ortopedia, Traumatologia e Nutrição | Nexus Espaço Saúde"
+        description="Serviços especializados em ortopedia, traumatologia e nutrição clínica na Vila Clementino, São Paulo. Atendimento humanizado com profissionais de excelência."
+        canonical="https://nexusespacosaude.com.br/servicos"
+      />
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">

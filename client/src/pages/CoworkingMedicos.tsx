@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
@@ -137,12 +138,11 @@ export default function CoworkingMedicos() {
   /* ── Render ── */
   return (
     <>
-      {/* ══════════════════════════════════════════════════════
-          SEO HEAD — injetado via Helmet ou index.html
-          Title: Coworking para Médicos em São Paulo | Nexus Espaço Saúde
-          Description: Consultórios equipados, recepção profissional e localização estratégica na Vila Clementino. Locação por hora, período ou mensal. Próximo à UNIFESP e Hospital São Paulo.
-          Canonical: https://nexusespacosaude.com.br/coworking-medico
-      ══════════════════════════════════════════════════════ */}
+      <SEOHead
+        title="Coworking para Médicos em São Paulo | Nexus Espaço Saúde"
+        description="Consultórios equipados, recepção profissional e localização estratégica na Vila Clementino. Locação por hora, período ou mensal. Próximo à UNIFESP e Hospital São Paulo."
+        canonical="https://nexusespacosaude.com.br/coworking-medico"
+      />
 
       <div className="min-h-screen overflow-x-hidden">
 

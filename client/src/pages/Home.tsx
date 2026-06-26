@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,8 +43,51 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "@id": "https://nexusespacosaude.com.br/",
+      "name": "Nexus Espaço Saúde",
+      "description": "Clínica médica especializada em ortopedia, traumatologia e nutrição clínica na Vila Clementino, São Paulo. Coworking médico com consultórios equipados.",
+      "url": "https://nexusespacosaude.com.br",
+      "telephone": "+5511932962026",
+      "email": "costadamorim@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Onze de Junho, 1070, Consultório 209",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "04041-002",
+        "addressCountry": "BR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -23.599, "longitude": -46.643 },
+      "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
+      "priceRange": "R$",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "13:00" }
+      ],
+      "sameAs": ["https://nexusespacosaude.com.br"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nexus Espaço Saúde",
+      "url": "https://nexusespacosaude.com.br",
+      "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.32.03_c74ce314.jpeg",
+      "contactPoint": { "@type": "ContactPoint", "telephone": "+5511932962026", "contactType": "customer service", "availableLanguage": "Portuguese" }
+    }
+  ];
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Nexus Espaço Saúde | Clínica e Coworking Médico em São Paulo"
+        description="Clínica especializada em ortopedia, traumatologia e nutrição clínica na Vila Clementino. Coworking médico com consultórios equipados, recepção profissional e localização estratégica próxima à UNIFESP e Hospital São Paulo."
+        canonical="https://nexusespacosaude.com.br/"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="container">

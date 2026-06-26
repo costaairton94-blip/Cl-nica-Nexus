@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/SEOHead";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -49,6 +50,11 @@ export default function Contact() {
   };
 
   return (
+    <SEOHead
+        title="Contato e Agendamento | Nexus Espaço Saúde"
+        description="Entre em contato com a Nexus Espaço Saúde. Agende sua consulta ou visita ao coworking médico na Vila Clementino, São Paulo. WhatsApp: (11) 93296-2026."
+        canonical="https://nexusespacosaude.com.br/contato"
+      />
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">
@@ -253,23 +259,7 @@ export default function Contact() {
                 <h3 className="font-bold text-foreground text-lg">Horários de Atendimento</h3>
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex justify-between">
-                    <span>Segunda-feira:</span>
-                    <span className="font-semibold">08:00 - 19:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Terça-feira:</span>
-                    <span className="font-semibold">08:00 - 19:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Quarta-feira:</span>
-                    <span className="font-semibold">08:00 - 19:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Quinta-feira:</span>
-                    <span className="font-semibold">08:00 - 19:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sexta-feira:</span>
+                    <span>Segunda a Sexta:</span>
                     <span className="font-semibold">08:00 - 19:00</span>
                   </div>
                   <div className="flex justify-between">

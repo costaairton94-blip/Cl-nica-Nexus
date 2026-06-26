@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import SEOHead from "@/components/SEOHead";
 import { ArrowRight, MapPin, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -38,6 +39,11 @@ export default function Space() {
   ];
 
   return (
+    <SEOHead
+        title="Conheça Nosso Espaço | Nexus Espaço Saúde"
+        description="Conheça a estrutura da Nexus Espaço Saúde: consultórios modernos, recepção profissional e ambiente climatizado na Vila Clementino, São Paulo. Fotos reais do espaço."
+        canonical="https://nexusespacosaude.com.br/espaco"
+      />
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">
@@ -192,7 +198,9 @@ export default function Space() {
               <Clock className="w-8 h-8 text-primary" />
               <h3 className="text-xl font-bold text-foreground">Horários</h3>
               <p className="text-muted-foreground text-sm">
-                [Inserir horário de atendimento]
+                Seg-Sex: 08:00-19:00<br />
+                Sáb: 09:00-13:00<br />
+                Dom: Fechado
               </p>
             </div>
 

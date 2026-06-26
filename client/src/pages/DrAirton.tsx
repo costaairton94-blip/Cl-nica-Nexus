@@ -1,10 +1,16 @@
 import { Link } from "wouter";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 
 export default function DrAirton() {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Dr. Airton Pereira da Costa | Ortopedista e Traumatologista | Nexus Espaço Saúde"
+        description="Dr. Airton Pereira da Costa, ortopedista e traumatologista especialista em Cirurgia do Pé e Tornozelo. CRM-SP 231.393. Atendimento na Vila Clementino, São Paulo."
+        canonical="https://nexusespacosaude.com.br/dr-airton"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container">

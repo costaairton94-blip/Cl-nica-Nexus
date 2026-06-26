@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
 import { ArrowRight, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,6 +43,11 @@ export default function Coworking() {
   ];
 
   return (
+    <SEOHead
+        title="Coworking Médico | Aluguel de Consultório | Nexus Espaço Saúde"
+        description="Alugue consultórios equipados por hora, período ou mensalmente na Vila Clementino. Coworking médico com recepção, internet e ambiente profissional em São Paulo."
+        canonical="https://nexusespacosaude.com.br/coworking"
+      />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-gradient-to-b from-secondary to-background">

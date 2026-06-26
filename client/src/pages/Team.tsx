@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
@@ -10,6 +11,11 @@ import { ArrowRight } from "lucide-react";
 
 export default function Team() {
   return (
+    <SEOHead
+        title="Nossa Equipe | Dr. Airton Costa e Mariana D'Amorim | Nexus Espaço Saúde"
+        description="Conheça a equipe da Nexus Espaço Saúde: Dr. Airton Pereira da Costa (Ortopedista, CRM-SP 231.393) e Mariana Carlim D'Amorim (Nutricionista, CRN-3 65535)."
+        canonical="https://nexusespacosaude.com.br/equipe"
+      />
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">

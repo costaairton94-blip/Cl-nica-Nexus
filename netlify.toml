@@ -2,7 +2,46 @@
   command = "pnpm build"
   publish = "dist/public"
 
+# ─── REDIRECIONAMENTO www → sem-www (301 permanente) ────────────────────────
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "https://www.nexusespacosaude.com.br/*"
+  to   = "https://nexusespacosaude.com.br/:splat"
+  status = 301
+  force  = true
+
+# ─── SPA FALLBACK (deve vir depois dos redirects específicos) ───────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
   status = 200
+
+# ─── HEADERS GLOBAIS ────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options       = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection      = "1; mode=block"
+    Referrer-Policy       = "strict-origin-when-cross-origin"
+    Permissions-Policy    = "camera=(), microphone=(), geolocation=()"
+
+# ─── SITEMAP.XML ────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type  = "application/xml; charset=UTF-8"
+    Cache-Control = "public, max-age=86400"
+    X-Robots-Tag  = "noindex"
+
+# ─── ROBOTS.TXT ─────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type  = "text/plain; charset=UTF-8"
+    Cache-Control = "public, max-age=86400"
+
+# ─── ASSETS ESTÁTICOS (cache longo) ─────────────────────────────────────────
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

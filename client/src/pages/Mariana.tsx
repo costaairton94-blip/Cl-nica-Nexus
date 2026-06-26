@@ -1,10 +1,16 @@
 import { Link } from "wouter";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 
 export default function Mariana() {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Mariana Carlim D'Amorim | Nutricionista Clínica | Nexus Espaço Saúde"
+        description="Mariana Carlim D'Amorim, nutricionista clínica especialista em Gerontologia. CRN-3 65535. Atendimento personalizado na Vila Clementino, São Paulo."
+        canonical="https://nexusespacosaude.com.br/mariana"
+      />
       {/* Hero */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container">

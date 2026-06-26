@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nexusespacosaude.com.br/sitemap.xml
+
+# Bloquear arquivos desnecessários
+Disallow: /src/
+Disallow: /*.json$
