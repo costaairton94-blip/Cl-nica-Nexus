@@ -161,10 +161,11 @@ export default function AluguelConsultorio() {
   ];
 
   const linksInternos = [
-    { href: "/coworking-medico",    label: "Coworking para Médicos" },
-    { href: "/consultorio-por-hora", label: "Consultório por Hora" },
-    { href: "/espaco",              label: "Estrutura" },
-    { href: "/contato",             label: "Contato" },
+    { href: "/coworking-medico",             label: "Coworking para Médicos" },
+    { href: "/consultorio-por-hora",          label: "Consultório por Hora" },
+    { href: "/coworking-vila-clementino",     label: "Coworking na Vila Clementino" },
+    { href: "/espaco",                        label: "Estrutura" },
+    { href: "/contato",                       label: "Contato" },
   ];
 
   return (

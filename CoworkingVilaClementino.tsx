@@ -17,7 +17,8 @@ import {
   ZoomIn,
   Star,
   Shield,
-  TrendingDown,
+  Train,
+  Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -25,8 +26,8 @@ import { Button } from "@/components/ui/button";
    IMAGENS REAIS DA NEXUS
 ───────────────────────────────────────────────────────────── */
 const IMG = {
-  hero:        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/MMIQogZagwsminEA.jpeg",
-  fachada:     "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
+  hero:        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
+  entrada:     "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/MMIQogZagwsminEA.jpeg",
   recepcao:    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/jKRDVkQyaUtwCSgT.jpeg",
   corredor:    "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg",
   consul1:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
@@ -37,12 +38,12 @@ const IMG = {
   recepcaoPred:"https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(5)_1cd4ab55.jpeg",
 };
 
-const WA = "https://wa.me/5511932962026?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20aluguel%20de%20consultório%20na%20Nexus.";
+const WA = "https://wa.me/5511932962026?text=Olá!%20Gostaria%20de%20conhecer%20o%20coworking%20da%20Nexus%20na%20Vila%20Clementino.";
 
 /* ─────────────────────────────────────────────────────────────
    COMPONENTE PRINCIPAL
 ───────────────────────────────────────────────────────────── */
-export default function AluguelConsultorio() {
+export default function CoworkingVilaClementino() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
@@ -53,82 +54,86 @@ export default function AluguelConsultorio() {
   }, []);
 
   /* ── Dados ── */
-  const vantagens = [
-    { icon: <TrendingDown className="w-6 h-6" />, title: "Zero Investimento Inicial",   desc: "Esqueça os R$ 50.000 a R$ 200.000 necessários para montar um consultório do zero. Na Nexus, você começa a atender no mesmo dia." },
-    { icon: <Shield className="w-6 h-6" />,       title: "Sem Risco Financeiro",        desc: "Sem contratos de locação longos, sem obras, sem compra de equipamentos. Você paga apenas pelo que usa." },
-    { icon: <Clock className="w-6 h-6" />,        title: "Flexibilidade Real",          desc: "Atenda quando quiser: por hora, período ou mensalmente. Adapte o espaço ao seu volume de pacientes." },
-    { icon: <Star className="w-6 h-6" />,         title: "Infraestrutura Pronta",       desc: "Recepção, limpeza, internet e climatização já incluídos. Você foca no atendimento, nós cuidamos do resto." },
+  const motivosVilaClementino = [
+    { icon: <Heart className="w-6 h-6" />,    title: "Maior Polo de Saúde do Brasil",     desc: "A Vila Clementino concentra a maior densidade de hospitais, clínicas e centros de pesquisa médica do país, atraindo pacientes de todo o Brasil." },
+    { icon: <Building2 className="w-6 h-6" />, title: "Presença da UNIFESP",               desc: "A Universidade Federal de São Paulo está no coração do bairro, gerando um fluxo constante de pacientes, pesquisadores e profissionais da saúde." },
+    { icon: <Train className="w-6 h-6" />,     title: "Fácil Acesso por Metrô",            desc: "Três estações de metrô a poucos minutos: Hospital São Paulo, Santa Cruz e AACD-Servidor. Seus pacientes chegam sem complicações." },
+    { icon: <Star className="w-6 h-6" />,      title: "Região Consolidada para Atendimento Particular", desc: "Pacientes da Vila Clementino e arredores já buscam atendimento particular na região. Você estará exatamente onde eles procuram." },
+    { icon: <Shield className="w-6 h-6" />,    title: "Infraestrutura Completa",           desc: "Bancos, farmácias, restaurantes, estacionamentos e serviços essenciais ao redor. Tudo que você e seus pacientes precisam está por perto." },
+    { icon: <MapPin className="w-6 h-6" />,    title: "Localização Estratégica",           desc: "Fácil acesso pelas principais avenidas de São Paulo, com boa visibilidade e posicionamento para atrair novos pacientes organicamente." },
   ];
 
-  const beneficios = [
-    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Equipados",      desc: "Salas completamente mobiliadas com equipamentos profissionais de alto padrão. Chegue e atenda." },
-    { icon: <Users className="w-6 h-6" />,        title: "Recepção Profissional",       desc: "Estrutura de recepção elegante para acolher seus pacientes com qualidade e discrição." },
-    { icon: <Wind className="w-6 h-6" />,         title: "Ambiente Climatizado",        desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes." },
-    { icon: <Wifi className="w-6 h-6" />,         title: "Internet de Alta Velocidade", desc: "Conexão estável para prontuários eletrônicos, laudos online e telemedicina." },
-    { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",             desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
-    { icon: <MapPin className="w-6 h-6" />,       title: "Excelente Localização",       desc: "Vila Clementino, no coração do maior polo de saúde da América Latina." },
-    { icon: <CalendarDays className="w-6 h-6" />, title: "Flexibilidade de Horários",   desc: "Agende os dias e horários que desejar, sem compromisso de frequência mínima." },
-    { icon: <Clock className="w-6 h-6" />,        title: "Planos por Hora, Período ou Mensal", desc: "Escolha o modelo ideal para o seu volume de atendimentos e orçamento." },
+  const diferenciais = [
+    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Mobiliados",       desc: "Salas completamente equipadas com mobiliário profissional de alto padrão. Chegue e atenda sem nenhuma adaptação." },
+    { icon: <Users className="w-6 h-6" />,        title: "Recepção Preparada",            desc: "Estrutura de recepção elegante para acolher seus pacientes com qualidade e discrição desde o primeiro contato." },
+    { icon: <Wind className="w-6 h-6" />,         title: "Ambiente Climatizado",          desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes durante todo o atendimento." },
+    { icon: <Wifi className="w-6 h-6" />,         title: "Internet Rápida",               desc: "Conexão estável e de alta velocidade para prontuários eletrônicos, laudos online e telemedicina." },
+    { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",               desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
+    { icon: <CalendarDays className="w-6 h-6" />, title: "Flexibilidade de Horários",     desc: "Agende os dias e horários que desejar, sem compromisso de frequência mínima." },
+    { icon: <Clock className="w-6 h-6" />,        title: "Locação por Hora, Período ou Mensal", desc: "Escolha o modelo ideal para o seu volume de atendimentos. Pague apenas pelo que usar." },
+    { icon: <MapPin className="w-6 h-6" />,       title: "Excelente Localização",         desc: "No coração da Vila Clementino, próximo aos maiores hospitais e com acesso fácil por metrô." },
   ];
 
   const profissionais = [
-    { emoji: "🩺", title: "Médicos",                   sub: "Todas as especialidades" },
-    { emoji: "🧠", title: "Psicólogos",                sub: "Clínica e avaliação" },
-    { emoji: "🥗", title: "Nutricionistas",            sub: "Clínica e esportiva" },
-    { emoji: "🦴", title: "Fisioterapeutas",           sub: "Ortopédica e neurológica" },
-    { emoji: "🦷", title: "Dentistas",                 sub: "Clínica e especialidades" },
-    { emoji: "🗣️", title: "Fonoaudiólogos",            sub: "Clínica e voz" },
-    { emoji: "🤝", title: "Terapeutas Ocupacionais",  sub: "Reabilitação" },
-    { emoji: "➕", title: "Outros Profissionais",      sub: "Da área da saúde" },
+    { emoji: "🩺", title: "Médicos",                  sub: "Todas as especialidades" },
+    { emoji: "🧠", title: "Psicólogos",               sub: "Clínica e avaliação" },
+    { emoji: "🥗", title: "Nutricionistas",           sub: "Clínica e esportiva" },
+    { emoji: "🦷", title: "Dentistas",                sub: "Clínica e especialidades" },
+    { emoji: "🦴", title: "Fisioterapeutas",          sub: "Ortopédica e neurológica" },
+    { emoji: "🗣️", title: "Fonoaudiólogos",           sub: "Clínica e voz" },
+    { emoji: "🤝", title: "Terapeutas Ocupacionais", sub: "Reabilitação" },
+    { emoji: "➕", title: "Outros Profissionais",     sub: "Da área da saúde" },
   ];
 
   const galeria = [
-    { src: IMG.hero,        alt: "Entrada do edifício Nexus aluguel de consultório Vila Clementino São Paulo",   label: "Entrada" },
-    { src: IMG.fachada,     alt: "Fachada do prédio Nexus aluguel consultório São Paulo",                        label: "Fachada" },
-    { src: IMG.recepcao,    alt: "Recepção interna Nexus aluguel de consultório médico São Paulo",               label: "Recepção" },
-    { src: IMG.recepcaoPred,alt: "Recepção do prédio Nexus consultório para aluguel Vila Clementino",            label: "Recepção do Prédio" },
-    { src: IMG.consul1,     alt: "Consultório mobiliado para aluguel em São Paulo",                              label: "Consultório 1" },
-    { src: IMG.consul2,     alt: "Sala de atendimento para aluguel Nexus São Paulo",                             label: "Consultório 2" },
-    { src: IMG.consul3,     alt: "Ambiente de consultório para locação Vila Clementino",                         label: "Consultório 3" },
-    { src: IMG.salaEspera,  alt: "Sala de espera acolhedora Nexus aluguel consultório",                          label: "Sala de Espera" },
-    { src: IMG.corredor,    alt: "Corredor e acesso aos consultórios para aluguel Nexus São Paulo",              label: "Corredor" },
-    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus consultório aluguel",                    label: "Detalhes" },
-  ];
-
-  const comparativo = [
-    { criterio: "Investimento inicial",  proprio: "R$ 50.000 a R$ 200.000+",    nexus: "Zero" },
-    { criterio: "Custos mensais fixos",  proprio: "R$ 5.000 a R$ 15.000+",      nexus: "Apenas o que usar" },
-    { criterio: "Flexibilidade",         proprio: "Contrato de 12 a 36 meses",  nexus: "Por hora, período ou mês" },
-    { criterio: "Infraestrutura",        proprio: "Você monta e mantém",         nexus: "Pronta e inclusa" },
-    { criterio: "Manutenção",            proprio: "Responsabilidade sua",        nexus: "Totalmente inclusa" },
-    { criterio: "Recepção",              proprio: "Custo adicional",             nexus: "Inclusa" },
-    { criterio: "Limpeza",               proprio: "Custo adicional",             nexus: "Inclusa" },
+    { src: IMG.hero,        alt: "Fachada do edifício Nexus coworking Vila Clementino São Paulo",             label: "Fachada" },
+    { src: IMG.entrada,     alt: "Entrada do prédio Nexus coworking médico Vila Clementino",                  label: "Entrada" },
+    { src: IMG.recepcao,    alt: "Recepção interna Nexus coworking profissionais saúde Vila Clementino",      label: "Recepção" },
+    { src: IMG.recepcaoPred,alt: "Recepção do prédio Nexus consultório Vila Clementino São Paulo",            label: "Recepção do Prédio" },
+    { src: IMG.consul1,     alt: "Consultório mobiliado coworking Vila Clementino Nexus",                     label: "Consultório 1" },
+    { src: IMG.consul2,     alt: "Sala de atendimento coworking médico Vila Clementino",                      label: "Consultório 2" },
+    { src: IMG.consul3,     alt: "Ambiente consultório coworking saúde Vila Clementino São Paulo",            label: "Consultório 3" },
+    { src: IMG.salaEspera,  alt: "Sala de espera acolhedora coworking Vila Clementino Nexus",                 label: "Sala de Espera" },
+    { src: IMG.corredor,    alt: "Corredor de acesso consultórios coworking Vila Clementino",                 label: "Corredor" },
+    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus coworking Vila Clementino",           label: "Detalhes" },
   ];
 
   const faqs = [
     {
-      q: "Quanto custa alugar um consultório na Nexus?",
-      a: "Os valores variam conforme o plano: Uso Eventual (R$ 85/h), Uso Recorrente (R$ 75/h) e Parceria Preferencial (R$ 65/h). Também oferecemos planos por período e mensais com condições especiais. Entre em contato para conhecer a opção mais adequada ao seu perfil.",
+      q: "Qual é a localização exata da Nexus na Vila Clementino?",
+      a: "A Nexus está localizada na Rua Onze de Junho, 1070 — Consultório 209, Vila Clementino, São Paulo. O endereço fica no coração do maior polo de saúde da América Latina, próximo à UNIFESP, Hospital São Paulo, Hospital do Rim e AACD.",
+    },
+    {
+      q: "Qual metrô fica mais perto da Nexus?",
+      a: "A Nexus tem acesso facilitado por três estações de metrô: Estação Hospital São Paulo (Linha 5 – Lilás), Estação Santa Cruz (Linha 2 – Verde) e Estação AACD-Servidor (Linha 5 – Lilás). Todas a poucos minutos a pé ou de transporte.",
+    },
+    {
+      q: "Existe estacionamento próximo à Nexus?",
+      a: "Sim. O edifício dispõe de estacionamento próprio e há diversas opções de estacionamento nas proximidades, facilitando o acesso tanto para os profissionais quanto para os pacientes que chegam de carro.",
     },
     {
       q: "O consultório já está mobiliado?",
       a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com equipamentos profissionais de alto padrão. Você chega ao espaço e começa a atender seus pacientes imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
-      q: "Preciso assinar contrato de longo prazo?",
-      a: "Não. O modelo da Nexus é totalmente flexível. Você pode alugar por hora, por período ou mensalmente, sem contratos longos, multas ou obrigações de frequência mínima. Comece quando quiser e ajuste conforme sua demanda.",
+      q: "Posso alugar apenas um período ou uma hora?",
+      a: "Sim. A Nexus oferece total flexibilidade: você pode alugar por hora, por período (manhã, tarde ou noite) ou mensalmente. Não há obrigação de frequência mínima. Você paga apenas pelo que usar.",
     },
     {
-      q: "Quais profissionais podem alugar o consultório?",
-      a: "Médicos de todas as especialidades, psicólogos, nutricionistas, fisioterapeutas, dentistas, fonoaudiólogos, terapeutas ocupacionais e outros profissionais da área da saúde. O espaço é versátil e adequado para consultas, avaliações e retornos.",
+      q: "Há recepção para receber meus pacientes?",
+      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
     },
     {
-      q: "Como funciona o agendamento?",
+      q: "Como funciona o agendamento do consultório?",
       a: "O agendamento é simples e pode ser feito via WhatsApp ou pelo formulário de contato do site. Nossa equipe confirma a disponibilidade e você já pode programar seus atendimentos com antecedência.",
     },
     {
-      q: "Existe recepção para receber meus pacientes?",
-      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
+      q: "Por que a Vila Clementino é uma boa região para atender pacientes?",
+      a: "A Vila Clementino é o maior polo de saúde da América Latina. A presença da UNIFESP, Hospital São Paulo, Hospital do Rim e AACD atrai pacientes de toda a cidade e do interior do estado. É uma região consolidada para atendimento particular, com alta demanda e público qualificado.",
+    },
+    {
+      q: "Quais profissionais podem utilizar o coworking na Vila Clementino?",
+      a: "Médicos de todas as especialidades, psicólogos, nutricionistas, fisioterapeutas, dentistas, fonoaudiólogos, terapeutas ocupacionais e outros profissionais da área da saúde. O espaço é versátil e adequado para consultas, avaliações e retornos.",
     },
     {
       q: "A limpeza está inclusa no aluguel?",
@@ -139,31 +144,27 @@ export default function AluguelConsultorio() {
       a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para prontuários eletrônicos, laudos online e telemedicina.",
     },
     {
-      q: "Qual é a localização exata da Nexus?",
-      a: "A Nexus está localizada na Rua Onze de Junho, 1070 — Consultório 209, Vila Clementino, São Paulo. Próxima à UNIFESP, Hospital São Paulo, Hospital do Rim, AACD e às estações de metrô Hospital São Paulo, Santa Cruz e AACD-Servidor.",
-    },
-    {
-      q: "Há estacionamento disponível?",
-      a: "Sim. O edifício dispõe de estacionamento e há diversas opções nas proximidades, facilitando o acesso tanto para os profissionais quanto para os pacientes.",
-    },
-    {
       q: "O ambiente possui acessibilidade para pacientes com mobilidade reduzida?",
       a: "Sim. O edifício conta com infraestrutura completa de acessibilidade, incluindo elevadores, rampas e banheiros adaptados, garantindo conforto e segurança para todos os pacientes.",
     },
     {
-      q: "Posso agendar uma visita antes de fechar o contrato?",
-      a: "Sim, e recomendamos! Agende uma visita pelo WhatsApp para conhecer pessoalmente o espaço, os consultórios e a recepção. Tenha certeza de que a Nexus é o ambiente ideal para os seus atendimentos.",
+      q: "Preciso assinar contrato de longo prazo?",
+      a: "Não. O modelo da Nexus é totalmente flexível. Você pode alugar por hora, por período ou mensalmente, sem contratos longos, multas ou obrigações de frequência mínima. Comece quando quiser e ajuste conforme sua demanda.",
     },
     {
-      q: "É possível fazer locação mensal?",
-      a: "Sim. Além da locação por hora, a Nexus oferece planos recorrentes com condições especiais para profissionais que atendem com frequência regular. Quanto maior a recorrência, melhor o custo por hora.",
+      q: "Posso agendar uma visita antes de fechar o contrato?",
+      a: "Sim, e recomendamos! Agende uma visita pelo WhatsApp para conhecer pessoalmente o espaço, os consultórios e a recepção. Tenha certeza de que a Nexus é o ambiente ideal para os seus atendimentos na Vila Clementino.",
+    },
+    {
+      q: "Qual é a diferença entre coworking médico e consultório próprio?",
+      a: "No coworking médico da Nexus, você tem toda a infraestrutura de um consultório próprio — mobiliado, climatizado, com recepção e limpeza — sem o investimento inicial de R$ 50.000 a R$ 200.000, sem obras e sem contratos longos. É a solução ideal para quem quer atender com qualidade e flexibilidade na Vila Clementino.",
     },
   ];
 
   const linksInternos = [
-    { href: "/coworking-medico",             label: "Coworking para Médicos" },
+    { href: "/coworking-medico",              label: "Coworking para Médicos" },
     { href: "/consultorio-por-hora",          label: "Consultório por Hora" },
-    { href: "/coworking-vila-clementino",     label: "Coworking na Vila Clementino" },
+    { href: "/aluguel-consultorio-sao-paulo", label: "Aluguel de Consultório" },
     { href: "/espaco",                        label: "Estrutura" },
     { href: "/contato",                       label: "Contato" },
   ];
@@ -180,7 +181,7 @@ export default function AluguelConsultorio() {
               <li aria-hidden="true">/</li>
               <li><Link href="/coworking" className="hover:text-primary transition-colors">Coworking</Link></li>
               <li aria-hidden="true">/</li>
-              <li className="text-foreground font-medium" aria-current="page">Aluguel de Consultório em São Paulo</li>
+              <li className="text-foreground font-medium" aria-current="page">Coworking na Vila Clementino</li>
             </ol>
           </div>
         </nav>
@@ -206,21 +207,20 @@ export default function AluguelConsultorio() {
                 </div>
 
                 <h1 id="hero-h1" className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                  Aluguel de{" "}
-                  <span className="text-primary">Consultório</span>{" "}
-                  em São Paulo
+                  Coworking para Profissionais da Saúde na{" "}
+                  <span className="text-primary">Vila Clementino</span>
                 </h1>
 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  Consultórios completos, mobiliados e prontos para atendimento, com planos flexíveis para profissionais da saúde na Vila Clementino.
+                  Consultórios completos, mobiliados e prontos para atendimento em uma das principais regiões de saúde de São Paulo.
                 </p>
 
                 {/* Social proof strip */}
                 <div className="flex flex-wrap gap-6">
                   {[
-                    { icon: <Star className="w-4 h-4 text-yellow-500" />,    text: "Ambiente premium" },
-                    { icon: <Shield className="w-4 h-4 text-primary" />,     text: "Sem burocracia" },
-                    { icon: <TrendingDown className="w-4 h-4 text-primary" />, text: "Custo reduzido" },
+                    { icon: <Heart className="w-4 h-4 text-primary" />,  text: "Polo de saúde nº 1 do Brasil" },
+                    { icon: <Train className="w-4 h-4 text-primary" />,  text: "3 estações de metrô" },
+                    { icon: <Shield className="w-4 h-4 text-primary" />, text: "Sem burocracia" },
                   ].map((b, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                       {b.icon}
@@ -256,7 +256,7 @@ export default function AluguelConsultorio() {
                 <div className="relative h-[520px] rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src={IMG.hero}
-                    alt="Entrada do edifício Nexus — aluguel de consultório na Vila Clementino, São Paulo"
+                    alt="Fachada do edifício Nexus — coworking para profissionais da saúde na Vila Clementino, São Paulo"
                     className="w-full h-full object-cover"
                     loading="eager"
                     fetchPriority="high"
@@ -266,111 +266,40 @@ export default function AluguelConsultorio() {
                 <div className="absolute -bottom-5 -left-5 bg-background rounded-2xl p-5 shadow-xl border border-border">
                   <p className="text-xs text-muted-foreground mb-1">Localização</p>
                   <p className="font-bold text-foreground">Vila Clementino</p>
-                  <p className="text-xs text-primary font-semibold mt-0.5">Próximo à UNIFESP</p>
+                  <p className="text-xs text-primary font-semibold mt-0.5">Polo de Saúde nº 1 do Brasil</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ══ POR QUE ALUGAR ══════════════════════════════════ */}
+        {/* ══ POR QUE VILA CLEMENTINO ═════════════════════════ */}
         <section
           className="py-24 md:py-32 bg-background"
-          aria-labelledby="por-que-h2"
-        >
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-6">
-                <header className="space-y-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">A escolha inteligente</span>
-                  <h2 id="por-que-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                    Por Que Alugar um Consultório?
-                  </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Montar um consultório próprio exige investimento alto, tempo e burocracia. O aluguel de consultório na Nexus elimina todos esses obstáculos e coloca você atendendo seus pacientes com rapidez, qualidade e muito menos custo.
-                  </p>
-                </header>
-                <p className="text-muted-foreground leading-relaxed">
-                  Profissionais que estão iniciando o atendimento particular, que desejam expandir para uma nova região ou que simplesmente buscam mais flexibilidade encontram no modelo de aluguel de consultório a solução ideal. Sem obras, sem compra de móveis, sem contratos longos — apenas você e seus pacientes.
-                </p>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
-                  Saiba mais pelo WhatsApp <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </a>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {vantagens.map((v, i) => (
-                  <article key={i} className="bg-secondary rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 group">
-                    <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary rounded-xl flex items-center justify-center text-primary group-hover:text-white transition-all duration-300 mb-4" aria-hidden="true">
-                      {v.icon}
-                    </div>
-                    <h3 className="font-bold text-foreground mb-2">{v.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══ BENEFÍCIOS ══════════════════════════════════════ */}
-        <section
-          className="py-24 md:py-32 bg-secondary"
-          aria-labelledby="beneficios-h2"
+          aria-labelledby="vila-h2"
         >
           <div className="container">
             <header className="text-center mb-16 space-y-3">
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Tudo incluso</span>
-              <h2 id="beneficios-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                O Que Está Incluso no Aluguel
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">A melhor localização</span>
+              <h2 id="vila-h2" className="text-4xl md:text-5xl font-bold text-foreground">
+                Por Que Escolher a Vila Clementino?
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Infraestrutura completa, ambiente premium e total flexibilidade — para que você se concentre apenas nos seus pacientes.
+                A Vila Clementino não é apenas um bairro — é o epicentro da medicina de excelência em São Paulo. Atender aqui significa estar onde os pacientes já buscam saúde.
               </p>
             </header>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {beneficios.map((d, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {motivosVilaClementino.map((m, i) => (
                 <article
                   key={i}
-                  className="group bg-background rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300"
+                  className="group bg-secondary rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary rounded-xl flex items-center justify-center text-primary group-hover:text-white transition-all duration-300 mb-5" aria-hidden="true">
-                    {d.icon}
+                    {m.icon}
                   </div>
-                  <h3 className="font-bold text-foreground mb-2">{d.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ PARA QUEM É ═════════════════════════════════════ */}
-        <section
-          className="py-24 md:py-32 bg-background"
-          aria-labelledby="para-quem-h2"
-        >
-          <div className="container">
-            <header className="text-center mb-16 space-y-3">
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Para todos os profissionais</span>
-              <h2 id="para-quem-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                Para Quem é o Aluguel de Consultório?
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                O espaço da Nexus é ideal para profissionais da saúde que buscam qualidade, praticidade e localização estratégica em São Paulo.
-              </p>
-            </header>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-              {profissionais.map((p, i) => (
-                <article
-                  key={i}
-                  className="group bg-secondary rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 text-center"
-                >
-                  <div className="text-4xl mb-4" aria-hidden="true">{p.emoji}</div>
-                  <h3 className="font-bold text-foreground mb-1">{p.title}</h3>
-                  <p className="text-xs text-muted-foreground">{p.sub}</p>
+                  <h3 className="font-bold text-foreground mb-2">{m.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
                 </article>
               ))}
             </div>
@@ -388,28 +317,29 @@ export default function AluguelConsultorio() {
               {/* Copy */}
               <div className="space-y-8">
                 <header className="space-y-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">Localização estratégica</span>
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">Onde estamos</span>
                   <h2 id="localizacao-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                    No Coração do Maior Polo de Saúde da América Latina
+                    No Centro do Polo de Saúde de São Paulo
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    A Nexus está localizada na Vila Clementino, bairro que concentra os maiores hospitais e centros de pesquisa médica do Brasil. Seus pacientes chegam com facilidade — de carro, metrô ou a pé.
+                    A Nexus está estrategicamente posicionada na Vila Clementino, a poucos metros dos maiores hospitais e centros médicos do Brasil. Seus pacientes chegam com facilidade — de metrô, carro ou a pé.
                   </p>
                 </header>
 
                 <div className="space-y-3">
                   {[
-                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência nacional" },
-                    { label: "UNIFESP",                        sub: "Universidade Federal de São Paulo" },
-                    { label: "Hospital do Rim",                sub: "Referência em nefrologia e transplantes" },
-                    { label: "AACD",                           sub: "Associação de Assistência à Criança Deficiente" },
-                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás, acesso direto" },
-                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde, a poucos minutos" },
-                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás, acesso facilitado" },
+                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência nacional", icon: "🏥" },
+                    { label: "UNIFESP",                        sub: "Universidade Federal de São Paulo", icon: "🎓" },
+                    { label: "Hospital do Rim",                sub: "Referência em nefrologia e transplantes", icon: "🏥" },
+                    { label: "AACD",                           sub: "Assistência à Criança Deficiente", icon: "🏥" },
+                    { label: "Hospital Paulista",              sub: "Referência em otorrinolaringologia", icon: "🏥" },
+                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás, acesso direto", icon: "🚇" },
+                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde, a poucos minutos", icon: "🚇" },
+                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás, acesso facilitado", icon: "🚇" },
                   ].map((loc, i) => (
                     <div key={i} className="flex items-start gap-4 bg-background rounded-xl p-4 border border-border">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0 mt-0.5" aria-hidden="true">
-                        <MapPin className="w-4 h-4" />
+                      <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 text-base" aria-hidden="true">
+                        {loc.icon}
                       </div>
                       <div>
                         <p className="font-semibold text-foreground text-sm">{loc.label}</p>
@@ -429,9 +359,9 @@ export default function AluguelConsultorio() {
               </div>
 
               {/* Mapa */}
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-border h-[520px] sticky top-24">
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-border h-[560px] sticky top-24">
                 <iframe
-                  title="Localização da Nexus — aluguel de consultório na Vila Clementino, São Paulo"
+                  title="Localização da Nexus — coworking na Vila Clementino, São Paulo"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4!2d-46.6430!3d-23.5990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0x1!2sRua%20Onze%20de%20Junho%2C%201070%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr"
                   width="100%"
                   height="100%"
@@ -445,9 +375,42 @@ export default function AluguelConsultorio() {
           </div>
         </section>
 
-        {/* ══ GALERIA ═════════════════════════════════════════ */}
+        {/* ══ DIFERENCIAIS ════════════════════════════════════ */}
         <section
           className="py-24 md:py-32 bg-background"
+          aria-labelledby="diferenciais-h2"
+        >
+          <div className="container">
+            <header className="text-center mb-16 space-y-3">
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Infraestrutura premium</span>
+              <h2 id="diferenciais-h2" className="text-4xl md:text-5xl font-bold text-foreground">
+                Diferenciais da Nexus
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Tudo que você precisa para atender com excelência na Vila Clementino, sem burocracia e sem investimento inicial.
+              </p>
+            </header>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {diferenciais.map((d, i) => (
+                <article
+                  key={i}
+                  className="group bg-secondary rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-primary/10 group-hover:bg-primary rounded-xl flex items-center justify-center text-primary group-hover:text-white transition-all duration-300 mb-5" aria-hidden="true">
+                    {d.icon}
+                  </div>
+                  <h3 className="font-bold text-foreground mb-2">{d.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══ GALERIA ═════════════════════════════════════════ */}
+        <section
+          className="py-24 md:py-32 bg-secondary"
           aria-labelledby="galeria-h2"
         >
           <div className="container">
@@ -457,7 +420,7 @@ export default function AluguelConsultorio() {
                 Conheça o Espaço
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ambiente premium, recepção elegante e consultórios prontos para o seu atendimento
+                Recepção, consultórios, entrada, corredores, fachada e detalhes — tudo pensado para profissionais da saúde
               </p>
             </header>
 
@@ -513,43 +476,32 @@ export default function AluguelConsultorio() {
           </div>
         )}
 
-        {/* ══ COMPARATIVO ═════════════════════════════════════ */}
+        {/* ══ PARA QUEM É ═════════════════════════════════════ */}
         <section
-          className="py-24 md:py-32 bg-secondary"
-          aria-labelledby="comparativo-h2"
+          className="py-24 md:py-32 bg-background"
+          aria-labelledby="para-quem-h2"
         >
           <div className="container">
             <header className="text-center mb-16 space-y-3">
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Análise comparativa</span>
-              <h2 id="comparativo-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                Montar Consultório Próprio × Alugar na Nexus
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Para todos os profissionais</span>
+              <h2 id="para-quem-h2" className="text-4xl md:text-5xl font-bold text-foreground">
+                Para Quem é o Coworking na Vila Clementino?
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Veja por que profissionais de saúde em todo o Brasil estão escolhendo o aluguel de consultório
+                O espaço da Nexus é ideal para profissionais da saúde que buscam qualidade, praticidade e localização estratégica no maior polo médico de São Paulo.
               </p>
             </header>
 
-            <div className="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-border shadow-xl">
-              <div className="grid grid-cols-3 bg-primary text-white text-sm font-bold">
-                <div className="p-5">Critério</div>
-                <div className="p-5 text-center border-l border-white/20">Consultório Próprio</div>
-                <div className="p-5 text-center border-l border-white/20">Aluguel Nexus</div>
-              </div>
-              {comparativo.map((row, i) => (
-                <div
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+              {profissionais.map((p, i) => (
+                <article
                   key={i}
-                  className={`grid grid-cols-3 border-t border-border text-sm ${i % 2 === 0 ? "bg-background" : "bg-secondary/50"}`}
+                  className="group bg-secondary rounded-2xl p-6 border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 text-center"
                 >
-                  <div className="p-5 font-semibold text-foreground">{row.criterio}</div>
-                  <div className="p-5 text-muted-foreground text-center border-l border-border flex items-center justify-center gap-2">
-                    <X className="w-4 h-4 text-red-400 flex-shrink-0" aria-hidden="true" />
-                    {row.proprio}
-                  </div>
-                  <div className="p-5 font-bold text-primary text-center border-l border-border flex items-center justify-center gap-2">
-                    <Check className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    {row.nexus}
-                  </div>
-                </div>
+                  <div className="text-4xl mb-4" aria-hidden="true">{p.emoji}</div>
+                  <h3 className="font-bold text-foreground mb-1">{p.title}</h3>
+                  <p className="text-xs text-muted-foreground">{p.sub}</p>
+                </article>
               ))}
             </div>
           </div>
@@ -557,7 +509,7 @@ export default function AluguelConsultorio() {
 
         {/* ══ FAQ ═════════════════════════════════════════════ */}
         <section
-          className="py-24 md:py-32 bg-background"
+          className="py-24 md:py-32 bg-secondary"
           aria-labelledby="faq-h2"
         >
           <div className="container max-w-3xl">
@@ -567,7 +519,7 @@ export default function AluguelConsultorio() {
                 Perguntas Frequentes
               </h2>
               <p className="text-lg text-muted-foreground">
-                Tudo que você precisa saber sobre o aluguel de consultório na Nexus
+                Tudo que você precisa saber sobre o coworking na Vila Clementino
               </p>
             </header>
 
@@ -576,11 +528,11 @@ export default function AluguelConsultorio() {
                 <div
                   key={i}
                   role="listitem"
-                  className="bg-secondary rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-background rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-start justify-between gap-4 p-6 text-left hover:bg-secondary/80 transition-colors"
+                    className="w-full flex items-start justify-between gap-4 p-6 text-left hover:bg-secondary/50 transition-colors"
                     aria-expanded={openFaq === i}
                     aria-controls={`faq-answer-${i}`}
                   >
@@ -603,12 +555,12 @@ export default function AluguelConsultorio() {
 
         {/* ══ LINKAGEM INTERNA ════════════════════════════════ */}
         <section
-          className="py-16 bg-secondary border-t border-border"
-          aria-labelledby="links-h2"
+          className="py-16 bg-background border-t border-border"
+          aria-labelledby="links-vila-h2"
         >
           <div className="container">
             <header className="text-center mb-10 space-y-2">
-              <h2 id="links-h2" className="text-2xl font-bold text-foreground">Explore Mais Opções</h2>
+              <h2 id="links-vila-h2" className="text-2xl font-bold text-foreground">Explore Mais Opções</h2>
               <p className="text-muted-foreground">Conheça todos os serviços da Nexus Espaço Saúde</p>
             </header>
             <div className="flex flex-wrap justify-center gap-4">
@@ -616,7 +568,7 @@ export default function AluguelConsultorio() {
                 <Link
                   key={i}
                   href={l.href}
-                  className="inline-flex items-center gap-2 bg-background border border-border hover:border-primary text-foreground hover:text-primary px-5 py-3 rounded-xl text-sm font-medium transition-all shadow-sm hover:shadow-md"
+                  className="inline-flex items-center gap-2 bg-secondary border border-border hover:border-primary text-foreground hover:text-primary px-5 py-3 rounded-xl text-sm font-medium transition-all shadow-sm hover:shadow-md"
                 >
                   {l.label}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -638,10 +590,10 @@ export default function AluguelConsultorio() {
 
           <div className="container relative z-10 text-center max-w-3xl mx-auto space-y-8">
             <h2 id="cta-h2" className="text-4xl md:text-5xl font-bold leading-tight">
-              Pronto para Começar a Atender?
+              Conheça a Nexus na Vila Clementino
             </h2>
             <p className="text-xl opacity-90 leading-relaxed">
-              Conheça pessoalmente a estrutura da Nexus Clínica e Coworking. Um espaço moderno, acolhedor e preparado para oferecer a melhor experiência aos seus pacientes — sem burocracia, sem investimento inicial.
+              Agende uma visita e descubra um espaço pensado para profissionais da saúde que desejam atender em uma das regiões médicas mais valorizadas de São Paulo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -677,10 +629,10 @@ export default function AluguelConsultorio() {
             "@graph": [
               {
                 "@type": "MedicalBusiness",
-                "@id": "https://nexusespacosaude.com.br/aluguel-consultorio-sao-paulo",
-                "name": "Nexus — Aluguel de Consultório em São Paulo",
-                "description": "Aluguel de consultório médico em São Paulo, na Vila Clementino. Consultórios mobiliados, recepção profissional e localização estratégica próxima à UNIFESP e Hospital São Paulo.",
-                "url": "https://nexusespacosaude.com.br/aluguel-consultorio-sao-paulo",
+                "@id": "https://nexusespacosaude.com.br/coworking-vila-clementino",
+                "name": "Nexus — Coworking para Profissionais da Saúde na Vila Clementino",
+                "description": "Coworking médico na Vila Clementino, São Paulo. Consultórios mobiliados, recepção profissional e localização estratégica próxima à UNIFESP, Hospital São Paulo, Hospital do Rim e AACD.",
+                "url": "https://nexusespacosaude.com.br/coworking-vila-clementino",
                 "telephone": "+5511932962026",
                 "email": "costadamorim@gmail.com",
                 "address": {
@@ -696,7 +648,7 @@ export default function AluguelConsultorio() {
                   "latitude": -23.599,
                   "longitude": -46.643,
                 },
-                "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/MMIQogZagwsminEA.jpeg",
+                "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
                 "priceRange": "R$ 65 – R$ 85/hora",
                 "openingHoursSpecification": [
                   { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
@@ -716,7 +668,7 @@ export default function AluguelConsultorio() {
                 "itemListElement": [
                   { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://nexusespacosaude.com.br/" },
                   { "@type": "ListItem", "position": 2, "name": "Coworking", "item": "https://nexusespacosaude.com.br/coworking" },
-                  { "@type": "ListItem", "position": 3, "name": "Aluguel de Consultório em São Paulo", "item": "https://nexusespacosaude.com.br/aluguel-consultorio-sao-paulo" },
+                  { "@type": "ListItem", "position": 3, "name": "Coworking na Vila Clementino", "item": "https://nexusespacosaude.com.br/coworking-vila-clementino" },
                 ],
               },
             ],

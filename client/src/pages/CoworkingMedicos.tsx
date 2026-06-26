@@ -523,6 +523,7 @@ export default function CoworkingMedicos() {
               {[
                 { href: "/aluguel-consultorio-sao-paulo", label: "Aluguel de Consultório em SP" },
                 { href: "/consultorio-por-hora",          label: "Consultório por Hora" },
+                { href: "/coworking-vila-clementino",     label: "Coworking na Vila Clementino" },
                 { href: "/espaco",                        label: "Estrutura" },
                 { href: "/contato",                       label: "Contato" },
               ].map((l, i) => (
