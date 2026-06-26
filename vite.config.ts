@@ -45,9 +45,6 @@ export default defineConfig({
           if (id.includes("node_modules/recharts")) {
             return "recharts";
           }
-          if (id.includes("node_modules/react-helmet-async")) {
-            return "react-helmet";
-          }
           if (id.includes("node_modules/lucide-react")) {
             return "lucide-icons";
           }
@@ -63,5 +60,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ["react", "react-dom", "wouter"],
+  },
+  server: {
+    allowedHosts: "all",
   },
 });
