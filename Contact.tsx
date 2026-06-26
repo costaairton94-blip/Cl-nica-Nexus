@@ -50,12 +50,13 @@ export default function Contact() {
   };
 
   return (
-    <SEOHead
-        title="Contato e Agendamento | Nexus Espaço Saúde"
-        description="Entre em contato com a Nexus Espaço Saúde. Agende sua consulta ou visita ao coworking médico na Vila Clementino, São Paulo. WhatsApp: (11) 93296-2026."
-        canonical="https://nexusespacosaude.com.br/contato"
-      />
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+          title="Contato e Agendamento | Nexus Espaço Saúde"
+          description="Entre em contato com a Nexus Espaço Saúde. Agende sua consulta ou visita ao coworking médico na Vila Clementino, São Paulo. WhatsApp: (11) 93296-2026."
+          canonical="https://nexusespacosaude.com.br/contato"
+        />
+      <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">
         <div className="container space-y-6">
@@ -338,5 +339,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -39,12 +39,13 @@ export default function Space() {
   ];
 
   return (
-    <SEOHead
-        title="Conheça Nosso Espaço | Nexus Espaço Saúde"
-        description="Conheça a estrutura da Nexus Espaço Saúde: consultórios modernos, recepção profissional e ambiente climatizado na Vila Clementino, São Paulo. Fotos reais do espaço."
-        canonical="https://nexusespacosaude.com.br/espaco"
-      />
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+          title="Conheça Nosso Espaço | Nexus Espaço Saúde"
+          description="Conheça a estrutura da Nexus Espaço Saúde: consultórios modernos, recepção profissional e ambiente climatizado na Vila Clementino, São Paulo. Fotos reais do espaço."
+          canonical="https://nexusespacosaude.com.br/espaco"
+        />
+      <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">
         <div className="container space-y-6">
@@ -231,5 +232,6 @@ export default function Space() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -43,12 +43,13 @@ export default function Coworking() {
   ];
 
   return (
-    <SEOHead
-        title="Coworking Médico | Aluguel de Consultório | Nexus Espaço Saúde"
-        description="Alugue consultórios equipados por hora, período ou mensalmente na Vila Clementino. Coworking médico com recepção, internet e ambiente profissional em São Paulo."
-        canonical="https://nexusespacosaude.com.br/coworking"
-      />
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+          title="Coworking Médico | Aluguel de Consultório | Nexus Espaço Saúde"
+          description="Alugue consultórios equipados por hora, período ou mensalmente na Vila Clementino. Coworking médico com recepção, internet e ambiente profissional em São Paulo."
+          canonical="https://nexusespacosaude.com.br/coworking"
+        />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-gradient-to-b from-secondary to-background">
         <div className="container">
@@ -459,5 +460,6 @@ export default function Coworking() {
         </div>
       </section>
     </div>
+    </>
   );
 }
