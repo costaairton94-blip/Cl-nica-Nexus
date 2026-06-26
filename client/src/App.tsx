@@ -8,6 +8,7 @@ import Coworking from "./pages/Coworking";
 import Contact from "./pages/Contact";
 import DrAirton from "./pages/DrAirton";
 import Mariana from "./pages/Mariana";
+import CoworkingMedicos from "./pages/CoworkingMedicos";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeProvider } from "./ThemeContext";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/contato" component={Contact} />
             <Route path="/dr-airton" component={DrAirton} />
             <Route path="/mariana" component={Mariana} />
+            <Route path="/coworking-medico" component={CoworkingMedicos} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
