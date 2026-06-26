@@ -41,10 +41,6 @@ export default function Team() {
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(4)_24d83444.jpeg" 
                   alt="Dr. Airton Pereira da Costa" 
                   className="w-full h-full object-cover"
-                  loading="eager"
-                  decoding="sync"
-                  width={600}
-                  height={600}
                 />
               </div>
 
@@ -89,10 +85,6 @@ export default function Team() {
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at19.00.28_a4ffe766.jpeg" 
                   alt="Mariana Carlim D'Amorim" 
                   className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                  decoding="async"
-                  width={600}
-                  height={600}
                 />
               </div>
               <div className="space-y-4">

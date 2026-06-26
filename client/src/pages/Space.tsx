@@ -66,10 +66,6 @@ export default function Space() {
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.23_37e94606.jpeg" 
               alt="Fachada da Clínica Nexus Saúde" 
               className="w-full h-full object-cover"
-              loading="eager"
-              decoding="sync"
-              width={1200}
-              height={800}
             />
           </div>
         </div>
@@ -102,10 +98,6 @@ export default function Space() {
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(5)_1cd4ab55.jpeg" 
                 alt="Recepção do Prédio" 
                 className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width={1200}
-                height={800}
               />
             </div>
           </div>
@@ -129,10 +121,6 @@ export default function Space() {
                   src={item.img} 
                   alt={item.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                  loading="lazy"
-                  decoding="async"
-                  width={800}
-                  height={600}
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-end">
                   <p className="font-semibold text-white p-4">{item.title}</p>
