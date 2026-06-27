@@ -12,8 +12,6 @@ export default function Layout({ children }: LayoutProps) {
   const navLinks = [
     { href: "/", label: "Início" },
     { href: "/espaco", label: "O Espaço" },
-    { href: "/equipe", label: "Equipe" },
-    { href: "/servicos", label: "Serviços" },
     { href: "/coworking", label: "Coworking" },
     { href: "/contato", label: "Contato" },
   ];
@@ -57,7 +55,7 @@ export default function Layout({ children }: LayoutProps) {
               href="/contato"
               className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md font-medium transition-colors text-sm whitespace-nowrap"
             >
-              Agendar Consulta
+              Agendar Visita
             </a>
 
             {/* Mobile Menu Button */}
@@ -94,7 +92,7 @@ export default function Layout({ children }: LayoutProps) {
                 className="block w-full bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-md font-medium text-center transition-colors mt-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Agendar Consulta
+                Agendar Visita
               </a>
             </nav>
           </div>
@@ -136,7 +134,7 @@ export default function Layout({ children }: LayoutProps) {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Saúde especializada com acolhimento. Ortopedia, traumatologia e nutrição clínica em um único espaço.
+                Consultórios equipados, recepção profissional e localização estratégica para profissionais de saúde na Vila Clementino, São Paulo.
               </p>
             </div>
 
@@ -183,13 +181,14 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Hours */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Horários</h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>[Inserir horário de atendimento]</p>
-                <p className="text-xs text-muted-foreground/70">
-                  Agende sua consulta pelo WhatsApp ou formulário de contato
-                </p>
-              </div>
+              <h4 className="font-semibold text-foreground mb-4">Páginas SEO</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="/coworking-medico" className="text-muted-foreground hover:text-primary transition-colors">Coworking para Médicos</a></li>
+                <li><a href="/consultorio-por-hora" className="text-muted-foreground hover:text-primary transition-colors">Consultório por Hora</a></li>
+                <li><a href="/aluguel-consultorio-sao-paulo" className="text-muted-foreground hover:text-primary transition-colors">Aluguel de Consultório</a></li>
+                <li><a href="/coworking-vila-clementino" className="text-muted-foreground hover:text-primary transition-colors">Coworking Vila Clementino</a></li>
+                <li><a href="/coworking-vila-mariana" className="text-muted-foreground hover:text-primary transition-colors">Coworking Vila Mariana</a></li>
+              </ul>
             </div>
           </div>
 
@@ -197,7 +196,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="border-t border-border pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-muted-foreground text-center md:text-left">
-                © 2026 Nexus Espaço Saúde. Todos os direitos reservados.
+                © 2026 Nexus Espaço Saúde — Coworking para Profissionais de Saúde. Todos os direitos reservados.
               </p>
               <div className="flex gap-6">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

@@ -1,32 +1,33 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "wouter";
+import { Building2, Clock, Wifi, Star, MapPin, Users, CheckCircle, ArrowRight, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-  {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/WhatsAppImage2026-03-15at18.31.23_d192afda.jpeg",
-    alt: "Entrada da Clínica Nexus Saúde"
-  },
-  {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
-    alt: "Consultório 1"
-  },
-  {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2)_519093bd.jpeg",
-    alt: "Consultório 2"
-  },
-  {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.25_86e235e1.jpeg",
-    alt: "Sala de Espera"
-  },
-  {
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(6)_3c43ebb1.jpeg",
-    alt: "Entrada Consultório"
-  }
-];
+    {
+      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
+      alt: "Fachada do Nexus Espaço Saúde na Vila Clementino"
+    },
+    {
+      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/qkmBWYHQXhTpABJp.jpeg",
+      alt: "Entrada do Nexus Espaço Saúde"
+    },
+    {
+      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/jKRDVkQyaUtwCSgT.jpeg",
+      alt: "Recepção interna do Nexus Espaço Saúde"
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(1)_21ee0bb7.jpeg",
+      alt: "Consultório moderno Nexus"
+    },
+    {
+      img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/6aKp98sGzwMcbVPqZn5kmm/WhatsAppImage2026-03-15at18.31.24(2)_519093bd.jpeg",
+      alt: "Ambiente de atendimento Nexus"
+    }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,21 +36,16 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@type": "MedicalClinic",
+      "@type": "MedicalBusiness",
       "@id": "https://nexusespacosaude.com.br/",
-      "name": "Nexus Espaço Saúde",
-      "description": "Clínica médica especializada em ortopedia, traumatologia e nutrição clínica na Vila Clementino, São Paulo. Coworking médico com consultórios equipados.",
+      "name": "Nexus Espaço Saúde — Coworking para Profissionais de Saúde",
+      "description": "Coworking médico com consultórios equipados, recepção profissional e localização estratégica na Vila Clementino, próximo à UNIFESP e Hospital São Paulo.",
       "url": "https://nexusespacosaude.com.br",
       "telephone": "+5511932962026",
       "email": "costadamorim@gmail.com",
@@ -64,10 +60,6 @@ export default function Home() {
       "geo": { "@type": "GeoCoordinates", "latitude": -23.599, "longitude": -46.643 },
       "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/oPxUKNpLAdSSGXes.jpeg",
       "priceRange": "R$",
-      "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "13:00" }
-      ],
       "sameAs": ["https://nexusespacosaude.com.br"]
     },
     {
@@ -80,306 +72,379 @@ export default function Home() {
     }
   ];
 
+  const diferenciais = [
+    { icon: Building2, title: "Consultórios Equipados", desc: "Mobiliados, climatizados e prontos para atendimento imediato. Sem obras, sem investimento inicial." },
+    { icon: Users, title: "Recepção Profissional", desc: "Equipe treinada para recepcionar seus pacientes com excelência e cordialidade." },
+    { icon: Wifi, title: "Internet de Alta Velocidade", desc: "Conexão estável e rápida para telemedicina, prontuários eletrônicos e videoconferências." },
+    { icon: Clock, title: "Flexibilidade Total", desc: "Alugue por hora, período ou mensalmente. Sem burocracia, sem fidelidade obrigatória." },
+    { icon: MapPin, title: "Localização Estratégica", desc: "Vila Clementino, próximo à UNIFESP, Hospital São Paulo e 3 estações de metrô." },
+    { icon: Star, title: "Infraestrutura Premium", desc: "Limpeza inclusa, ar-condicionado, sala de espera e ambiente 100% profissional." },
+  ];
+
+  const planos = [
+    {
+      nome: "Por Hora",
+      preco: "A partir de R$ 85",
+      periodo: "/hora",
+      destaque: false,
+      itens: ["Consultório equipado", "Recepção inclusa", "Internet inclusa", "Limpeza inclusa", "Sem fidelidade"],
+    },
+    {
+      nome: "Por Período",
+      preco: "A partir de R$ 75",
+      periodo: "/hora",
+      destaque: true,
+      badge: "Mais popular",
+      itens: ["Tudo do plano por hora", "Desconto por volume", "Horários fixos", "Prioridade na agenda", "Suporte dedicado"],
+    },
+    {
+      nome: "Mensal",
+      preco: "Sob consulta",
+      periodo: "",
+      destaque: false,
+      itens: ["Uso ilimitado no período", "Melhor custo-benefício", "Consultório reservado", "Atendimento prioritário", "Condições especiais"],
+    },
+  ];
+
+  const especialidades = [
+    "Clínica Médica", "Ortopedia", "Psicologia", "Nutrição", "Fisioterapia",
+    "Dermatologia", "Ginecologia", "Pediatria", "Cardiologia", "Neurologia",
+    "Fonoaudiologia", "Terapia Ocupacional",
+  ];
+
+  const paginasSeo = [
+    { href: "/coworking-medico", title: "Coworking para Médicos", desc: "Espaço especializado para médicos que desejam atender com excelência." },
+    { href: "/consultorio-por-hora", title: "Consultório por Hora", desc: "Alugue apenas pelo período que precisar, sem compromisso." },
+    { href: "/aluguel-consultorio-sao-paulo", title: "Aluguel de Consultório", desc: "Consultórios completos e mobiliados para profissionais de saúde." },
+    { href: "/coworking-vila-clementino", title: "Coworking Vila Clementino", desc: "No coração do maior polo de saúde de São Paulo." },
+  ];
+
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Nexus Espaço Saúde | Clínica e Coworking Médico em São Paulo"
-        description="Clínica especializada em ortopedia, traumatologia e nutrição clínica na Vila Clementino. Coworking médico com consultórios equipados, recepção profissional e localização estratégica próxima à UNIFESP e Hospital São Paulo."
+        title="Nexus Espaço Saúde | Coworking para Profissionais de Saúde em São Paulo"
+        description="Consultórios equipados, recepção profissional e localização estratégica na Vila Clementino. Alugue por hora, período ou mensalmente. Próximo à UNIFESP e Hospital São Paulo."
         canonical="https://nexusespacosaude.com.br/"
         structuredData={structuredData}
       />
-      {/* Hero Section */}
+
+      {/* ── HERO ── */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+            {/* Conteúdo */}
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="text-sm font-semibold text-primary">
-                  Bem-vindo à Clínica Nexus Saúde
+                <span className="text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
+                  Coworking para Profissionais de Saúde · Vila Clementino
                 </span>
               </div>
-              
               <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                Saúde Especializada com Acolhimento
+                Seu Consultório Pronto para Atender
               </h1>
-              
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Atendimento de excelência em ortopedia e nutrição clínica. Profissionais dedicados a transformar sua saúde com expertise e humanidade.
+                Consultórios completos, mobiliados e equipados na Vila Clementino. Planos flexíveis por hora, período ou mensais — sem burocracia, sem obras.
               </p>
-
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <a href="/contato" className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base rounded-md font-medium transition-colors">
-                  Agendar Consulta
+                <a
+                  href="https://wa.me/5511932962026?text=Olá! Gostaria de agendar uma visita ao espaço da Nexus."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-8 py-4 text-base rounded-md font-semibold transition-colors"
+                  aria-label="Agendar visita pelo WhatsApp"
+                >
+                  Agendar Visita
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
-                <a href="/espaco" className="inline-flex items-center justify-center border border-border hover:bg-secondary px-8 py-6 text-base rounded-md font-medium transition-colors">
-                  Conhecer Espaço
-                </a>
+                <Link
+                  href="/espaco"
+                  className="inline-flex items-center justify-center border border-border hover:bg-secondary px-8 py-4 text-base rounded-md font-semibold transition-colors"
+                >
+                  Conhecer o Espaço
+                </Link>
+              </div>
+              <div className="flex flex-wrap gap-6 pt-2">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary" />
+                  Sem burocracia
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary" />
+                  Sem obras
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary" />
+                  Pronto para atender
+                </div>
               </div>
             </div>
 
-            {/* Right Image Carousel */}
+            {/* Carrossel de imagens */}
             <div className="relative h-96 md:h-full min-h-96 rounded-lg overflow-hidden shadow-lg group">
-              {/* Slides */}
               <div className="relative w-full h-full">
                 {slides.map((slide, idx) => (
                   <div
                     key={idx}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      idx === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentSlide ? "opacity-100" : "opacity-0"}`}
                   >
                     <img
                       src={slide.img}
                       alt={slide.alt}
                       className="w-full h-full object-cover"
+                      loading={idx === 0 ? "eager" : "lazy"}
+                      decoding={idx === 0 ? "sync" : "async"}
+                      width={600}
+                      height={450}
                     />
                   </div>
                 ))}
               </div>
-
-              {/* Navigation Buttons */}
               <button
                 onClick={prevSlide}
+                aria-label="Imagem anterior"
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextSlide}
+                aria-label="Próxima imagem"
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
-
-              {/* Dots Indicator */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
                 {slides.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentSlide
-                        ? "bg-white w-8"
-                        : "bg-white/50 hover:bg-white/75"
-                    }`}
+                    aria-label={`Ir para imagem ${idx + 1}`}
+                    className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? "bg-white w-8" : "bg-white/50 hover:bg-white/75"}`}
                   />
                 ))}
               </div>
             </div>
           </div>
         </div>
-
-        {/* Decorative Line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-30"></div>
       </section>
 
-      {/* Team Section */}
+      {/* ── DIFERENCIAIS ── */}
       <section className="py-20 md:py-32 bg-secondary">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Conheça Nossa Equipe
+              Por Que Escolher a Nexus?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Profissionais com formação de excelência dedicados ao seu bem-estar
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Tudo que você precisa para atender seus pacientes com excelência, sem os custos e a burocracia de um consultório próprio.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Dr. Airton */}
-            <div className="group">
-              <div className="relative h-64 md:h-80 rounded-lg overflow-hidden mb-6 shadow-lg">
-                <img 
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663441484870/o7re9pwUy5yEm9Cf6vPWLJ/dr_airton_a1f9b392.jpg" 
-                  alt="Dr. Airton Pereira da Costa" 
-                  className="w-full h-full object-cover"
-                />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {diferenciais.map((item, i) => (
+              <div key={i} className="bg-background rounded-xl p-6 hover:shadow-md transition-shadow border border-border">
+                <div className="bg-primary/10 rounded-lg p-3 w-fit mb-4">
+                  <item.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </div>
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-foreground">Dr. Airton Pereira da Costa</h3>
-                <p className="text-primary font-semibold">Ortopedista e Traumatologista</p>
-                <p className="text-sm text-muted-foreground">
-                  Especialista em Cirurgia do Pé e Tornozelo | CRM-SP 231.393
-                </p>
-                <a href="/dr-airton" className="inline-flex items-center text-primary hover:text-primary/80 font-semibold text-sm pt-2 cursor-pointer">
-                  Ver Currículo
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </div>
-            </div>
-
-            {/* Mariana */}
-            <div className="group">
-              <div className="relative h-64 md:h-80 rounded-lg overflow-hidden mb-6 shadow-lg">
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/GvILTihzvcozhzrP.jpeg" 
-                  alt="Mariana Carlim D'Amorim" 
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-foreground">Mariana Carlim D'Amorim</h3>
-                <p className="text-primary font-semibold">Nutricionista Clínica</p>
-                <p className="text-sm text-muted-foreground">
-                  Especialista em Gerontologia | CRN-3 65535
-                </p>
-                <a href="/mariana" className="inline-flex items-center text-primary hover:text-primary/80 font-semibold text-sm pt-2 cursor-pointer">
-                  Ver Currículo
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 md:py-32 bg-secondary">
+      {/* ── PLANOS ── */}
+      <section className="py-20 md:py-32 bg-background">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              O Que Nossos Pacientes Dizem
+              Planos Flexíveis
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Avaliações e depoimentos de clientes satisfeitos com nosso atendimento
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Escolha o modelo que melhor se adapta à sua rotina de atendimentos.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Gabriel Santos",
-                role: "Paciente",
-                text: "Ótimo atendimento, gostei muito da nutricionista Mariana. Muito atenciosa, sempre pensando no melhor e de acordo com as expectativas e preferências do paciente!",
-                rating: 5
-              },
-              {
-                name: "Rafaella Viotto",
-                role: "Paciente",
-                text: "Ótima experiência! A clínica é organizada, pontual e conta com uma equipe muito atenciosa. Atendimento de qualidade desde a recepção até os profissionais de saúde. Recomendo!",
-                rating: 5
-              },
-              {
-                name: "Alex Calil",
-                role: "Local Guide",
-                text: "Clínica maravilhosa! Ótimos profissionais, faço consultas de nutrição e ortopedia lá e tenho um carinho enorme com os profissionais, ambiente muito agradável. Clínica muito confiável!",
-                rating: 5
-              },
-              {
-                name: "Vivian Kotait",
-                role: "Local Guide",
-                text: "Estou aqui pra falar sobre o atendimento da nutricionista Mariana. Exemplar!!! Parabéns!!! Muito bom ser atendida por uma profissional competente, atenciosa e dedicada. Indicarei pra outras pessoas...",
-                rating: 5
-              },
-              {
-                name: "Wania Carlim",
-                role: "Paciente",
-                text: "Recomendo o ortopedista Dr. Airton Costa. Excelente médico, atencioso e muito detalhista durante a consulta. Melhorei muito da minha lesão no tornozelo. Há meses sofria com muitas dores.",
-                rating: 5
-              },
-              {
-                name: "Rafaella Alvarenga",
-                role: "Paciente",
-                text: "Só tenho elogios à clínica. Mariana profissional de nutrição e Airton de ortopedia são ótimos profissionais! O atendimento é humanizado, os profissionais são extremamente dedicados e o cuidado com o paciente é visível em cada detalhe. Me senti acolhida e confiante com o tratamento proposto. Indico de olhos fechados!",
-                rating: 5
-              },
-              {
-                name: "Giulia Amorim",
-                role: "Paciente",
-                text: "Experiência incrível! Fui muito bem atendida, desde a recepção até o consultório. Dr. Airton é um profissional exemplar, muito atencioso e competente. Voltarei com certeza!",
-                rating: 5
-              },
-              {
-                name: "Maria Cecilia",
-                role: "Paciente",
-                text: "Adorei! Ambiente acolhedor, equipe atenciosa e profissionais de primeira qualidade. Recomendo para todos que buscam um atendimento humanizado e de excelência.",
-                rating: 5
-              },
-              {
-                name: "Chafic Kotait",
-                role: "Paciente",
-                text: "Excelente atendimento! Dr. Airton é muito competente e atencioso. Senti-me bem cuidado e confiante com o tratamento. Clínica muito profissional!",
-                rating: 5
-              }
-            ].map((testimonial, idx ) => (
-              <div key={idx} className="bg-background rounded-lg p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-primary text-lg">★</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {planos.map((plano, i) => (
+              <div
+                key={i}
+                className={`rounded-2xl p-8 border-2 flex flex-col relative ${
+                  plano.destaque
+                    ? "border-primary bg-primary text-white shadow-xl scale-105"
+                    : "border-border bg-white hover:shadow-md transition-shadow"
+                }`}
+              >
+                {plano.badge && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-primary text-xs font-bold px-3 py-1 rounded-full shadow">
+                    {plano.badge}
+                  </span>
+                )}
+                <h3 className={`text-xl font-bold mb-2 ${plano.destaque ? "text-white" : "text-foreground"}`}>
+                  {plano.nome}
+                </h3>
+                <div className="mb-6">
+                  <span className={`text-2xl font-bold ${plano.destaque ? "text-white" : "text-primary"}`}>
+                    {plano.preco}
+                  </span>
+                  <span className={`text-sm ${plano.destaque ? "text-white/80" : "text-muted-foreground"}`}>
+                    {plano.periodo}
+                  </span>
+                </div>
+                <ul className="space-y-3 flex-1 mb-8">
+                  {plano.itens.map((item, j) => (
+                    <li key={j} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className={`w-4 h-4 flex-shrink-0 ${plano.destaque ? "text-white" : "text-primary"}`} />
+                      <span className={plano.destaque ? "text-white" : "text-muted-foreground"}>{item}</span>
+                    </li>
                   ))}
-                </div>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{testimonial.text}</p>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-primary">{testimonial.role}</p>
-                </div>
+                </ul>
+                <a
+                  href="https://wa.me/5511932962026?text=Olá! Tenho interesse no plano de coworking da Nexus."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full text-center py-3 rounded-lg font-semibold transition-colors text-sm ${
+                    plano.destaque
+                      ? "bg-white text-primary hover:bg-white/90"
+                      : "bg-primary text-white hover:bg-primary/90"
+                  }`}
+                >
+                  Saber Mais
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 md:py-32">
+      {/* ── ESPECIALIDADES ── */}
+      <section className="py-20 bg-secondary">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Nossos Serviços
+              Para Quem É
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Oferecemos uma gama completa de serviços de saúde especializados
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Nosso espaço é ideal para profissionais de saúde de diversas especialidades que desejam atender com qualidade e sem burocracia.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Ortopedia Especializada",
-                desc: "Tratamento completo de problemas ortopédicos com foco em cirurgia do pé e tornozelo"
-              },
-              {
-                title: "Nutrição Clínica",
-                desc: "Acompanhamento nutricional personalizado para otimizar sua saúde e bem-estar"
-              },
-              {
-                title: "Avaliação Completa",
-                desc: "Diagnóstico preciso com tecnologia de ponta e análise detalhada do seu caso"
-              },
-              {
-                title: "Acompanhamento Contínuo",
-                desc: "Suporte integral durante todo o processo de tratamento e recuperação"
-              }
-            ].map((service, idx) => (
-              <div key={idx} className="group p-8 rounded-lg border border-border hover:border-primary/50 transition-all hover:shadow-lg group-hover:shadow-primary/10">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-primary font-bold text-sm">✓</span>
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
-              </div>
+          <div className="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
+            {especialidades.map((esp, i) => (
+              <span key={i} className="bg-background text-foreground border border-border px-4 py-2 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                {esp}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary">
+      {/* ── LOCALIZAÇÃO ── */}
+      <section className="py-20 md:py-32 bg-background">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Localização Estratégica
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Situado na <strong>Vila Clementino</strong>, o maior polo de saúde de São Paulo, a Nexus oferece acesso fácil para médicos e pacientes de toda a cidade.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Próximo à UNIFESP e Hospital São Paulo",
+                  "Hospital do Rim e AACD nas proximidades",
+                  "Metrô Hospital São Paulo, Santa Cruz e AACD-Servidor",
+                  "Fácil acesso por transporte público e carro",
+                  "Rua Onze de Junho, 1070 — Consultório 209",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://wa.me/5511932962026?text=Olá! Gostaria de agendar uma visita ao espaço da Nexus."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
+                Agendar Visita <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg h-80">
+              <iframe
+                title="Localização Nexus Espaço Saúde"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8!2d-46.643!3d-23.599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0x1!2sRua+Onze+de+Junho%2C+1070+-+Vila+Clementino%2C+S%C3%A3o+Paulo!5e0!3m2!1spt-BR!2sbr!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PÁGINAS SEO ── */}
+      <section className="py-20 bg-secondary">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Soluções para Cada Necessidade
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Conheça todas as nossas opções de coworking e aluguel de consultório.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {paginasSeo.map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className="group bg-background hover:bg-primary/5 border border-border hover:border-primary rounded-xl p-6 transition-all"
+              >
+                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3">
+                  Saiba mais <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA FINAL ── */}
+      <section className="py-20 md:py-32 bg-primary text-white">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Pronto para Cuidar da Sua Saúde?
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Pronto para Começar a Atender?
           </h2>
-          <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Entre em contato agora e agende sua consulta com nossos especialistas
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            Agende uma visita gratuita e conheça pessoalmente o espaço da Nexus. Sem compromisso.
           </p>
-          <a
-            href="/contato"
-            className="inline-flex items-center justify-center bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-md font-semibold transition-colors text-base"
-          >
-            Agendar Consulta
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/5511932962026?text=Olá! Gostaria de agendar uma visita ao espaço da Nexus."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-md font-bold text-base transition-colors"
+            >
+              Falar pelo WhatsApp
+            </a>
+            <a
+              href="tel:+5511932962026"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-md font-bold text-base transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              (11) 93296-2026
+            </a>
+          </div>
         </div>
       </section>
     </div>
