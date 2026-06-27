@@ -65,11 +65,11 @@ export default function CoworkingVilaMariana() {
   ];
 
   const diferenciais = [
-    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Mobiliados",              desc: "Salas completamente equipadas e prontas para atendimento. Chegue e comece a receber seus pacientes sem nenhuma adaptação." },
-    { icon: <Users className="w-6 h-6" />,        title: "Recepção Profissional",                desc: "Ambiente de recepção elegante e acolhedor, preparado para transmitir credibilidade desde o primeiro contato com seus pacientes." },
+    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Aconchegantes",              desc: "Salas mobiliadas com carinho e prontas para atendimento. Chegue e comece a receber seus pacientes num clima familiar." },
+    { icon: <Users className="w-6 h-6" />,        title: "Recepção Calorosa",                desc: "Ambiente de recepção preparado com carinho, transmitindo conforto e acolhimento desde o primeiro contato com seus pacientes." },
     { icon: <Wind className="w-6 h-6" />,         title: "Ambiente Climatizado",                 desc: "Ar-condicionado em todos os ambientes para garantir conforto durante todo o atendimento, em qualquer época do ano." },
-    { icon: <Wifi className="w-6 h-6" />,         title: "Internet de Alta Velocidade",          desc: "Conexão estável e rápida para prontuários eletrônicos, laudos digitais, teleconsultas e comunicação com pacientes." },
-    { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",                      desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional. Ambiente sempre impecável." },
+    { icon: <Wifi className="w-6 h-6" />,         title: "Internet de Alta Velocidade",          desc: "Conexão estável e rápida para garantir que seus atendimentos e comunicação fluam sem interrupções." },
+    { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",                      desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional. Ambiente sempre bem cuidado." },
     { icon: <CalendarDays className="w-6 h-6" />, title: "Flexibilidade de Horários",            desc: "Você escolhe os dias e horários. Sem obrigação de frequência mínima. Adapte o espaço ao seu ritmo de atendimentos." },
     { icon: <Clock className="w-6 h-6" />,        title: "Locação por Hora ou Período",          desc: "Alugue apenas o tempo que precisar — por hora ou por período (manhã, tarde ou noite). Pague somente pelo que usar." },
     { icon: <MapPin className="w-6 h-6" />,       title: "Planos Mensais Disponíveis",           desc: "Para quem atende com regularidade, oferecemos planos mensais com condições especiais e custo por hora reduzido." },
@@ -96,7 +96,7 @@ export default function CoworkingVilaMariana() {
     { src: IMG.consul3,     alt: "Ambiente consultório coworking saúde próximo Vila Mariana",                     label: "Consultório 3" },
     { src: IMG.salaEspera,  alt: "Sala de espera acolhedora coworking Vila Mariana Nexus",                        label: "Sala de Espera" },
     { src: IMG.corredor,    alt: "Corredor de acesso consultórios Nexus próximo Vila Mariana",                    label: "Corredor" },
-    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus coworking Vila Mariana",                  label: "Detalhes" },
+    { src: IMG.detalhe,     alt: "Detalhes da ambientação acolhedora Nexus coworking Vila Mariana",                  label: "Detalhes" },
   ];
 
   const faqs = [
@@ -114,11 +114,11 @@ export default function CoworkingVilaMariana() {
     },
     {
       q: "Por que atender pacientes da Vila Mariana na Nexus?",
-      a: "A Vila Mariana concentra um público com excelente perfil para atendimento particular. Ao se instalar na Nexus — a poucos minutos do bairro — você oferece praticidade aos seus pacientes, com toda a infraestrutura de um consultório premium sem o custo de montar um espaço próprio.",
+      a: "A Vila Mariana concentra um público com excelente perfil para atendimento particular. Ao se instalar na Nexus — a poucos minutos do bairro — você oferece praticidade aos seus pacientes, com todo o conforto de um consultório acolhedor sem o custo de montar um espaço próprio.",
     },
     {
       q: "O consultório já está mobiliado?",
-      a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com equipamentos profissionais de alto padrão. Você chega ao espaço e começa a atender imediatamente, sem nenhuma adaptação ou investimento adicional.",
+      a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com muito carinho. Você chega ao espaço e começa a atender seus pacientes num clima familiar imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
       q: "Posso alugar apenas por hora?",
@@ -126,7 +126,7 @@ export default function CoworkingVilaMariana() {
     },
     {
       q: "Há recepção para receber meus pacientes?",
-      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
+      a: "Sim. O espaço conta com recepção calorosa e bem cuidada, preparada para acolher seus pacientes com atenção e carinho desde o primeiro contato.",
     },
     {
       q: "Como funciona o agendamento do consultório?",
@@ -142,7 +142,7 @@ export default function CoworkingVilaMariana() {
     },
     {
       q: "Há internet disponível no consultório?",
-      a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para prontuários eletrônicos, laudos online e telemedicina.",
+      a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para garantir que seus atendimentos e comunicação fluam sem interrupções.",
     },
     {
       q: "O ambiente possui acessibilidade para pacientes com mobilidade reduzida?",
@@ -423,7 +423,7 @@ export default function CoworkingVilaMariana() {
                 Conheça o Espaço
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ambiente premium, recepção elegante e consultórios prontos para receber seus pacientes da Vila Mariana
+                Ambiente aconchegante, recepção calorosa e consultórios prontos para receber seus pacientes da Vila Mariana
               </p>
             </header>
 

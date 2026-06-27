@@ -57,7 +57,7 @@ export default function CoworkingMedicos() {
   /* ── Dados ── */
   const diferenciais = [
     { icon: <Building2 className="w-6 h-6" />, title: "Consultórios Mobiliados", desc: "Salas completamente equipadas com mobiliário profissional. Você chega e começa a atender." },
-    { icon: <Users className="w-6 h-6" />,     title: "Recepção Preparada",      desc: "Estrutura de recepção elegante para acolher seus pacientes com a atenção que merecem." },
+    { icon: <Users className="w-6 h-6" />,     title: "Recepção Calorosa",      desc: "Recepção preparada com carinho para acolher seus pacientes com a atenção que merecem." },
     { icon: <Wifi className="w-6 h-6" />,      title: "Internet de Alta Velocidade", desc: "Conexão estável para prontuários eletrônicos, laudos online e telemedicina." },
     { icon: <Wind className="w-6 h-6" />,      title: "Ambiente Climatizado",    desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes." },
     { icon: <Sparkles className="w-6 h-6" />,  title: "Limpeza Inclusa",         desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
@@ -76,7 +76,7 @@ export default function CoworkingMedicos() {
     { src: IMG.consul3,     alt: "Ambiente de consultório médico Vila Clementino",                             label: "Consultório 3" },
     { src: IMG.salaEspera,  alt: "Sala de espera acolhedora Nexus Coworking médico",                           label: "Sala de Espera" },
     { src: IMG.corredor,    alt: "Corredor e acesso aos consultórios Nexus São Paulo",                         label: "Corredor" },
-    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus Coworking",                            label: "Detalhes" },
+    { src: IMG.detalhe,     alt: "Detalhes da ambientação aconchegante Nexus Coworking",                            label: "Detalhes" },
   ];
 
   const comparativo = [
@@ -95,7 +95,7 @@ export default function CoworkingMedicos() {
     },
     {
       q: "O consultório já está mobiliado e equipado?",
-      a: "Sim. Todas as salas da Nexus são completamente mobiliadas e equipadas com mobiliário profissional de alto padrão. Você chega ao espaço e começa a atender seus pacientes imediatamente, sem nenhuma adaptação ou investimento adicional.",
+      a: "Sim. Todas as salas da Nexus são completamente mobiliadas com muito carinho. Você chega ao espaço e começa a atender seus pacientes num clima familiar imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
       q: "Posso atender apenas alguns dias da semana?",
@@ -103,7 +103,7 @@ export default function CoworkingMedicos() {
     },
     {
       q: "Existe recepção para receber meus pacientes?",
-      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para receber e acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
+      a: "Sim. O espaço conta com recepção calorosa e bem cuidada, preparada para receber e acolher seus pacientes com atenção e carinho desde o primeiro contato.",
     },
     {
       q: "É possível fazer locação mensal?",
@@ -187,13 +187,13 @@ export default function CoworkingMedicos() {
                 </h1>
 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  Consultórios equipados, recepção profissional e localização estratégica para médicos que desejam atender com excelência — sem os custos e burocracia de uma clínica própria.
+                  Consultórios aconchegantes, clima familiar e localização estratégica para médicos que desejam atender com carinho e dedicação — sem os custos e burocracia de uma clínica própria.
                 </p>
 
                 {/* Social proof strip */}
                 <div className="flex flex-wrap gap-6">
                   {[
-                    { icon: <Star className="w-4 h-4 text-yellow-500" />, text: "Ambiente premium" },
+                    { icon: <Star className="w-4 h-4 text-yellow-500" />, text: "Ambiente familiar" },
                     { icon: <Shield className="w-4 h-4 text-primary" />, text: "Sem burocracia" },
                     { icon: <TrendingDown className="w-4 h-4 text-primary" />, text: "Custo reduzido" },
                   ].map((b, i) => (
@@ -258,10 +258,10 @@ export default function CoworkingMedicos() {
             <header className="text-center mb-16 space-y-3">
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Por que escolher a Nexus</span>
               <h2 id="diferenciais-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                Tudo que Você Precisa para Atender com Excelência
+                Tudo que Você Precisa para Atender com Carinho e Dedicação
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Infraestrutura completa, ambiente premium e total flexibilidade — para que você se concentre apenas nos seus pacientes.
+                Infraestrutura completa, ambiente familiar e total flexibilidade — para que você se concentre apenas no bem-estar dos seus pacientes.
               </p>
             </header>
 
@@ -359,10 +359,10 @@ export default function CoworkingMedicos() {
             <header className="text-center mb-16 space-y-3">
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Fotos reais</span>
               <h2 id="galeria-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                Conheça o Espaço
+                Conheça o ambiente acolhedor da Nexus Coworking Médico na Vila Clementino, São Paulo
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ambiente premium, recepção elegante e consultórios prontos para o seu atendimento
+                Ambiente familiar, recepção calorosa e consultórios prontos para receber seus pacientes com carinho
               </p>
             </header>
 

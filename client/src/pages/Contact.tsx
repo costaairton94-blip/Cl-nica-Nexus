@@ -289,7 +289,7 @@ export default function Contact() {
               <div className="bg-secondary rounded-lg p-6 border border-border">
                 <h3 className="font-bold text-foreground mb-2">Quais itens estão inclusos no aluguel?</h3>
                 <p className="text-muted-foreground text-sm">
-                  Todos os planos incluem consultório mobiliado, recepção profissional, internet de alta velocidade e limpeza. Sem custos extras ou surpresas.
+                  Todos os planos incluem consultório mobiliado com carinho, recepção acolhedora, internet estável e limpeza. Sem custos extras ou surpresas.
                 </p>
               </div>
               <div className="bg-secondary rounded-lg p-6 border border-border">
@@ -315,7 +315,7 @@ export default function Contact() {
               Pronto para Agendar sua Visita?
             </h2>
             <p className="text-lg opacity-90 max-w-2xl mx-auto">
-              Conheça pessoalmente o espaço da Nexus e veja como podemos facilitar o seu atendimento.
+              Conheça pessoalmente o espaço da Nexus e sinta o clima acolhedor que preparamos para você e seus pacientes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a

@@ -58,14 +58,14 @@ export default function AluguelConsultorio() {
     { icon: <TrendingDown className="w-6 h-6" />, title: "Zero Investimento Inicial",   desc: "Esqueça os R$ 50.000 a R$ 200.000 necessários para montar um consultório do zero. Na Nexus, você começa a atender no mesmo dia." },
     { icon: <Shield className="w-6 h-6" />,       title: "Sem Risco Financeiro",        desc: "Sem contratos de locação longos, sem obras, sem compra de equipamentos. Você paga apenas pelo que usa." },
     { icon: <Clock className="w-6 h-6" />,        title: "Flexibilidade Real",          desc: "Atenda quando quiser: por hora, período ou mensalmente. Adapte o espaço ao seu volume de pacientes." },
-    { icon: <Star className="w-6 h-6" />,         title: "Infraestrutura Pronta",       desc: "Recepção, limpeza, internet e climatização já incluídos. Você foca no atendimento, nós cuidamos do resto." },
+    { icon: <Star className="w-6 h-6" />,         title: "Ambiente Acolhedor",       desc: "Recepção, limpeza, internet e climatização já incluídos. Você foca em cuidar dos seus pacientes, nós cuidamos do resto." },
   ];
 
   const beneficios = [
-    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Equipados",      desc: "Salas completamente mobiliadas com equipamentos profissionais de alto padrão. Chegue e atenda." },
-    { icon: <Users className="w-6 h-6" />,        title: "Recepção Profissional",       desc: "Estrutura de recepção elegante para acolher seus pacientes com qualidade e discrição." },
+    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Aconchegantes",      desc: "Salas completamente mobiliadas com carinho. Você chega e atende num clima familiar." },
+    { icon: <Users className="w-6 h-6" />,        title: "Recepção Calorosa",       desc: "Recepção preparada com carinho para acolher seus pacientes com atenção e cuidado." },
     { icon: <Wind className="w-6 h-6" />,         title: "Ambiente Climatizado",        desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes." },
-    { icon: <Wifi className="w-6 h-6" />,         title: "Internet de Alta Velocidade", desc: "Conexão estável para prontuários eletrônicos, laudos online e telemedicina." },
+    { icon: <Wifi className="w-6 h-6" />,         title: "Internet de Alta Velocidade", desc: "Conexão estável e rápida para garantir que seus atendimentos fluam sem interrupções." },
     { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",             desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
     { icon: <MapPin className="w-6 h-6" />,       title: "Excelente Localização",       desc: "Vila Clementino, no coração do maior polo de saúde da América Latina." },
     { icon: <CalendarDays className="w-6 h-6" />, title: "Flexibilidade de Horários",   desc: "Agende os dias e horários que desejar, sem compromisso de frequência mínima." },
@@ -93,7 +93,7 @@ export default function AluguelConsultorio() {
     { src: IMG.consul3,     alt: "Ambiente de consultório para locação Vila Clementino",                         label: "Consultório 3" },
     { src: IMG.salaEspera,  alt: "Sala de espera acolhedora Nexus aluguel consultório",                          label: "Sala de Espera" },
     { src: IMG.corredor,    alt: "Corredor e acesso aos consultórios para aluguel Nexus São Paulo",              label: "Corredor" },
-    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus consultório aluguel",                    label: "Detalhes" },
+    { src: IMG.detalhe,     alt: "Detalhes da ambientação acolhedora Nexus consultório aluguel",                    label: "Detalhes" },
   ];
 
   const comparativo = [
@@ -113,7 +113,7 @@ export default function AluguelConsultorio() {
     },
     {
       q: "O consultório já está mobiliado?",
-      a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com equipamentos profissionais de alto padrão. Você chega ao espaço e começa a atender seus pacientes imediatamente, sem nenhuma adaptação ou investimento adicional.",
+      a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com muito carinho. Você chega ao espaço e começa a atender seus pacientes num clima familiar imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
       q: "Preciso assinar contrato de longo prazo?",
@@ -129,7 +129,7 @@ export default function AluguelConsultorio() {
     },
     {
       q: "Existe recepção para receber meus pacientes?",
-      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
+      a: "Sim. O espaço conta com recepção calorosa e bem cuidada, preparada para acolher seus pacientes com atenção e carinho desde o primeiro contato.",
     },
     {
       q: "A limpeza está inclusa no aluguel?",
@@ -137,7 +137,7 @@ export default function AluguelConsultorio() {
     },
     {
       q: "Há internet disponível no consultório?",
-      a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para prontuários eletrônicos, laudos online e telemedicina.",
+      a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para garantir que seus atendimentos fluam sem interrupções.",
     },
     {
       q: "Qual é a localização exata da Nexus?",
@@ -214,13 +214,13 @@ export default function AluguelConsultorio() {
                 </h1>
 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  Consultórios completos, mobiliados e prontos para atendimento, com planos flexíveis para profissionais da saúde na Vila Clementino.
+                  Consultórios completos, mobiliados com carinho e prontos para atendimento acolhedor, com planos flexíveis para profissionais da saúde na Vila Clementino.
                 </p>
 
                 {/* Social proof strip */}
                 <div className="flex flex-wrap gap-6">
                   {[
-                    { icon: <Star className="w-4 h-4 text-yellow-500" />,    text: "Ambiente premium" },
+                    { icon: <Star className="w-4 h-4 text-yellow-500" />,    text: "Ambiente familiar" },
                     { icon: <Shield className="w-4 h-4 text-primary" />,     text: "Sem burocracia" },
                     { icon: <TrendingDown className="w-4 h-4 text-primary" />, text: "Custo reduzido" },
                   ].map((b, i) => (
@@ -327,7 +327,7 @@ export default function AluguelConsultorio() {
                 O Que Está Incluso no Aluguel
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Infraestrutura completa, ambiente premium e total flexibilidade — para que você se concentre apenas nos seus pacientes.
+                Infraestrutura completa, ambiente aconchegante e total flexibilidade — para que você se concentre apenas no cuidado dos seus pacientes.
               </p>
             </header>
 
@@ -459,7 +459,7 @@ export default function AluguelConsultorio() {
                 Conheça o Espaço
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ambiente premium, recepção elegante e consultórios prontos para o seu atendimento
+                Ambiente aconchegante, recepção calorosa e consultórios prontos para o seu atendimento
               </p>
             </header>
 

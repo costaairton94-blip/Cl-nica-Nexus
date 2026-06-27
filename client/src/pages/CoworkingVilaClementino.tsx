@@ -65,10 +65,10 @@ export default function CoworkingVilaClementino() {
   ];
 
   const diferenciais = [
-    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Mobiliados",       desc: "Salas completamente equipadas com mobiliário profissional de alto padrão. Chegue e atenda sem nenhuma adaptação." },
-    { icon: <Users className="w-6 h-6" />,        title: "Recepção Preparada",            desc: "Estrutura de recepção elegante para acolher seus pacientes com qualidade e discrição desde o primeiro contato." },
+    { icon: <Building2 className="w-6 h-6" />,    title: "Consultórios Aconchegantes",       desc: "Salas mobiliadas com carinho. Você chega e atende num clima familiar, sem nenhuma adaptação." },
+    { icon: <Users className="w-6 h-6" />,        title: "Recepção Calorosa",            desc: "Recepção preparada com carinho para acolher seus pacientes com atenção e cuidado desde o primeiro contato." },
     { icon: <Wind className="w-6 h-6" />,         title: "Ambiente Climatizado",          desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes durante todo o atendimento." },
-    { icon: <Wifi className="w-6 h-6" />,         title: "Internet Rápida",               desc: "Conexão estável e de alta velocidade para prontuários eletrônicos, laudos online e telemedicina." },
+    { icon: <Wifi className="w-6 h-6" />,         title: "Internet Rápida",               desc: "Conexão estável e de alta velocidade para garantir que seus atendimentos fluam sem interrupções." },
     { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",               desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
     { icon: <CalendarDays className="w-6 h-6" />, title: "Flexibilidade de Horários",     desc: "Agende os dias e horários que desejar, sem compromisso de frequência mínima." },
     { icon: <Clock className="w-6 h-6" />,        title: "Locação por Hora, Período ou Mensal", desc: "Escolha o modelo ideal para o seu volume de atendimentos. Pague apenas pelo que usar." },
@@ -96,7 +96,7 @@ export default function CoworkingVilaClementino() {
     { src: IMG.consul3,     alt: "Ambiente consultório coworking saúde Vila Clementino São Paulo",            label: "Consultório 3" },
     { src: IMG.salaEspera,  alt: "Sala de espera acolhedora coworking Vila Clementino Nexus",                 label: "Sala de Espera" },
     { src: IMG.corredor,    alt: "Corredor de acesso consultórios coworking Vila Clementino",                 label: "Corredor" },
-    { src: IMG.detalhe,     alt: "Detalhes da ambientação premium Nexus coworking Vila Clementino",           label: "Detalhes" },
+    { src: IMG.detalhe,     alt: "Detalhes da ambientação acolhedora Nexus coworking Vila Clementino",           label: "Detalhes" },
   ];
 
   const faqs = [
@@ -114,7 +114,7 @@ export default function CoworkingVilaClementino() {
     },
     {
       q: "O consultório já está mobiliado?",
-      a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com equipamentos profissionais de alto padrão. Você chega ao espaço e começa a atender seus pacientes imediatamente, sem nenhuma adaptação ou investimento adicional.",
+      a: "Sim. Todos os consultórios da Nexus são completamente mobiliados com muito carinho. Você chega ao espaço e começa a atender seus pacientes num clima familiar imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
       q: "Posso alugar apenas um período ou uma hora?",
@@ -122,7 +122,7 @@ export default function CoworkingVilaClementino() {
     },
     {
       q: "Há recepção para receber meus pacientes?",
-      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade e discrição, transmitindo credibilidade desde o primeiro contato.",
+      a: "Sim. O espaço conta com recepção calorosa e bem cuidada, preparada para acolher seus pacientes com atenção e carinho desde o primeiro contato.",
     },
     {
       q: "Como funciona o agendamento do consultório?",
@@ -142,7 +142,7 @@ export default function CoworkingVilaClementino() {
     },
     {
       q: "Há internet disponível no consultório?",
-      a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para prontuários eletrônicos, laudos online e telemedicina.",
+      a: "Sim. O espaço conta com internet de alta velocidade e conexão estável, ideal para garantir que seus atendimentos fluam sem interrupções.",
     },
     {
       q: "O ambiente possui acessibilidade para pacientes com mobilidade reduzida?",
@@ -384,7 +384,7 @@ export default function CoworkingVilaClementino() {
         >
           <div className="container">
             <header className="text-center mb-16 space-y-3">
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Infraestrutura premium</span>
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Infraestrutura completa</span>
               <h2 id="diferenciais-h2" className="text-4xl md:text-5xl font-bold text-foreground">
                 Diferenciais da Nexus
               </h2>

@@ -88,10 +88,10 @@ export default function ConsultorioPorHora() {
   ];
 
   const diferenciais = [
-    { icon: <Users className="w-6 h-6" />,     title: "Recepção Profissional",        desc: "Estrutura de recepção elegante para acolher seus pacientes desde a chegada." },
-    { icon: <Wifi className="w-6 h-6" />,      title: "Internet de Alta Velocidade",  desc: "Conexão estável para prontuários, laudos e telemedicina sem interrupções." },
+    { icon: <Users className="w-6 h-6" />,     title: "Recepção Calorosa",        desc: "Recepção preparada com carinho para acolher seus pacientes desde a chegada." },
+    { icon: <Wifi className="w-6 h-6" />,      title: "Internet de Alta Velocidade",  desc: "Conexão estável e rápida para garantir que seus atendimentos fluam sem interrupções." },
     { icon: <Sparkles className="w-6 h-6" />,  title: "Limpeza Inclusa",              desc: "Higienização profissional incluída em todos os períodos de locação." },
-    { icon: <Building2 className="w-6 h-6" />, title: "Consultórios Mobiliados",      desc: "Salas equipadas com mobiliário profissional de alto padrão. Zero adaptação." },
+    { icon: <Building2 className="w-6 h-6" />, title: "Consultórios Aconchegantes",      desc: "Salas mobiliadas com carinho. Você chega e atende num clima familiar." },
     { icon: <Wind className="w-6 h-6" />,      title: "Ambiente Climatizado",         desc: "Ar-condicionado em todos os ambientes para máximo conforto." },
     { icon: <MapPin className="w-6 h-6" />,    title: "Excelente Localização",        desc: "Vila Clementino, próximo à UNIFESP, Hospital São Paulo e 3 estações de metrô." },
     { icon: <Clock className="w-6 h-6" />,     title: "Flexibilidade Total",          desc: "Agende por hora, período ou mensalmente. Sem contratos longos ou multas." },
@@ -151,7 +151,7 @@ export default function ConsultorioPorHora() {
     },
     {
       q: "O consultório já está mobiliado e equipado?",
-      a: "Sim. Todas as salas da Nexus são completamente mobiliadas com equipamentos profissionais de alto padrão. Você chega e começa a atender imediatamente, sem nenhuma adaptação ou investimento adicional.",
+      a: "Sim. Todas as salas da Nexus são completamente mobiliadas com muito carinho. Você chega ao espaço e começa a atender seus pacientes num clima familiar imediatamente, sem nenhuma adaptação ou investimento adicional.",
     },
     {
       q: "Posso alugar apenas algumas horas por semana?",
@@ -159,7 +159,7 @@ export default function ConsultorioPorHora() {
     },
     {
       q: "Existe recepção para receber meus pacientes?",
-      a: "Sim. O espaço conta com recepção profissional e elegante, preparada para acolher seus pacientes com qualidade e discrição, transmitindo credibilidade e conforto desde o primeiro contato.",
+      a: "Sim. O espaço conta com recepção calorosa e bem cuidada, preparada para acolher seus pacientes com atenção e carinho desde o primeiro contato.",
     },
     {
       q: "Quais profissionais podem alugar o consultório?",
@@ -235,7 +235,7 @@ export default function ConsultorioPorHora() {
                 </h1>
 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  Alugue um consultório totalmente equipado apenas pelo período que precisar, na Vila Clementino — sem contratos longos, sem burocracia, sem investimento inicial.
+                  Alugue um consultório aconchegante e familiar apenas pelo período que precisar, na Vila Clementino — sem contratos longos, sem burocracia, com muito carinho.
                 </p>
 
                 {/* Trust strip */}
@@ -244,7 +244,7 @@ export default function ConsultorioPorHora() {
                     "Pronto para atender",
                     "Sem contrato longo",
                     "Recepção inclusa",
-                    "Localização premium",
+                    "Ambiente acolhedor",
                   ].map((b) => (
                     <div key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -311,7 +311,7 @@ export default function ConsultorioPorHora() {
                 Como Funciona o Aluguel por Hora
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Em menos de 24 horas você já pode estar atendendo seus pacientes em um consultório premium na Vila Clementino.
+                Em menos de 24 horas você já pode estar atendendo seus pacientes em um consultório aconchegante na Vila Clementino.
               </p>
             </header>
 
@@ -369,7 +369,7 @@ export default function ConsultorioPorHora() {
             <header className="text-center mb-16 space-y-3">
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Infraestrutura completa</span>
               <h2 id="diferenciais-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                Tudo Incluso na Locação por Hora
+                Tudo Incluso para Atender com Carinho
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Você paga apenas pelo tempo que usa — e recebe muito mais do que um simples espaço.
@@ -468,7 +468,7 @@ export default function ConsultorioPorHora() {
                 Conheça os Consultórios
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ambientes premium, prontos para atendimento imediato
+                Ambientes aconchegantes, prontos para atendimento imediato
               </p>
             </header>
 
@@ -618,7 +618,7 @@ export default function ConsultorioPorHora() {
               Reserve Seu Consultório Agora
             </h2>
             <p className="text-xl opacity-90 leading-relaxed">
-              Não perca mais tempo sem um espaço adequado para atender seus pacientes. Na Nexus, você encontra um consultório premium, totalmente equipado e pronto para uso — pelo tempo exato que precisar.
+              Não perca mais tempo sem um espaço adequado para atender seus pacientes. Na Nexus, você encontra um consultório aconchegante, bem cuidado e pronto para uso — pelo tempo exato que precisar.
             </p>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-md mx-auto">

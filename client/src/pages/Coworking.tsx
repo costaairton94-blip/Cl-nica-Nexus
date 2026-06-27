@@ -61,11 +61,11 @@ export default function Coworking() {
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-              Salas Prontas para Atendimento em um Espaço Premium
+              Salas Prontas para Atendimento em um Espaço Acolhedor
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Estrutura completa, ambiente acolhedor e planos flexíveis para profissionais que desejam atender com excelência
+              Estrutura completa, clima familiar e planos flexíveis para profissionais que desejam atender com carinho e dedicação
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -98,11 +98,11 @@ export default function Coworking() {
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                A Clínica Nexus Coworking foi pensada para profissionais da saúde que desejam unir praticidade, sofisticação e credibilidade em um só lugar.
+                A Clínica Nexus Coworking foi pensada para profissionais da saúde que desejam unir praticidade, conforto e um clima familiar em um só lugar.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Oferecemos salas preparadas para atendimento, em um ambiente elegante, acolhedor e funcional, ideal para proporcionar uma excelente experiência tanto ao profissional quanto ao paciente.
+                Oferecemos salas preparadas para atendimento, em um ambiente aconchegante, flexível e funcional, ideal para proporcionar uma experiência humana e próxima tanto ao profissional quanto ao paciente.
               </p>
 
               <div className="space-y-4 pt-4">
@@ -111,8 +111,8 @@ export default function Coworking() {
                     <Check className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Localização Premium</p>
-                    <p className="text-sm text-muted-foreground">Edifício de alto padrão com fácil acesso</p>
+                    <p className="font-semibold text-foreground">Localização Estratégica</p>
+                    <p className="text-sm text-muted-foreground">Edifício bem cuidado com fácil acesso</p>
                   </div>
                 </div>
 
@@ -131,8 +131,8 @@ export default function Coworking() {
                     <Check className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Ambiente Profissional</p>
-                    <p className="text-sm text-muted-foreground">Recepção elegante e ambientação sofisticada</p>
+                    <p className="font-semibold text-foreground">Ambiente Acolhedor</p>
+                    <p className="text-sm text-muted-foreground">Recepção calorosa e ambientação familiar</p>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function Coworking() {
               Diferenciais Nexus Coworking
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Tudo que você precisa para atender com excelência
+              Tudo que você precisa para atender com carinho e dedicação
             </p>
           </div>
 
@@ -168,12 +168,12 @@ export default function Coworking() {
                 description: "Todas as salas possuem móveis e equipamentos profissionais prontos para uso"
               },
               {
-                title: "Ambiente Moderno",
-                description: "Ambientação sofisticada que transmite profissionalismo e confiança"
+                title: "Ambiente Acolhedor",
+                description: "Ambientação familiar que transmite conforto e tranquilidade"
               },
               {
-                title: "Recepção Profissional",
-                description: "Estrutura de recepção elegante para receber seus pacientes"
+                title: "Recepção Calorosa",
+                description: "Estrutura de recepção preparada com carinho para receber seus pacientes"
               },
               {
                 title: "Flexibilidade de Horários",
@@ -363,7 +363,7 @@ export default function Coworking() {
           </h2>
           
           <p className="text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
-            Tenha a estrutura de um espaço premium sem os custos e a complexidade de manter um consultório próprio. Na Nexus Coworking, você encontra praticidade, elegância e flexibilidade para focar no que realmente importa: o cuidado com seus pacientes.
+            Tenha a estrutura de um espaço aconchegante sem os custos e a complexidade de manter um consultório próprio. Na Nexus Coworking, você encontra praticidade, harmonia e flexibilidade para focar no que realmente importa: o cuidado com seus pacientes.
           </p>
 
           <div className="bg-white/10 backdrop-blur rounded-lg p-8 max-w-2xl mx-auto border border-white/20">

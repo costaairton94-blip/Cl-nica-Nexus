@@ -77,13 +77,13 @@ export default function Space() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-                Estrutura Premium para Sua Saúde
+                Um Espaço Acolhedor para Seus Pacientes
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Localizada na Vila Clementino, em São Paulo, nossa clínica oferece consultórios modernos, equipados e preparados para atendimento de excelência. Cada detalhe foi pensado para proporcionar conforto e segurança aos nossos pacientes.
+                Localizado na Vila Clementino, em São Paulo, nosso coworking oferece consultórios aconchegantes e preparados com muito carinho. Cada detalhe foi pensado para proporcionar conforto, flexibilidade e um clima familiar aos profissionais e seus pacientes.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Com ambiente acolhedor, tecnologia de ponta e profissionais dedicados, criamos um espaço onde a saúde é tratada com a seriedade e humanidade que merece.
+                Com um ambiente familiar e flexível, criamos um espaço onde o cuidado é tratado com a proximidade e o carinho que a saúde merece.
               </p>
               <Link href="/contato">
                 <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6">
@@ -143,9 +143,9 @@ export default function Space() {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl">
                 ✓
               </div>
-              <h3 className="text-xl font-bold text-foreground">Consultórios Modernos</h3>
+              <h3 className="text-xl font-bold text-foreground">Consultórios Aconchegantes</h3>
               <p className="text-muted-foreground text-sm">
-                Equipados com tecnologia de ponta para diagnóstico e tratamento de qualidade
+                Mobiliados com carinho para garantir o conforto que seus pacientes merecem
               </p>
             </div>
 
@@ -153,9 +153,9 @@ export default function Space() {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl">
                 ✓
               </div>
-              <h3 className="text-xl font-bold text-foreground">Ambiente Acolhedor</h3>
+              <h3 className="text-xl font-bold text-foreground">Clima Familiar</h3>
               <p className="text-muted-foreground text-sm">
-                Design pensado para conforto e bem-estar dos pacientes
+                Recepção calorosa e ambiente flexível para você se sentir em casa
               </p>
             </div>
 
@@ -173,9 +173,9 @@ export default function Space() {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl">
                 ✓
               </div>
-              <h3 className="text-xl font-bold text-foreground">Profissionais Dedicados</h3>
+              <h3 className="text-xl font-bold text-foreground">Suporte Dedicado</h3>
               <p className="text-muted-foreground text-sm">
-                Equipe especializada comprometida com sua saúde
+                Nossa equipe está sempre pronta para ajudar no dia a dia do seu atendimento
               </p>
             </div>
           </div>
@@ -223,7 +223,7 @@ export default function Space() {
             Agende uma Visita
           </h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Conheça pessoalmente nosso espaço e experimente o atendimento de excelência
+            Conheça pessoalmente nosso espaço e sinta o clima acolhedor que preparamos para você
           </p>
           <a href="/contato" className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-primary px-8 py-6 text-base rounded-md font-medium transition-colors">
             Agendar Consulta

@@ -75,10 +75,10 @@ export default function Home() {
   const diferenciais = [
     { icon: Building2, title: "Consultórios Equipados", desc: "Mobiliados, climatizados e prontos para atendimento imediato. Sem obras, sem investimento inicial." },
     { icon: Users, title: "Recepção Profissional", desc: "Equipe treinada para recepcionar seus pacientes com excelência e cordialidade." },
-    { icon: Wifi, title: "Internet de Alta Velocidade", desc: "Conexão estável e rápida para telemedicina, prontuários eletrônicos e videoconferências." },
+    { icon: Wifi, title: "Internet de Alta Velocidade", desc: "Conexão estável e rápida para garantir que seus atendimentos e registros fluam sem interrupções." },
     { icon: Clock, title: "Flexibilidade Total", desc: "Alugue por hora, período ou mensalmente. Sem burocracia, sem fidelidade obrigatória." },
     { icon: MapPin, title: "Localização Estratégica", desc: "Vila Clementino, próximo à UNIFESP, Hospital São Paulo e 3 estações de metrô." },
-    { icon: Star, title: "Infraestrutura Premium", desc: "Limpeza inclusa, ar-condicionado, sala de espera e ambiente 100% profissional." },
+    { icon: Star, title: "Ambiente Acolhedor", desc: "Limpeza inclusa, ar-condicionado, sala de espera aconchegante e um clima familiar que seus pacientes vão adorar." },
   ];
 
   const planos = [
@@ -113,7 +113,7 @@ export default function Home() {
   ];
 
   const paginasSeo = [
-    { href: "/coworking-medico", title: "Coworking para Médicos", desc: "Espaço especializado para médicos que desejam atender com excelência." },
+    { href: "/coworking-medico", title: "Coworking para Médicos", desc: "Espaço acolhedor e preparado para médicos que valorizam o cuidado humano." },
     { href: "/consultorio-por-hora", title: "Consultório por Hora", desc: "Alugue apenas pelo período que precisar, sem compromisso." },
     { href: "/aluguel-consultorio-sao-paulo", title: "Aluguel de Consultório", desc: "Consultórios completos e mobiliados para profissionais de saúde." },
     { href: "/coworking-vila-clementino", title: "Coworking Vila Clementino", desc: "No coração do maior polo de saúde de São Paulo." },
@@ -143,7 +143,7 @@ export default function Home() {
                 Seu Consultório Pronto para Atender
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Consultórios completos, mobiliados e equipados na Vila Clementino. Planos flexíveis por hora, período ou mensais — sem burocracia, sem obras.
+                Consultórios completos, mobiliados e aconchegantes na Vila Clementino. Planos flexíveis por hora, período ou mensais — um ambiente familiar para você e seus pacientes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
@@ -237,7 +237,7 @@ export default function Home() {
               Por Que Escolher a Nexus?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tudo que você precisa para atender seus pacientes com excelência, sem os custos e a burocracia de um consultório próprio.
+              Um espaço pensado com carinho para você atender seus pacientes de forma acolhedora, flexível e sem burocracia.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -325,7 +325,7 @@ export default function Home() {
               Para Quem É
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Nosso espaço é ideal para profissionais de saúde de diversas especialidades que desejam atender com qualidade e sem burocracia.
+              Nosso espaço é ideal para profissionais de saúde de diversas especialidades que buscam um ambiente familiar, flexível e carinhoso para seus pacientes.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
