@@ -67,7 +67,7 @@ export default function AluguelConsultorio() {
     { icon: <Wind className="w-6 h-6" />,         title: "Ambiente Climatizado",        desc: "Ar-condicionado em todos os ambientes para conforto de profissionais e pacientes." },
     { icon: <Wifi className="w-6 h-6" />,         title: "Internet de Alta Velocidade", desc: "Conexão estável e rápida para garantir que seus atendimentos fluam sem interrupções." },
     { icon: <Sparkles className="w-6 h-6" />,     title: "Limpeza Inclusa",             desc: "Higienização profissional e rigorosa incluída em todos os planos, sem custo adicional." },
-    { icon: <MapPin className="w-6 h-6" />,       title: "Excelente Localização",       desc: "Vila Clementino, no coração do maior polo de saúde da América Latina." },
+    { icon: <MapPin className="w-6 h-6" />,       title: "Fácil de Chegar",       desc: "A 5 min do Metrô Hospital São Paulo e próximo ao AACD-Servidor e Santa Cruz. Seus pacientes chegam sem dificuldade." },
     { icon: <CalendarDays className="w-6 h-6" />, title: "Flexibilidade de Horários",   desc: "Agende os dias e horários que desejar, sem compromisso de frequência mínima." },
     { icon: <Clock className="w-6 h-6" />,        title: "Planos por Hora, Período ou Mensal", desc: "Escolha o modelo ideal para o seu volume de atendimentos e orçamento." },
   ];
@@ -390,24 +390,23 @@ export default function AluguelConsultorio() {
               {/* Copy */}
               <div className="space-y-8">
                 <header className="space-y-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">Localização estratégica</span>
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">Fácil de chegar</span>
                   <h2 id="localizacao-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                    No Coração do Maior Polo de Saúde da América Latina
+                    Seus Pacientes Chegam com Facilidade
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    A Nexus está localizada na Vila Clementino, bairro que concentra os maiores hospitais e centros de pesquisa médica do Brasil. Seus pacientes chegam com facilidade — de carro, metrô ou a pé.
+                    A Nexus fica na Vila Clementino, a <strong>5 minutos do Metrô Hospital São Paulo</strong> e próxima às estações AACD-Servidor e Santa Cruz. Quem vem de carro também tem estacionamento no próprio prédio.
                   </p>
                 </header>
 
                 <div className="space-y-3">
                   {[
-                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência nacional" },
-                    { label: "UNIFESP",                        sub: "Universidade Federal de São Paulo" },
-                    { label: "Hospital do Rim",                sub: "Referência em nefrologia e transplantes" },
-                    { label: "AACD",                           sub: "Associação de Assistência à Criança Deficiente" },
-                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás, acesso direto" },
-                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde, a poucos minutos" },
-                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás, acesso facilitado" },
+                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás · a 5 minutos a pé" },
+                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás · a 10 minutos" },
+                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde · a 10 minutos" },
+                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência, ao lado" },
+                    { label: "Hospital do Rim e AACD",          sub: "Nas proximidades imediatas" },
+                    { label: "Estacionamento no prédio",        sub: "Para quem vem de carro, sem preocupação" },
                   ].map((loc, i) => (
                     <div key={i} className="flex items-start gap-4 bg-background rounded-xl p-4 border border-border">
                       <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0 mt-0.5" aria-hidden="true">

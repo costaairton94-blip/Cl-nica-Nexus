@@ -319,25 +319,23 @@ export default function CoworkingVilaClementino() {
               {/* Copy */}
               <div className="space-y-8">
                 <header className="space-y-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">Onde estamos</span>
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest">Fácil de chegar</span>
                   <h2 id="localizacao-h2" className="text-4xl md:text-5xl font-bold text-foreground">
-                    No Centro do Polo de Saúde de São Paulo
+                    Seus Pacientes Chegam com Facilidade
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    A Nexus está estrategicamente posicionada na Vila Clementino, a poucos metros dos maiores hospitais e centros médicos do Brasil. Seus pacientes chegam com facilidade — de metrô, carro ou a pé.
+                    A Nexus fica na Vila Clementino, a <strong>5 minutos do Metrô Hospital São Paulo</strong> e próxima às estações AACD-Servidor e Santa Cruz. Quem vem de carro também tem estacionamento no próprio prédio.
                   </p>
                 </header>
 
                 <div className="space-y-3">
                   {[
-                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência nacional", icon: "🏥" },
-                    { label: "UNIFESP",                        sub: "Universidade Federal de São Paulo", icon: "🎓" },
-                    { label: "Hospital do Rim",                sub: "Referência em nefrologia e transplantes", icon: "🏥" },
-                    { label: "AACD",                           sub: "Assistência à Criança Deficiente", icon: "🏥" },
-                    { label: "Hospital Paulista",              sub: "Referência em otorrinolaringologia", icon: "🏥" },
-                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás, acesso direto", icon: "🚇" },
-                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde, a poucos minutos", icon: "🚇" },
-                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás, acesso facilitado", icon: "🚇" },
+                    { label: "Metrô Hospital São Paulo",       sub: "Linha 5 – Lilás · a 5 minutos a pé", icon: "🚇" },
+                    { label: "Metrô AACD-Servidor",            sub: "Linha 5 – Lilás · a 10 minutos", icon: "🚇" },
+                    { label: "Metrô Santa Cruz",               sub: "Linha 2 – Verde · a 10 minutos", icon: "🚇" },
+                    { label: "Hospital São Paulo (UNIFESP)",   sub: "Hospital universitário de referência, ao lado", icon: "🏥" },
+                    { label: "Hospital do Rim e AACD",          sub: "Nas proximidades imediatas", icon: "🏥" },
+                    { label: "Estacionamento no prédio",        sub: "Para quem vem de carro, sem preocupação", icon: "🚗" },
                   ].map((loc, i) => (
                     <div key={i} className="flex items-start gap-4 bg-background rounded-xl p-4 border border-border">
                       <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 text-base" aria-hidden="true">

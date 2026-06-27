@@ -163,9 +163,9 @@ export default function Space() {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl">
                 ✓
               </div>
-              <h3 className="text-xl font-bold text-foreground">Localização Privilegiada</h3>
+              <h3 className="text-xl font-bold text-foreground">Fácil de Chegar</h3>
               <p className="text-muted-foreground text-sm">
-                Vila Clementino, São Paulo - fácil acesso e estacionamento
+                Vila Clementino, São Paulo · A 5 min do Metrô Hospital São Paulo · Estacionamento no prédio
               </p>
             </div>
 
@@ -190,8 +190,9 @@ export default function Space() {
               <MapPin className="w-8 h-8 text-primary" />
               <h3 className="text-xl font-bold text-foreground">Localização</h3>
               <p className="text-muted-foreground text-sm">
-                Vila Clementino<br />
-                São Paulo, SP
+                Rua Onze de Junho, 1070 — Consultório 209<br />
+                Vila Clementino, São Paulo, SP<br />
+                Metrô Hospital São Paulo · AACD-Servidor · Santa Cruz
               </p>
             </div>
 

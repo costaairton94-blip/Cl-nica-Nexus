@@ -344,18 +344,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-                Localização Estratégica
+                Fácil de Chegar, Fácil de Atender
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Situado na <strong>Vila Clementino</strong>, o maior polo de saúde de São Paulo, a Nexus oferece acesso fácil para médicos e pacientes de toda a cidade.
+                A Nexus fica na <strong>Vila Clementino</strong>, no coração do maior polo de saúde de São Paulo. Seus pacientes chegam com facilidade — de metrô, de carro ou a pé.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Próximo à UNIFESP e Hospital São Paulo",
-                  "Hospital do Rim e AACD nas proximidades",
-                  "Metrô Hospital São Paulo, Santa Cruz e AACD-Servidor",
-                  "Fácil acesso por transporte público e carro",
-                  "Rua Onze de Junho, 1070 — Consultório 209",
+                  "A 5 min da Estação Metrô Hospital São Paulo (Linha 5 – Lilás)",
+                  "A 10 min da Estação Metrô AACD-Servidor (Linha 5 – Lilás)",
+                  "A 10 min da Estação Metrô Santa Cruz (Linha 2 – Verde)",
+                  "Próximo à UNIFESP, Hospital São Paulo, Hospital do Rim e AACD",
+                  "Rua Onze de Junho, 1070 — Consultório 209 · Estacionamento no prédio",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />

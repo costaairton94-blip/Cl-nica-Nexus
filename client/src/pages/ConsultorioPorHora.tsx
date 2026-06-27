@@ -93,7 +93,7 @@ export default function ConsultorioPorHora() {
     { icon: <Sparkles className="w-6 h-6" />,  title: "Limpeza Inclusa",              desc: "Higienização profissional incluída em todos os períodos de locação." },
     { icon: <Building2 className="w-6 h-6" />, title: "Consultórios Aconchegantes",      desc: "Salas mobiliadas com carinho. Você chega e atende num clima familiar." },
     { icon: <Wind className="w-6 h-6" />,      title: "Ambiente Climatizado",         desc: "Ar-condicionado em todos os ambientes para máximo conforto." },
-    { icon: <MapPin className="w-6 h-6" />,    title: "Excelente Localização",        desc: "Vila Clementino, próximo à UNIFESP, Hospital São Paulo e 3 estações de metrô." },
+    { icon: <MapPin className="w-6 h-6" />,    title: "Fácil de Chegar",        desc: "A 5 min do Metrô Hospital São Paulo e próximo ao AACD-Servidor e Santa Cruz. Seus pacientes chegam sem dificuldade." },
     { icon: <Clock className="w-6 h-6" />,     title: "Flexibilidade Total",          desc: "Agende por hora, período ou mensalmente. Sem contratos longos ou multas." },
     { icon: <PhoneCall className="w-6 h-6" />, title: "Suporte Ágil",                 desc: "Atendimento rápido via WhatsApp para dúvidas e agendamentos." },
   ];
