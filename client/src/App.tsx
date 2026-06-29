@@ -13,6 +13,13 @@ import ConsultorioPorHora from "./pages/ConsultorioPorHora";
 import AluguelConsultorio from "./pages/AluguelConsultorio";
 import CoworkingVilaClementino from "./pages/CoworkingVilaClementino";
 import CoworkingVilaMariana from "./pages/CoworkingVilaMariana";
+import SalaPsicologo from "./pages/SalaPsicologo";
+import SalaNutricionista from "./pages/SalaNutricionista";
+import SalaFonoaudiologo from "./pages/SalaFonoaudiologo";
+import ConsultorioMedicoVilaClementino from "./pages/ConsultorioMedicoVilaClementino";
+import ConsultorioHospitalSaoPaulo from "./pages/ConsultorioHospitalSaoPaulo";
+import ConsultorioMetroSantaCruz from "./pages/ConsultorioMetroSantaCruz";
+import CoworkingProfissionaisSaude from "./pages/CoworkingProfissionaisSaude";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeProvider } from "./ThemeContext";
@@ -36,6 +43,13 @@ function App() {
             <Route path="/aluguel-consultorio-sao-paulo" component={AluguelConsultorio} />
             <Route path="/coworking-vila-clementino" component={CoworkingVilaClementino} />
             <Route path="/coworking-vila-mariana" component={CoworkingVilaMariana} />
+            <Route path="/sala-psicologo-vila-clementino" component={SalaPsicologo} />
+            <Route path="/sala-nutricionista-vila-clementino" component={SalaNutricionista} />
+            <Route path="/sala-fonoaudiologo-vila-clementino" component={SalaFonoaudiologo} />
+            <Route path="/consultorio-medico-vila-clementino" component={ConsultorioMedicoVilaClementino} />
+            <Route path="/consultorio-hospital-sao-paulo" component={ConsultorioHospitalSaoPaulo} />
+            <Route path="/consultorio-metro-santa-cruz" component={ConsultorioMetroSantaCruz} />
+            <Route path="/coworking-profissionais-saude" component={CoworkingProfissionaisSaude} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
