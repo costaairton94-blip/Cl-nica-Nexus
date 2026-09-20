@@ -52,6 +52,12 @@ export default function Layout({ children }: LayoutProps) {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/cuidado-integral-60-mais"
+              className="inline-flex items-center rounded-full border border-[#8a9b7e] bg-[#f4f6ee] px-3 py-2 text-sm font-semibold text-[#465b3d] transition-colors hover:bg-[#e7eddd] whitespace-nowrap"
+            >
+              Cuidado 60+
+            </Link>
           </nav>
 
           {/* CTA Button + Mobile Menu */}
@@ -92,6 +98,13 @@ export default function Layout({ children }: LayoutProps) {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/cuidado-integral-60-mais"
+                className="block py-3 px-2 text-[#465b3d] hover:bg-[#eef0e7] rounded-md transition-colors font-semibold text-base"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Cuidado Integral 60+
+              </Link>
               <a
                 href="/contato"
                 className="block w-full bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-md font-medium text-center transition-colors mt-2"
