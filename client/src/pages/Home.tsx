@@ -12,10 +12,6 @@ export default function Home() {
       alt: "Fachada do Nexus Espaço Saúde na Vila Clementino"
     },
     {
-      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/qkmBWYHQXhTpABJp.jpeg",
-      alt: "Entrada do Nexus Espaço Saúde"
-    },
-    {
       img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663441484870/jKRDVkQyaUtwCSgT.jpeg",
       alt: "Recepção interna do Nexus Espaço Saúde"
     },

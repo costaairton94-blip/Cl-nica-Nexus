@@ -34,6 +34,13 @@ const routes = [
   { path: "/aluguel-consultorio-sao-paulo",     changefreq: "monthly", priority: "1.0" },
   { path: "/coworking-vila-clementino",         changefreq: "monthly", priority: "1.0" },
   { path: "/coworking-vila-mariana",            changefreq: "monthly", priority: "1.0" },
+  { path: "/sala-psicologo-vila-clementino",    changefreq: "monthly", priority: "1.0" },
+  { path: "/sala-nutricionista-vila-clementino", changefreq: "monthly", priority: "1.0" },
+  { path: "/sala-fonoaudiologo-vila-clementino", changefreq: "monthly", priority: "1.0" },
+  { path: "/consultorio-medico-vila-clementino", changefreq: "monthly", priority: "1.0" },
+  { path: "/consultorio-hospital-sao-paulo",    changefreq: "monthly", priority: "1.0" },
+  { path: "/consultorio-metro-santa-cruz",      changefreq: "monthly", priority: "1.0" },
+  { path: "/coworking-profissionais-saude",     changefreq: "monthly", priority: "1.0" },
 ];
 
 // ─── GERAÇÃO DO XML ─────────────────────────────────────────────────────────
