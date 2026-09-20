@@ -20,6 +20,7 @@ import ConsultorioMedicoVilaClementino from "./pages/ConsultorioMedicoVilaClemen
 import ConsultorioHospitalSaoPaulo from "./pages/ConsultorioHospitalSaoPaulo";
 import ConsultorioMetroSantaCruz from "./pages/ConsultorioMetroSantaCruz";
 import CoworkingProfissionaisSaude from "./pages/CoworkingProfissionaisSaude";
+import CuidadoIntegral60Mais from "./pages/CuidadoIntegral60Mais";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
 import { ThemeProvider } from "./ThemeContext";
@@ -50,6 +51,7 @@ function App() {
             <Route path="/consultorio-hospital-sao-paulo" component={ConsultorioHospitalSaoPaulo} />
             <Route path="/consultorio-metro-santa-cruz" component={ConsultorioMetroSantaCruz} />
             <Route path="/coworking-profissionais-saude" component={CoworkingProfissionaisSaude} />
+            <Route path="/cuidado-integral-60-mais" component={CuidadoIntegral60Mais} />
             <Route component={NotFound} />
           </Switch>
         </Layout>

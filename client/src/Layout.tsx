@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, MapPin, Mail } from "lucide-react";
 
 interface LayoutProps {
@@ -8,6 +8,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   const navLinks = [
     { href: "/", label: "Início" },
@@ -15,6 +16,10 @@ export default function Layout({ children }: LayoutProps) {
     { href: "/coworking", label: "Coworking" },
     { href: "/contato", label: "Contato" },
   ];
+
+  if (location === "/cuidado-integral-60-mais") {
+    return <>{children}</>;
+  }
 
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">

@@ -41,6 +41,7 @@ const routes = [
   { path: "/consultorio-hospital-sao-paulo",    changefreq: "monthly", priority: "1.0" },
   { path: "/consultorio-metro-santa-cruz",      changefreq: "monthly", priority: "1.0" },
   { path: "/coworking-profissionais-saude",     changefreq: "monthly", priority: "1.0" },
+  { path: "/cuidado-integral-60-mais",          changefreq: "monthly", priority: "0.9" },
 ];
 
 // ─── GERAÇÃO DO XML ─────────────────────────────────────────────────────────
